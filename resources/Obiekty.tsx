@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="1162" tileheight="725" tilecount="11" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="1162" tileheight="725" tilecount="14" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -30,5 +30,17 @@
  </tile>
  <tile id="9">
   <image width="397" height="490" source="kitchenGirlHair.png"/>
+ </tile>
+ <tile id="10">
+  <image width="59" height="155" source="kitchenLampHang.png"/>
+ </tile>
+ <tile id="11">
+  <image width="59" height="44" source="kitchenLampBulb.png"/>
+ </tile>
+ <tile id="12">
+  <image width="279" height="99" source="kitchenLampClosh.png"/>
+ </tile>
+ <tile id="13">
+  <image width="397" height="498" source="kitchenGirlShirt.png"/>
  </tile>
 </tileset>

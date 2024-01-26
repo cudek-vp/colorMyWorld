@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="3" nextobjectid="14">
+ <tileset firstgid="1" source="Obiekty.tsx"/>
+ <layer id="1" name="Warstwa Kafelków 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgAAAABAAB
+  </data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" gid="4" x="2641.71" y="2165.14" width="511" height="725">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="2" gid="7" x="2766.75" y="1473.25" width="281" height="196">
+   <properties>
+    <property name="color" value="MUSTARD"/>
+   </properties>
+  </object>
+  <object id="3" gid="3" x="2372.33" y="2156.33" width="302" height="670">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="4" gid="6" x="3124.67" y="2156.33" width="292" height="670">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="5" gid="1" x="2645.67" y="1063.33" width="506" height="677">
+   <properties>
+    <property name="color" value="MEAT_BROWN"/>
+   </properties>
+  </object>
+  <object id="6" gid="8" x="271" y="2155" width="1162" height="694">
+   <properties>
+    <property name="color" value="BISTRE_BROWN"/>
+   </properties>
+  </object>
+  <object id="7" gid="9" x="577.333" y="1469.67" width="397" height="490">
+   <properties>
+    <property name="color" value="HANSA_YELLOW"/>
+   </properties>
+  </object>
+  <object id="8" gid="10" x="576.667" y="1470.33" width="397" height="490">
+   <properties>
+    <property name="color" value="CARROT_ORANGE"/>
+   </properties>
+  </object>
+  <object id="9" gid="5" x="735" y="1468.33" width="79" height="138">
+   <properties>
+    <property name="color" value="BITTER_LEMON"/>
+   </properties>
+  </object>
+  <object id="10" gid="14" x="576.667" y="1478.67" width="397" height="498">
+   <properties>
+    <property name="color" value="INDIGO"/>
+   </properties>
+  </object>
+  <object id="11" gid="11" x="1802" y="156" width="59" height="155">
+   <properties>
+    <property name="color" value="ITALIAN_SKY_BLUE"/>
+   </properties>
+  </object>
+  <object id="12" gid="13" x="1692" y="246.667" width="279" height="99">
+   <properties>
+    <property name="color" value="HAN_PURPLE"/>
+   </properties>
+  </object>
+  <object id="13" gid="12" x="1802" y="246.333" width="59" height="44">
+   <properties>
+    <property name="color" value="GOLD"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
