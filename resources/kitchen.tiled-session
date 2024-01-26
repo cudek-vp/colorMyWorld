@@ -10,11 +10,25 @@
     "fileStates": {
         "Obiekty.tsx": {
             "dynamicWrapping": true
+        },
+        "bez nazwy.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.25,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 2064,
+                "y": 2228
+            }
         }
     },
+    "last.exportedFilePath": "C:/Users/Tracz/Documents/crackjam2024/colorMyWorld/resources",
     "last.imagePath": "C:/Users/Tracz/Documents/crackjam2024/colorMyWorld/resources",
     "map.height": 2160,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
     "map.tileHeight": 1,
     "map.tileWidth": 1,
     "map.width": 3840,
