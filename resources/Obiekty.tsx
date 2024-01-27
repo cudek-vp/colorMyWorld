@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="32" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="36" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -68,7 +68,7 @@
   <image width="506" height="239" source="ocapBorders.png"/>
  </tile>
  <tile id="22">
-  <image width="474" height="745" source="kitchencaUpper.png"/>
+  <image width="474" height="749" source="kitchencaUpper.png"/>
  </tile>
  <tile id="23">
   <image width="428" height="127" source="kitchencaButtons.png"/>
@@ -96,5 +96,17 @@
  </tile>
  <tile id="31">
   <image width="2927" height="36" source="kitchenUpperWall.png"/>
+ </tile>
+ <tile id="32">
+  <image width="222" height="36" source="book.png"/>
+ </tile>
+ <tile id="33">
+  <image width="1162" height="51" source="platform.png"/>
+ </tile>
+ <tile id="34">
+  <image width="506" height="34" source="platformX.png"/>
+ </tile>
+ <tile id="35">
+  <image width="283" height="34" source="platformBorder.png"/>
  </tile>
 </tileset>
