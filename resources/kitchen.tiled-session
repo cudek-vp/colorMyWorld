@@ -11,7 +11,7 @@
     "fileStates": {
         "Obiekty.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 0.0625,
+            "scaleInDock": 0.015625,
             "scaleInEditor": 0.06
         },
         "bez nazwy.tmx": {
@@ -40,11 +40,11 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 2,
-            "selectedLayer": 2,
+            "scale": 0.25,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 1329,
-                "y": 1481
+                "x": 2540,
+                "y": 1020
             }
         }
     },
