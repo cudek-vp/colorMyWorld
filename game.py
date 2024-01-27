@@ -122,9 +122,10 @@ class Game(arcade.Window):
                                             friction=WALL_FRICTION,
                                             collision_type="wall",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
-
-
-
+        self.physics_engine.add_sprite_list(self.scene[PLATFORMS_LAYER],
+                                            friction=WALL_FRICTION,
+                                            collision_type="platform",
+                                            body_type=arcade.PymunkPhysicsEngine.STATIC)
         self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
                                             mass=PLAYER_MASS,
                                             collision_type="enemy"
@@ -137,7 +138,8 @@ class Game(arcade.Window):
                                             )
 
         # self.physics_engine.add_collision_handler()
-        # self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
+        self.physics_engine.add_collision_handler("player", "platform", begin_handler=enemy_platform_jump_collide)
+        self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
         self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
