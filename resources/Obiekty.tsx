@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="57" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="69" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -171,5 +171,41 @@
  </tile>
  <tile id="56">
   <image width="93" height="566" source="kitchenRightWall2.png"/>
+ </tile>
+ <tile id="57">
+  <image width="630" height="441" source="vampireSkin.png"/>
+ </tile>
+ <tile id="58">
+  <image width="340" height="281" source="vampireHair.png"/>
+ </tile>
+ <tile id="59">
+  <image width="103" height="54" source="vampireTear.png"/>
+ </tile>
+ <tile id="60">
+  <image width="1321" height="321" source="bedshit.png"/>
+ </tile>
+ <tile id="61">
+  <image width="1411" height="782" source="bedWood.png"/>
+ </tile>
+ <tile id="62">
+  <image width="286" height="45" source="vampireShoe.png"/>
+ </tile>
+ <tile id="63">
+  <image width="672" height="567" source="vampireCoat.png"/>
+ </tile>
+ <tile id="64">
+  <image width="275" height="188" source="vampireNeck.png"/>
+ </tile>
+ <tile id="65">
+  <image width="331" height="240" source="lightRoomHandler.png"/>
+ </tile>
+ <tile id="66">
+  <image width="331" height="240" source="lightRoom.png"/>
+ </tile>
+ <tile id="67">
+  <image width="326" height="909" source="bigPlant.png"/>
+ </tile>
+ <tile id="68">
+  <image width="271" height="255" source="plantHolder.png"/>
  </tile>
 </tileset>
