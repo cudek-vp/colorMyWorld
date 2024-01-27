@@ -47,7 +47,6 @@
   </object>
   <object id="117" gid="46" x="46.8182" y="171.545" width="223" height="149"/>
   <object id="133" gid="18" x="988" y="59" width="2854" height="58"/>
-  <object id="135" gid="31" x="3754.08" y="624.5" width="93" height="566"/>
  </objectgroup>
  <objectgroup id="6" name="objects2">
   <object id="70" gid="40" x="1838" y="781" width="1084" height="234">
@@ -163,11 +162,6 @@
   <object id="16" gid="17" x="1933.86" y="2110.26" width="344" height="765">
    <properties>
     <property name="color" value="RUST"/>
-   </properties>
-  </object>
-  <object id="23" gid="21" x="1229.61" y="694.739" width="126" height="643.75">
-   <properties>
-    <property name="color" value="YELLOW_ROSE"/>
    </properties>
   </object>
   <object id="24" gid="20" x="1057.14" y="899.781" width="478" height="166">
