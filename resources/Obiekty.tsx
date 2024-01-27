@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="55" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="57" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -62,7 +62,7 @@
   <image width="478" height="166" source="ocapMain.png"/>
  </tile>
  <tile id="20">
-  <image width="46" height="642" source="ocapPipe.png"/>
+  <image width="124" height="639" source="ocapPipe.png"/>
  </tile>
  <tile id="21">
   <image width="506" height="239" source="ocapBorders.png"/>
@@ -89,10 +89,10 @@
   <image width="148" height="106" source="pot.png"/>
  </tile>
  <tile id="29">
-  <image width="90" height="2110" source="kitchenLeftWall.png"/>
+  <image width="93" height="2110" source="kitchenLeftWall.png"/>
  </tile>
  <tile id="30">
-  <image width="36" height="671" source="kitchenRightWall.png"/>
+  <image width="93" height="566" source="kitchenRightWall.png"/>
  </tile>
  <tile id="31">
   <image width="2927" height="36" source="kitchenUpperWall.png"/>
@@ -165,5 +165,11 @@
  </tile>
  <tile id="54">
   <image width="439" height="470" source="web.png"/>
+ </tile>
+ <tile id="55">
+  <image width="124" height="639" source="ocapPipe2.png"/>
+ </tile>
+ <tile id="56">
+  <image width="93" height="566" source="kitchenRightWall2.png"/>
  </tile>
 </tileset>

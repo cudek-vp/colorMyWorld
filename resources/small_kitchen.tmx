@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="136">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="138">
  <editorsettings>
   <export target="kitchen.tmj" format="json"/>
  </editorsettings>
@@ -350,6 +350,8 @@
     <property name="color" value="MIDNIGHT_BLUE"/>
    </properties>
   </object>
+  <object id="136" gid="56" x="1233.5" y="694.5" width="124" height="639"/>
+  <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
  </objectgroup>
  <objectgroup id="4" name="objects1">
   <object id="36" gid="29" x="1103.5" y="1454.5" width="148" height="106">

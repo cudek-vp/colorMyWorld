@@ -10,7 +10,6 @@
   <object id="1" gid="18" x="-0.101449" y="2161.02" width="3840.3" height="58"/>
   <object id="4" gid="31" x="-2.88283" y="622.968" width="93" height="566"/>
   <object id="5" gid="18" x="0.0924242" y="58.0152" width="3840.3" height="58"/>
-  <object id="6" gid="31" x="3750.23" y="623.136" width="93" height="566"/>
  </objectgroup>
  <objectgroup id="5" name="objects1">
   <object id="14" gid="2147483703" x="3337" y="535" width="439" height="470"/>
