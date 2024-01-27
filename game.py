@@ -22,8 +22,8 @@ from Object import Object
 from Enemy import Enemy
 from Player import Player
 
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 800
+SCREEN_WIDTH = 900
+SCREEN_HEIGHT = 700
 SCREEN_TITLE = "Starting Template"
 
 OBJECTS_LAYER = "objects0"
@@ -225,6 +225,9 @@ class Game(arcade.Window):
         enemy.time += delta_time
         if enemy.time > enemy.move_time:
             enemy.time = 0
+            jump_chance = random.random() * 100
+            if jump_chance <  50 and self.physics_engine.is_on_ground(enemy):
+                self.physics_engine.apply_impulse(enemy, (0, random.uniform(1, 1.5) * GRAVITY))
             enemy.move_force = random.choice([-100, 100])
         self.physics_engine.set_velocity(enemy, (enemy.move_force, self.physics_engine.get_physics_object(enemy).body.velocity[1]))
 
