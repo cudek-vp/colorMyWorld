@@ -1,5 +1,5 @@
 from typing import Optional
-
+import random
 import arcade
 from arcade import Texture
 
@@ -25,7 +25,8 @@ class Enemy(arcade.Sprite):
         self.has_color = True
 
     def split(self):
-        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(2)]
+        n = random.sample([1, 2], counts=[7, 3], k=1)[0]
+        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(n)]
 
 
     def on_update(self, delta_time: float = 1 / 60):

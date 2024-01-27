@@ -9,7 +9,7 @@ from arcade import Texture
 # Force applied while on the ground
 PLAYER_MOVE_FORCE_ON_GROUND = 8000
 class Player(arcade.Sprite):
-    def __init__(self, filename: str = './resources/pumpkinCoat.png', scale: float = 0.04, image_x: float = 0, image_y: float = 0,
+    def __init__(self, filename: str = './resources/mr carrot.png', scale: float = 0.04, image_x: float = 0, image_y: float = 0,
                  image_width: float = 0, image_height: float = 0, center_x: float = 0, center_y: float = 0,
                  repeat_count_x: int = 1, repeat_count_y: int = 1, flipped_horizontally: bool = False,
                  flipped_vertically: bool = False, flipped_diagonally: bool = False,
