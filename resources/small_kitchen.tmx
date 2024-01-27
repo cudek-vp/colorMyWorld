@@ -24,8 +24,6 @@
   <object id="60" gid="35" x="2999.67" y="1007" width="497.333" height="28"/>
   <object id="61" gid="35" x="1043" y="899" width="506" height="34"/>
   <object id="62" gid="35" x="1081" y="1466" width="435" height="78"/>
-  <object id="68" gid="38" x="3310.73" y="629.636" width="336" height="560"/>
-  <object id="69" gid="39" x="3310.63" y="629.5" width="336" height="560"/>
   <object id="88" gid="41" x="2093.33" y="650.667" width="824" height="104"/>
   <object id="89" gid="41" x="1842.67" y="856" width="824" height="104"/>
   <object id="90" gid="41" x="1639.52" y="1524.73" width="940" height="104"/>
@@ -274,6 +272,16 @@
   <object id="101" gid="44" x="2596" y="556" width="283" height="366">
    <properties>
     <property name="color" value="UP_FOREST_GREEN"/>
+   </properties>
+  </object>
+  <object id="68" gid="38" x="3310.73" y="629.636" width="336" height="560">
+   <properties>
+    <property name="color" value="SANGRIA"/>
+   </properties>
+  </object>
+  <object id="69" gid="39" x="3310.63" y="629.5" width="336" height="560">
+   <properties>
+    <property name="color" value="SHEEN_GREEN"/>
    </properties>
   </object>
  </objectgroup>
