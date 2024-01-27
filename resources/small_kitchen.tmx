@@ -47,6 +47,7 @@
   </object>
   <object id="117" gid="46" x="46.8182" y="171.545" width="223" height="149"/>
   <object id="133" gid="18" x="988" y="59" width="2854" height="58"/>
+  <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
  </objectgroup>
  <objectgroup id="6" name="objects2">
   <object id="70" gid="40" x="1838" y="781" width="1084" height="234">
@@ -350,8 +351,11 @@
     <property name="color" value="MIDNIGHT_BLUE"/>
    </properties>
   </object>
-  <object id="136" gid="56" x="1233.5" y="694.5" width="124" height="639"/>
-  <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
+  <object id="136" gid="56" x="1233.5" y="694.5" width="124" height="639">
+   <properties>
+    <property name="color" value="MARDI_GRAS"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="objects1">
   <object id="36" gid="29" x="1103.5" y="1454.5" width="148" height="106">
@@ -438,7 +442,7 @@
   <object id="104" gid="5" x="2053" y="759" width="79" height="138"/>
   <object id="105" gid="5" x="2338.92" y="2026.58" width="79" height="138" rotation="100"/>
   <object id="130" gid="54" x="158.167" y="2131.33" width="447.788" height="742.812"/>
-  <object id="132" gid="55" x="980.999" y="520.902" width="439" height="470">
+  <object id="132" gid="55" x="980.999" y="510.235" width="439" height="459.333">
    <properties>
     <property name="color" value="NEON_FUCHSIA"/>
    </properties>
