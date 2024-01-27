@@ -208,6 +208,17 @@ class Game(arcade.Window):
                         object.remove_color()
                         break
 
+
+        enemies = arcade.check_for_collision_with_list(self.player_sprite, self.scene[ENEMIES_LAYER])
+        for enemy in enemies:
+            if enemy.has_color:
+                closest_sprite = self.get_closest_colored_sprite(enemy)
+                if closest_sprite:
+                    closest_sprite.give_color(enemy.color)
+                    enemy.destroy()
+            else:
+                enemy.destroy()
+
         self.physics_engine.step()
 
     def move_enemy(self, enemy, delta_time):
@@ -257,17 +268,6 @@ class Game(arcade.Window):
             self.up_pressed = False
         elif key == arcade.key.DOWN:
             self.down_pressed = False
-
-    # def on_key_press(self, key, modifiers):
-    #     """Called whenever a key is pressed. """
-    #     if key == arcade.key.LEFT:
-    #         self.left_pressed = True
-    #     elif key == arcade.key.RIGHT:
-    #         self.right_pressed = True
-    #     elif key == arcade.key.UP:
-    #         # find out if player is standing on ground
-    #         if self.physics_engine.is_on_ground(self.player_sprite):
-    #             self.right_pressed = False
 
     def player_update(self, delta_time):
         """ Movement and game logic """
