@@ -18,6 +18,8 @@ If Python and Arcade are installed, this example can be run from the command lin
 python -m arcade.examples.starting_template
 """
 import arcade
+from Object import Object
+from Enemy import Enemy
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -46,83 +48,6 @@ PLAYER_MASS = 2.5
 # Keep player from going too fast
 PLAYER_MAX_HORIZONTAL_SPEED = 450
 PLAYER_MAX_VERTICAL_SPEED = 1600
-
-class Enemy(arcade.Sprite):
-    velocity_ratio = 100
-
-    def __init__(self, filename: str = "./resources/enemy.png", scale: float = 0.03, image_x: float = 0, image_y: float = 0,
-                 image_width: float = 0, image_height: float = 0, center_x: float = 0, center_y: float = 0,
-                 repeat_count_x: int = 1, repeat_count_y: int = 1, flipped_horizontally: bool = False,
-                 flipped_vertically: bool = False, flipped_diagonally: bool = False,
-                 hit_box_algorithm: Optional[str] = "Simple", hit_box_detail: float = 4.5, texture: Texture = None,
-                 angle: float = 0, game : Game = None):
-        super().__init__(filename, scale, image_x, image_y, image_width, image_height, center_x, center_y,
-                         repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
-                         hit_box_algorithm, hit_box_detail, texture, angle)
-        print("New")
-
-        self.has_color = False
-        self.game = game
-        self.move_time = 0
-        self.time = 0
-
-    def steal(self, color):
-        self.color = color
-        self.has_color = True
-
-    def split(self):
-        for i in range(1):
-            new_enemy = Enemy(center_x=self.center_x, center_y=self.center_y, game=self.game)
-            self.game.scene.add_sprite(ENEMIES_LAYER, new_enemy)
-            self.game.physics_engine.add_sprite(new_enemy, friction=PLAYER_FRICTION,
-                                           mass=PLAYER_MASS,
-                                           collision_type="enemy")
-
-    def on_update(self, delta_time: float = 1 / 60):
-        physics_engine = self.game.physics_engine
-        po: arcade.PymunkPhysicsObject = physics_engine.get_physics_object(self)
-        #print(po.body.velocity.x, po.body.velocity.y)
-        if self.center_y < -10:
-            self.remove_from_sprite_lists()
-            return
-        self.time += delta_time
-
-        if abs(po.body.velocity[1]) > 1:
-            return
-        if self.time > self.move_time:
-            self.move_time = random.uniform(0.5, 2)
-            self.time = 0
-            self.change_x = random.choice([-1000, 1000])
-
-        # physics_engine.apply_force(self, (self.change_x, 0))
-
-
-
-
-    def destroy(self):
-        self.remove_from_sprite_lists()
-
-
-class Object(arcade.Sprite):
-    def __init__(self, filename: str = None, scale: float = 0.2, image_x: float = 0, image_y: float = 0,
-                 image_width: float = 0, image_height: float = 0, center_x: float = 0, center_y: float = 0,
-                 repeat_count_x: int = 1, repeat_count_y: int = 1, flipped_horizontally: bool = False,
-                 flipped_vertically: bool = False, flipped_diagonally: bool = False,
-                 hit_box_algorithm: Optional[str] = "Simple", hit_box_detail: float = 4.5, texture: Texture = None,
-                 angle: float = 0):
-        super().__init__(filename, scale, image_x, image_y, image_width, image_height, center_x, center_y,
-                         repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
-                         hit_box_algorithm, hit_box_detail, texture, angle)
-
-        self.has_color = True
-
-    def remove_color(self):
-        self.color = arcade.color.LIGHT_GRAY
-        self.has_color = False
-
-    def give_color(self, color):
-        self.color = color
-        self.has_color = True
 
 
 class Game(arcade.Window):
@@ -184,10 +109,7 @@ class Game(arcade.Window):
             self.scene.add_sprite(OBJECTS_LAYER, object)
 
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
-        enemy = Enemy( game=self)
-        enemy.center_x = 450
-        enemy.center_y = 400
-        enemy.change_x = -Enemy.velocity_ratio
+        enemy = Enemy(center_x=450, center_y=400)
         enemy.color = arcade.color.LIGHT_GRAY
 
         def enemy_platform_jump_collide(enemy, _platform, _arbiter, _space, _data):
@@ -247,19 +169,35 @@ class Game(arcade.Window):
         enemy : Enemy = None
         object : Object = None
         for enemy in self.scene[ENEMIES_LAYER]:
+            self.move_enemy(enemy, delta_time)
             if not enemy.has_color:
                 objects = arcade.check_for_collision_with_list(enemy, self.scene[OBJECTS_LAYER])
                 for object in objects:
                     if object.has_color:
-                        enemy.steal(object.color)
+                        self.steal(object.color)
                         enemy.change_x = -enemy.change_x
                         object.remove_color()
-                        enemy.split()
                         break
 
         self.physics_engine.step()
 
+    def move_enemy(self, enemy, delta_time):
+        enemy.time += delta_time
+        if enemy.time > enemy.move_time:
+            enemy.time = 0
+            enemy.move_force = random.choice([-500, 500])
+        self.physics_engine.apply_force(enemy, (enemy.move_force, 0))
+        self.physics_engine.set_friction(enemy, 0.0)
 
+
+
+    def steal_color(self, enemy, color):
+        enemy.steal(color)
+        for new_enemy in enemy.split():
+            self.game.scene.add_sprite(ENEMIES_LAYER, new_enemy)
+            self.game.physics_engine.add_sprite(new_enemy, friction=1.0,
+                                                mass=2.5,
+                                                collision_type="enemy")
 
     def on_key_press(self, key, key_modifiers):
         """
@@ -285,7 +223,7 @@ class Game(arcade.Window):
     def on_mouse_press(self, x, y, button, key_modifiers):
         if not len(self.scene[ENEMIES_LAYER]):
             return
-        enemy = self.scene[ENEMIES_LAYER][0]
+        enemy: Enemy = self.scene[ENEMIES_LAYER][0]
         if button == arcade.MOUSE_BUTTON_LEFT:
 
             if enemy.has_color:
@@ -295,7 +233,7 @@ class Game(arcade.Window):
 
             enemy.destroy()
         elif button == arcade.MOUSE_BUTTON_RIGHT:
-            self.physics_engine.apply_impulse(enemy, (0, 1*GRAVITY))
+            enemy.split()
 
     def get_closest_colored_sprite(self, sprite) -> Object:
         min = inf
@@ -307,6 +245,7 @@ class Game(arcade.Window):
                     min = distance
                     closest_sprite = o
         return closest_sprite
+
     def on_mouse_release(self, x, y, button, key_modifiers):
         """
         Called when a user releases a mouse button.
