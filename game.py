@@ -90,7 +90,7 @@ class Game(arcade.Window):
     def setup(self):
         """ Set up the game variables. Call to re-start the game. """
         # Create your sprites and sprite lists here
-        self.tile_map = arcade.load_tilemap("./resources/small_kitchen.tmj", 0.2)
+        self.tile_map = arcade.load_tilemap("./resources/kitchen.tmj", 0.2)
         #
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
 
@@ -112,7 +112,10 @@ class Game(arcade.Window):
             o.center_y  =   sprite.center_y
             sprites.append(sprite)
             objects.append(o)
-            o.color = colors[sprite.properties["color"]]
+            try:
+                o.color = colors[sprite.properties["color"]]
+            except KeyError:
+                o.color = arcade.color.WHITE
 
         for sprite in sprites:
             sprite.remove_from_sprite_lists()
@@ -123,7 +126,7 @@ class Game(arcade.Window):
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
         enemy = Enemy()
         enemy.center_x = 900
-        enemy.center_y = 300
+        enemy.center_y = 100
         enemy.change_x = -Enemy.velocity_ratio
         enemy.color = arcade.color.LIGHT_GRAY
 
@@ -153,15 +156,18 @@ class Game(arcade.Window):
         new_enemies = []
 
         for enemy in self.scene[ENEMIES_LAYER]:
-            objects = arcade.check_for_collision_with_list(enemy, self.scene[OBJECTS_LAYER])
-            for object in objects:
-                if object.has_color:
-                    enemy.steal(object.color)
-                    object.remove_color()
-                    new_enemy = Enemy(center_x=enemy.center_x, center_y=enemy.center_y)
-                    new_enemy.change_x = -enemy.change_x
-                    new_enemies.append(new_enemy)
-                    self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
+            if not enemy.has_color:
+                objects = arcade.check_for_collision_with_list(enemy, self.scene[OBJECTS_LAYER])
+                for object in objects:
+                    if object.has_color:
+                        enemy.steal(object.color)
+                        enemy.change_x = -enemy.change_x
+                        object.remove_color()
+                        new_enemy = Enemy(center_x=enemy.center_x, center_y=enemy.center_y)
+                        new_enemy.change_x = -enemy.change_x
+                        new_enemies.append(new_enemy)
+                        self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
+                        break
 
 
 
@@ -187,7 +193,9 @@ class Game(arcade.Window):
         pass
 
     def on_mouse_press(self, x, y, button, key_modifiers):
-        enemy = self.scene[ENEMIES_LAYER][0]
+        if not len(self.scene[ENEMIES_LAYER]):
+            return
+        enemy = self.scene[ENEMIES_LAYER][-1]
 
         if enemy.has_color:
             closest_sprite = self.get_closest_colored_sprite(enemy)
