@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="99">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="102">
  <editorsettings>
   <export target="kitchen.tmj" format="json"/>
  </editorsettings>
@@ -39,12 +39,36 @@
   <object id="98" gid="41" x="1713.52" y="327.758" width="258" height="104"/>
  </objectgroup>
  <objectgroup id="6" name="objects2">
-  <object id="70" gid="40" x="1838" y="781" width="1084" height="234"/>
-  <object id="71" gid="2147483686" x="1699.67" y="1049.92" width="336" height="560"/>
-  <object id="72" gid="2147483687" x="1699.67" y="1050.04" width="336" height="560"/>
-  <object id="73" gid="37" x="2094.25" y="553.75" width="141" height="111"/>
-  <object id="74" gid="37" x="2271" y="554" width="141" height="111"/>
-  <object id="75" gid="37" x="2448.67" y="554" width="141" height="111"/>
+  <object id="70" gid="40" x="1838" y="781" width="1084" height="234">
+   <properties>
+    <property name="color" value="SMOKEY_TOPAZ"/>
+   </properties>
+  </object>
+  <object id="71" gid="2147483686" x="1699.67" y="1049.92" width="336" height="560">
+   <properties>
+    <property name="color" value="SPRING_BUD"/>
+   </properties>
+  </object>
+  <object id="72" gid="2147483687" x="1699.67" y="1050.04" width="336" height="560">
+   <properties>
+    <property name="color" value="SPANISH_GREEN"/>
+   </properties>
+  </object>
+  <object id="73" gid="37" x="2094.25" y="553.75" width="141" height="111">
+   <properties>
+    <property name="color" value="SPANISH_VIRIDIAN"/>
+   </properties>
+  </object>
+  <object id="74" gid="37" x="2271" y="554" width="141" height="111">
+   <properties>
+    <property name="color" value="SPRING_GREEN"/>
+   </properties>
+  </object>
+  <object id="75" gid="37" x="2448.67" y="554" width="141" height="111">
+   <properties>
+    <property name="color" value="TANGELO"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="2" name="objects0">
   <object id="1" gid="4" x="2996.64" y="2119.36" width="511" height="725">
@@ -187,16 +211,71 @@
     <property name="color" value="MEAT_BROWN"/>
    </properties>
   </object>
-  <object id="78" gid="33" x="2212.83" y="756.917" width="178" height="32" rotation="270"/>
-  <object id="79" gid="33" x="2226.5" y="757" width="185.5" height="20" rotation="270"/>
-  <object id="80" gid="33" x="2261" y="757" width="165" height="37.5" rotation="270"/>
-  <object id="81" gid="33" x="2286.73" y="757.477" width="178" height="32" rotation="270"/>
-  <object id="82" gid="33" x="2427.22" y="756.125" width="178" height="32" rotation="270"/>
-  <object id="83" gid="33" x="2302.39" y="757.375" width="185.5" height="20" rotation="270"/>
-  <object id="84" gid="33" x="2336.39" y="756.625" width="165" height="37.5" rotation="270"/>
-  <object id="85" gid="33" x="2401.12" y="755.852" width="144.667" height="32" rotation="270"/>
-  <object id="86" gid="33" x="2374.5" y="755.917" width="179.333" height="44.8333" rotation="270"/>
-  <object id="87" gid="33" x="2537.5" y="748.583" width="192.333" height="28.8333" rotation="240"/>
+  <object id="78" gid="33" x="2212.83" y="756.917" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TERRA_COTTA"/>
+   </properties>
+  </object>
+  <object id="79" gid="33" x="2226.5" y="757" width="185.5" height="20" rotation="270">
+   <properties>
+    <property name="color" value="TITANIUM_YELLOW"/>
+   </properties>
+  </object>
+  <object id="80" gid="33" x="2261" y="757" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="TRACTOR_RED"/>
+   </properties>
+  </object>
+  <object id="81" gid="33" x="2286.73" y="757.477" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TURQUOISE_BLUE"/>
+   </properties>
+  </object>
+  <object id="82" gid="33" x="2427.22" y="756.125" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TYRIAN_PURPLE"/>
+   </properties>
+  </object>
+  <object id="83" gid="33" x="2302.39" y="757.375" width="185.5" height="20" rotation="270">
+   <properties>
+    <property name="color" value="ULTRAMARINE"/>
+   </properties>
+  </object>
+  <object id="84" gid="33" x="2336.39" y="756.625" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="ULTRA_PINK"/>
+   </properties>
+  </object>
+  <object id="85" gid="33" x="2401.12" y="755.852" width="144.667" height="32" rotation="270">
+   <properties>
+    <property name="color" value="UNIVERSITY_OF_TENNESSEE_ORANGE"/>
+   </properties>
+  </object>
+  <object id="86" gid="33" x="2374.5" y="755.917" width="179.333" height="44.8333" rotation="270">
+   <properties>
+    <property name="color" value="USC_CARDINAL"/>
+   </properties>
+  </object>
+  <object id="87" gid="33" x="2537.5" y="748.583" width="192.333" height="28.8333" rotation="240">
+   <properties>
+    <property name="color" value="VIVID_ORCHID"/>
+   </properties>
+  </object>
+  <object id="99" gid="42" x="2596" y="556" width="283" height="366">
+   <properties>
+    <property name="color" value="WATERSPOUT"/>
+   </properties>
+  </object>
+  <object id="100" gid="43" x="2596.33" y="556" width="283" height="366">
+   <properties>
+    <property name="color" value="WHITE"/>
+   </properties>
+  </object>
+  <object id="101" gid="44" x="2596" y="556" width="283" height="366">
+   <properties>
+    <property name="color" value="UP_FOREST_GREEN"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="objects1">
   <object id="36" gid="29" x="1103.5" y="1454.5" width="148" height="106">
@@ -254,10 +333,30 @@
     <property name="color" value="SAPPHIRE_BLUE"/>
    </properties>
   </object>
-  <object id="63" gid="29" x="2840.33" y="1464.33" width="148" height="106"/>
-  <object id="64" gid="28" x="2834.15" y="1370.42" width="160" height="48"/>
-  <object id="65" gid="2147483685" x="2317" y="1415" width="142.333" height="123"/>
-  <object id="66" gid="2147483685" x="2729" y="1453" width="95.6667" height="99"/>
-  <object id="67" gid="37" x="3564" y="1402" width="91.5" height="83"/>
+  <object id="63" gid="29" x="2840.33" y="1464.33" width="148" height="106">
+   <properties>
+    <property name="color" value="USC_GOLD"/>
+   </properties>
+  </object>
+  <object id="64" gid="28" x="2834.15" y="1370.42" width="160" height="48">
+   <properties>
+    <property name="color" value="VENETIAN_RED"/>
+   </properties>
+  </object>
+  <object id="65" gid="2147483685" x="2317" y="1415" width="142.333" height="123">
+   <properties>
+    <property name="color" value="VIVID_AUBURN"/>
+   </properties>
+  </object>
+  <object id="66" gid="2147483685" x="2729" y="1453" width="95.6667" height="99">
+   <properties>
+    <property name="color" value="VIVID_SKY_BLUE"/>
+   </properties>
+  </object>
+  <object id="67" gid="37" x="3564" y="1402" width="91.5" height="83">
+   <properties>
+    <property name="color" value="WILD_ORCHID"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
