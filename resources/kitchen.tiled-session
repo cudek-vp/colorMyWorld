@@ -43,8 +43,8 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2260,
-                "y": 1192
+                "x": 2672,
+                "y": 2148
             }
         }
     },
@@ -59,16 +59,14 @@
     "map.width": 1,
     "openFiles": [
         "Obiekty.tsx",
-        "bez nazwy.tmx",
-        "kitchen.tmx",
         "small_kitchen.tmx"
     ],
     "project": "kitchen.tiled-project",
     "recentFiles": [
-        "kitchen.tmx",
-        "bez nazwy.tmx",
         "Obiekty.tsx",
-        "small_kitchen.tmx"
+        "small_kitchen.tmx",
+        "kitchen.tmx",
+        "bez nazwy.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.type": 1

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="3" nextobjectid="17">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="4" nextobjectid="20">
  <editorsettings>
-  <export target="small_kitchen.tmj" format="json"/>
+  <export target="kitchen.tmj" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="Obiekty.tsx"/>
  <layer id="1" name="Warstwa Kafelków 1" width="1" height="1">
@@ -10,52 +10,52 @@
   </data>
  </layer>
  <objectgroup id="2" name="objects">
-  <object id="1" gid="4" x="2641.71" y="2165.14" width="511" height="725">
+  <object id="1" gid="4" x="2996.64" y="2119.36" width="511" height="725">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
    </properties>
   </object>
-  <object id="2" gid="7" x="2766.75" y="1473.25" width="281" height="196">
+  <object id="2" gid="7" x="3121.68" y="1427.47" width="281" height="196">
    <properties>
     <property name="color" value="MUSTARD"/>
    </properties>
   </object>
-  <object id="3" gid="3" x="2372.33" y="2156.33" width="302" height="670">
+  <object id="3" gid="3" x="2727.26" y="2110.55" width="302" height="670">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
    </properties>
   </object>
-  <object id="4" gid="6" x="3124.67" y="2156.33" width="292" height="670">
+  <object id="4" gid="6" x="3479.6" y="2110.55" width="292" height="670">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
    </properties>
   </object>
-  <object id="5" gid="1" x="2645.67" y="1063.33" width="506" height="677">
+  <object id="5" gid="1" x="3058.52" y="1017.13" width="506" height="677">
    <properties>
     <property name="color" value="MEAT_BROWN"/>
    </properties>
   </object>
-  <object id="6" gid="8" x="1186.15" y="2155" width="1162" height="694">
+  <object id="6" gid="8" x="1638.08" y="2102.27" width="946" height="694">
    <properties>
     <property name="color" value="BISTRE_BROWN"/>
    </properties>
   </object>
-  <object id="7" gid="9" x="1491.94" y="2130.33" width="397" height="1150">
+  <object id="7" gid="9" x="1906.91" y="2077.2" width="397" height="1150">
    <properties>
     <property name="color" value="HANSA_YELLOW"/>
    </properties>
   </object>
-  <object id="8" gid="10" x="1491.82" y="1470.33" width="397" height="490">
+  <object id="8" gid="10" x="1906.94" y="1417.21" width="397" height="490">
    <properties>
     <property name="color" value="CARROT_ORANGE"/>
    </properties>
   </object>
-  <object id="9" gid="5" x="1650.15" y="1468.33" width="79" height="138">
+  <object id="9" gid="5" x="2065.9" y="1414.29" width="79" height="138">
    <properties>
     <property name="color" value="BITTER_LEMON"/>
    </properties>
   </object>
-  <object id="10" gid="14" x="1492.36" y="1579.67" width="397" height="600">
+  <object id="10" gid="14" x="1906.93" y="1527.3" width="397" height="600">
    <properties>
     <property name="color" value="INDIGO"/>
    </properties>
@@ -75,16 +75,24 @@
     <property name="color" value="GOLD"/>
    </properties>
   </object>
-  <object id="14" gid="15" x="1518.65" y="2018.5" width="343" height="500">
+  <object id="14" gid="15" x="1933.85" y="1966.32" width="343" height="500">
    <properties>
     <property name="color" value="RED_DEVIL"/>
    </properties>
   </object>
-  <object id="15" gid="16" x="1605.65" y="2163.25" width="169" height="60"/>
-  <object id="16" gid="17" x="1518.56" y="2162.55" width="344" height="765">
+  <object id="15" gid="16" x="2020.95" y="2110.37" width="169" height="60">
+   <properties>
+    <property name="color" value="SHOCKING_PINK"/>
+   </properties>
+  </object>
+  <object id="16" gid="17" x="1933.86" y="2110.26" width="344" height="765">
    <properties>
     <property name="color" value="RUST"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup id="3" name="walls">
+  <object id="18" gid="18" x="959.677" y="2160.27" width="2880" height="58"/>
+  <object id="19" gid="19" x="912.625" y="2110.38" width="2927" height="2110"/>
  </objectgroup>
 </map>
