@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="44" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="53" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -132,5 +132,32 @@
  </tile>
  <tile id="43">
   <image width="283" height="366" source="plant2.png"/>
+ </tile>
+ <tile id="44">
+  <image width="78" height="285" source="garlic.png"/>
+ </tile>
+ <tile id="45">
+  <image width="223" height="149" source="sunEyes.png"/>
+ </tile>
+ <tile id="46">
+  <image width="487" height="478" source="sun.png"/>
+ </tile>
+ <tile id="47">
+  <image width="48" height="1072" source="fence.png"/>
+ </tile>
+ <tile id="48">
+  <image width="204" height="124" source="pumpkin.png"/>
+ </tile>
+ <tile id="49">
+  <image width="772" height="269" source="pumpkinGrass.png"/>
+ </tile>
+ <tile id="50">
+  <image width="26" height="1386" source="pumpkinStick.png"/>
+ </tile>
+ <tile id="51">
+  <image width="608" height="534" source="pumpkinCoat.png"/>
+ </tile>
+ <tile id="52">
+  <image width="336" height="130" source="pumpkinHat.png"/>
  </tile>
 </tileset>
