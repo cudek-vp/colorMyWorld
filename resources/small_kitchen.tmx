@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="4" nextobjectid="20">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="4" nextobjectid="36">
  <editorsettings>
   <export target="kitchen.tmj" format="json"/>
  </editorsettings>
@@ -28,11 +28,6 @@
   <object id="4" gid="6" x="3479.6" y="2110.55" width="292" height="670">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
-   </properties>
-  </object>
-  <object id="5" gid="1" x="3058.52" y="1017.13" width="506" height="677">
-   <properties>
-    <property name="color" value="MEAT_BROWN"/>
    </properties>
   </object>
   <object id="6" gid="8" x="1638.08" y="2102.27" width="946" height="694">
@@ -90,9 +85,58 @@
     <property name="color" value="RUST"/>
    </properties>
   </object>
+  <object id="23" gid="21" x="1273.48" y="668.375" width="46" height="642">
+   <properties>
+    <property name="color" value="YELLOW_ROSE"/>
+   </properties>
+  </object>
+  <object id="24" gid="20" x="1058.02" y="875.167" width="478" height="166">
+   <properties>
+    <property name="color" value="UP_MAROON"/>
+   </properties>
+  </object>
+  <object id="25" gid="22" x="1042.49" y="900.135" width="506" height="239">
+   <properties>
+    <property name="color" value="SPIRO_DISCO_BALL"/>
+   </properties>
+  </object>
+  <object id="26" gid="26" x="1063.11" y="2110.17" width="474" height="745">
+   <properties>
+    <property name="color" value="PUMPKIN"/>
+   </properties>
+  </object>
+  <object id="27" gid="25" x="1062.97" y="2110.28" width="474" height="745">
+   <properties>
+    <property name="color" value="PERIDOT"/>
+   </properties>
+  </object>
+  <object id="28" gid="27" x="1116.38" y="1866.45" width="368" height="360">
+   <properties>
+    <property name="color" value="UP_MAROON"/>
+   </properties>
+  </object>
+  <object id="29" gid="24" x="1086.09" y="1622.16" width="428" height="127">
+   <properties>
+    <property name="color" value="VIVID_VIOLET"/>
+   </properties>
+  </object>
+  <object id="30" gid="23" x="1063.09" y="2110.27" width="474" height="745">
+   <properties>
+    <property name="color" value="YANKEES_BLUE"/>
+   </properties>
+  </object>
+  <object id="32" gid="28" x="1116" y="1324" width="160" height="48"/>
+  <object id="31" gid="29" x="1118" y="1401" width="148" height="106"/>
  </objectgroup>
  <objectgroup id="3" name="walls">
   <object id="18" gid="18" x="959.677" y="2160.27" width="2880" height="58"/>
-  <object id="19" gid="19" x="912.625" y="2110.38" width="2927" height="2110"/>
+  <object id="5" gid="1" x="3058.52" y="1017.13" width="506" height="677">
+   <properties>
+    <property name="color" value="MEAT_BROWN"/>
+   </properties>
+  </object>
+  <object id="33" gid="32" x="912.978" y="36.0054" width="2927" height="36"/>
+  <object id="34" gid="31" x="3804.03" y="671" width="36" height="671"/>
+  <object id="35" gid="30" x="913" y="2109.91" width="90" height="2110"/>
  </objectgroup>
 </map>

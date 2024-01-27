@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="19" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="32" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -57,5 +57,44 @@
  </tile>
  <tile id="18">
   <image width="2927" height="2110" source="kitchenWalls.png"/>
+ </tile>
+ <tile id="19">
+  <image width="478" height="166" source="ocapMain.png"/>
+ </tile>
+ <tile id="20">
+  <image width="46" height="642" source="ocapPipe.png"/>
+ </tile>
+ <tile id="21">
+  <image width="506" height="239" source="ocapBorders.png"/>
+ </tile>
+ <tile id="22">
+  <image width="474" height="745" source="kitchencaUpper.png"/>
+ </tile>
+ <tile id="23">
+  <image width="428" height="127" source="kitchencaButtons.png"/>
+ </tile>
+ <tile id="24">
+  <image width="474" height="745" source="kitchencaFront.png"/>
+ </tile>
+ <tile id="25">
+  <image width="474" height="745" source="kitchencaFrontBorders.png"/>
+ </tile>
+ <tile id="26">
+  <image width="368" height="360" source="kitchencaScreens.png"/>
+ </tile>
+ <tile id="27">
+  <image width="160" height="48" source="potup.png"/>
+ </tile>
+ <tile id="28">
+  <image width="148" height="106" source="pot.png"/>
+ </tile>
+ <tile id="29">
+  <image width="90" height="2110" source="kitchenLeftWall.png"/>
+ </tile>
+ <tile id="30">
+  <image width="36" height="671" source="kitchenRightWall.png"/>
+ </tile>
+ <tile id="31">
+  <image width="2927" height="36" source="kitchenUpperWall.png"/>
  </tile>
 </tileset>
