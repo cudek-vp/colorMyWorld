@@ -25,7 +25,7 @@ class Enemy(arcade.Sprite):
         self.has_color = True
 
     def split(self):
-        return  [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(1)]
+        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(2)]
 
 
     def on_update(self, delta_time: float = 1 / 60):
