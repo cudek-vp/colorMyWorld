@@ -6,7 +6,6 @@ from math import inf
 
 from typing import Optional
 
-from _testcapi import pytime_object_to_time_t
 from arcade import Texture
 
 """
@@ -21,6 +20,7 @@ python -m arcade.examples.starting_template
 import arcade
 from Object import Object
 from Enemy import Enemy
+from Player import Player
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
@@ -28,12 +28,13 @@ SCREEN_TITLE = "Starting Template"
 
 OBJECTS_LAYER = "objects0"
 ENEMIES_LAYER = "enemies"
+PLAYER_LAYER = "player"
 PLATFORMS_LAYER = "platforms"
 WALLS_LAYER = "walls"
 
 # Gravity
 GRAVITY = 1500
-
+PLAYER_MOVE_FORCE_ON_GROUND = 8000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
 PLAYER_DAMPING = 0.4
@@ -61,11 +62,14 @@ class Game(arcade.Window):
         self.scene : Optional[arcade.Scene]
 
         self.physics_engine : Optional[arcade.PymunkPhysicsEngine]
-
-        self.setup()
+        self.player_sprite: Optional[arcade.Sprite] = None
         # If you have sprite lists, you should create them here,
         # and set them to None
 
+        self.left_pressed: bool = False
+        self.right_pressed: bool = False
+
+        self.setup()
 
 
 
@@ -148,7 +152,18 @@ class Game(arcade.Window):
         # self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
+        self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
 
+
+        self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
+        self.player = Player(center_x=450, center_y=400)
+        self.scene.add_sprite(PLAYER_LAYER, self.player)
+        # player.color = arcade.color.LIGHT_GRAY
+        self.physics_engine.add_sprite_list(self.scene[PLAYER_LAYER],
+                                            friction=0,
+                                            mass=PLAYER_MASS,
+                                            collision_type="player"
+                                            )
 
     def on_draw(self):
         """
@@ -158,8 +173,7 @@ class Game(arcade.Window):
         # This command should happen before we start drawing. It will clear
         # the screen to the background color, and erase what we drew last frame.
         self.clear()
-        self.scene[ENEMIES_LAYER].draw()
-        self.scene[WALLS_LAYER].draw()
+        self.scene.draw()
 
         # Call draw() on all your sprite lists below
 
@@ -170,7 +184,7 @@ class Game(arcade.Window):
         need it.
         """
         self.scene.on_update(delta_time)
-
+        self.player_update(delta_time)
         new_enemies = []
 
         enemy : Enemy = None
@@ -212,13 +226,34 @@ class Game(arcade.Window):
         For a full list of keys, see:
         https://api.arcade.academy/en/latest/arcade.key.html
         """
-        pass
+        if key == arcade.key.LEFT:
+            self.left_pressed = True
+        elif key == arcade.key.RIGHT:
+            self.right_pressed = True
+
 
     def on_key_release(self, key, key_modifiers):
         """
         Called whenever the user lets off a previously pressed key.
         """
-        pass
+        if key == arcade.key.LEFT:
+            self.left_pressed = False
+        if key == arcade.key.RIGHT:
+            self.right_pressed = False
+
+    def player_update(self, delta_time):
+        """ Movement and game logic """
+
+        # Update player forces based on keys pressed
+        if self.left_pressed and not self.right_pressed:
+            # Create a force to the left. Apply it.
+            force = (-PLAYER_MOVE_FORCE_ON_GROUND, 0)
+            self.physics_engine.apply_force(self.player_sprite, force)
+            # Set friction to zero for the player while moving
+        elif self.right_pressed and not self.left_pressed:
+            # Create a force to the right. Apply it.
+            force = (PLAYER_MOVE_FORCE_ON_GROUND, 0)
+            self.physics_engine.apply_force(self.player_sprite, force)
 
     def on_mouse_motion(self, x, y, delta_x, delta_y):
         """
