@@ -19,11 +19,11 @@
                 3,
                 2
             ],
-            "scale": 1,
+            "scale": 0.25,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 758,
-                "y": 561
+                "x": 2364,
+                "y": 696
             }
         },
         "bez nazwy.tmx": {
@@ -60,6 +60,14 @@
             "viewCenter": {
                 "x": 1952,
                 "y": 960
+            }
+        },
+        "walls.tmj": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1532,
+                "y": 820
             }
         }
     },
