@@ -51,6 +51,10 @@ PLAYER_MASS = 2.5
 PLAYER_MAX_HORIZONTAL_SPEED = 450
 PLAYER_MAX_VERTICAL_SPEED = 1600
 
+# Force applied when moving left/right in the air
+PLAYER_MOVE_FORCE_IN_AIR = 900
+# Strength of a jump
+PLAYER_JUMP_IMPULSE = 1800
 
 class Game(arcade.Window):
 
@@ -68,7 +72,7 @@ class Game(arcade.Window):
 
         self.left_pressed: bool = False
         self.right_pressed: bool = False
-
+        self.up_pressed: bool = False
         self.setup()
 
 
@@ -130,6 +134,10 @@ class Game(arcade.Window):
             enemy.set_position(enemy.center_x, enemy.center_y+100)
             return True
 
+        def player_wall_collide(player, _wall, _arbiter, _space, _data):
+
+            player.change_y = 0
+            return True
 
         self.physics_engine.add_sprite_list(self.scene[WALLS_LAYER],
                                             friction=WALL_FRICTION,
@@ -154,11 +162,11 @@ class Game(arcade.Window):
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
         self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
 
-
         self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
-        self.player = Player(center_x=450, center_y=400)
-        self.scene.add_sprite(PLAYER_LAYER, self.player)
+        self.player_sprite = Player(center_x=450, center_y=400)
+        self.scene.add_sprite(PLAYER_LAYER, self.player_sprite)
         # player.color = arcade.color.LIGHT_GRAY
+
         self.physics_engine.add_sprite_list(self.scene[PLAYER_LAYER],
                                             friction=0,
                                             mass=PLAYER_MASS,
@@ -230,7 +238,12 @@ class Game(arcade.Window):
             self.left_pressed = True
         elif key == arcade.key.RIGHT:
             self.right_pressed = True
-
+        elif key == arcade.key.UP:
+            self.up_pressed = True
+            # find out if player is standing on ground, and not on a ladder
+            if self.physics_engine.is_on_ground(self.player_sprite):
+                impulse = (0, PLAYER_JUMP_IMPULSE)
+                self.physics_engine.apply_impulse(self.player_sprite, impulse)
 
     def on_key_release(self, key, key_modifiers):
         """
@@ -238,22 +251,48 @@ class Game(arcade.Window):
         """
         if key == arcade.key.LEFT:
             self.left_pressed = False
-        if key == arcade.key.RIGHT:
+        elif key == arcade.key.RIGHT:
             self.right_pressed = False
+        elif key == arcade.key.UP:
+            self.up_pressed = False
+        elif key == arcade.key.DOWN:
+            self.down_pressed = False
+
+    # def on_key_press(self, key, modifiers):
+    #     """Called whenever a key is pressed. """
+    #     if key == arcade.key.LEFT:
+    #         self.left_pressed = True
+    #     elif key == arcade.key.RIGHT:
+    #         self.right_pressed = True
+    #     elif key == arcade.key.UP:
+    #         # find out if player is standing on ground
+    #         if self.physics_engine.is_on_ground(self.player_sprite):
+    #             self.right_pressed = False
 
     def player_update(self, delta_time):
         """ Movement and game logic """
 
+        is_on_ground = self.physics_engine.is_on_ground(self.player_sprite)
         # Update player forces based on keys pressed
         if self.left_pressed and not self.right_pressed:
             # Create a force to the left. Apply it.
-            force = (-PLAYER_MOVE_FORCE_ON_GROUND, 0)
+            if is_on_ground:
+                force = (-PLAYER_MOVE_FORCE_ON_GROUND, 0)
+            else:
+                force = (-PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
+            self.physics_engine.set_friction(self.player_sprite, 0)
         elif self.right_pressed and not self.left_pressed:
             # Create a force to the right. Apply it.
-            force = (PLAYER_MOVE_FORCE_ON_GROUND, 0)
+            if is_on_ground:
+                force = (PLAYER_MOVE_FORCE_ON_GROUND, 0)
+            else:
+                force = (PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
+            # Set friction to zero for the player while moving
+            self.physics_engine.set_friction(self.player_sprite, 0)
+
 
     def on_mouse_motion(self, x, y, delta_x, delta_y):
         """
