@@ -48,6 +48,7 @@
   <object id="117" gid="46" x="46.8182" y="171.545" width="223" height="149"/>
   <object id="133" gid="18" x="988" y="59" width="2854" height="58"/>
   <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
+  <object id="134" gid="18" x="919.909" y="58.2727" width="2922" height="58"/>
  </objectgroup>
  <objectgroup id="6" name="objects2">
   <object id="70" gid="40" x="1838" y="781" width="1084" height="234">
@@ -85,9 +86,21 @@
     <property name="color" value="SANDSTORM"/>
    </properties>
   </object>
-  <object id="111" gid="33" x="1524" y="1924.5" width="222" height="36" rotation="60"/>
-  <object id="112" gid="33" x="1561.5" y="1934.5" width="255.234" height="26.8076" rotation="45"/>
-  <object id="113" gid="33" x="1676.05" y="2021.26" width="187.352" height="38.1213" rotation="30"/>
+  <object id="111" gid="33" x="1524" y="1924.5" width="222" height="36" rotation="60">
+   <properties>
+    <property name="color" value="PAKISTAN_GREEN"/>
+   </properties>
+  </object>
+  <object id="112" gid="33" x="1561.5" y="1934.5" width="255.234" height="26.8076" rotation="45">
+   <properties>
+    <property name="color" value="PASTEL_RED"/>
+   </properties>
+  </object>
+  <object id="113" gid="33" x="1676.05" y="2021.26" width="187.352" height="38.1213" rotation="30">
+   <properties>
+    <property name="color" value="PATRIARCH"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="2" name="objects0">
   <object id="1" gid="4" x="2996.64" y="2119.36" width="511" height="725">
@@ -438,15 +451,30 @@
     <property name="color" value="WILD_ORCHID"/>
    </properties>
   </object>
-  <object id="103" gid="5" x="3056.83" y="1428.83" width="79" height="138" rotation="-50"/>
-  <object id="104" gid="5" x="2053" y="759" width="79" height="138"/>
-  <object id="105" gid="5" x="2338.92" y="2026.58" width="79" height="138" rotation="100"/>
-  <object id="130" gid="54" x="158.167" y="2131.33" width="447.788" height="742.812"/>
+  <object id="103" gid="5" x="3056.83" y="1428.83" width="79" height="138" rotation="-50">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="104" gid="5" x="2053" y="759" width="79" height="138">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="105" gid="5" x="2338.92" y="2026.58" width="79" height="138" rotation="100">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="130" gid="54" x="158.167" y="2131.33" width="447.788" height="742.812">
+   <properties>
+    <property name="color" value="MUGHAL_GREEN"/>
+   </properties>
+  </object>
   <object id="132" gid="55" x="980.999" y="510.235" width="439" height="459.333">
    <properties>
     <property name="color" value="NEON_FUCHSIA"/>
    </properties>
   </object>
-  <object id="134" gid="18" x="919.909" y="58.2727" width="2922" height="58"/>
  </objectgroup>
 </map>
