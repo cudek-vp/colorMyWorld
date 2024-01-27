@@ -2,21 +2,10 @@ from __future__ import annotations
 
 import random
 from math import inf
-
+import math
 
 from typing import Optional
 
-from arcade import Texture
-
-"""
-Starting Template
-
-Once you have learned how to use classes, you can begin your program with this
-template.
-
-If Python and Arcade are installed, this example can be run from the command line with:
-python -m arcade.examples.starting_template
-"""
 import arcade
 from Object import Object
 from Enemy import Enemy
@@ -24,7 +13,7 @@ from Player import Player
 
 SCREEN_WIDTH = 900
 SCREEN_HEIGHT = 700
-SCREEN_TITLE = "Starting Template"
+SCREEN_TITLE = "Colour My World"
 
 OBJECTS_LAYER = "objects0"
 ENEMIES_LAYER = "enemies"
@@ -32,10 +21,9 @@ PLAYER_LAYER = "player"
 PLATFORMS_LAYER = "platforms"
 WALLS_LAYER = "walls"
 
-
 # Gravity
 GRAVITY = 1500
-PLAYER_MOVE_FORCE_ON_GROUND = 2000
+PLAYER_MOVE_FORCE_ON_GROUND = 4000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
 PLAYER_DAMPING = 0.4
@@ -49,7 +37,7 @@ DYNAMIC_ITEM_FRICTION = 0.6
 PLAYER_MASS = 2.5
 
 # Keep player from going too fast
-PLAYER_MAX_HORIZONTAL_SPEED = 450
+PLAYER_MAX_HORIZONTAL_SPEED = 50
 PLAYER_MAX_VERTICAL_SPEED = 1600
 
 # Force applied when moving left/right in the air
@@ -131,10 +119,6 @@ class Game(arcade.Window):
                                             collision_type="platform",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
 
-        # self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
-        #                                     mass=PLAYER_MASS,
-        #                                     collision_type="enemy"
-        #                                     )
         self.add_enemy_phisic(enemy)
 
         self.physics_engine.add_sprite(self.player_sprite,
@@ -142,7 +126,7 @@ class Game(arcade.Window):
                                         mass=PLAYER_MASS,
                                         collision_type="player",
                                         max_vertical_velocity=PLAYER_MAX_VERTICAL_SPEED,
-                                       moment_of_inertia=inf)
+                                        moment_of_inertia=inf)
 
 
         # self.physics_engine.add_collision_handler()
@@ -173,6 +157,7 @@ class Game(arcade.Window):
             o.scale = sprite.scale
             o.center_x = sprite.center_x
             o.center_y = sprite.center_y
+            o.angle = sprite.angle
             sprites.append(sprite)
             objects.append(o)
             try:
@@ -209,8 +194,6 @@ class Game(arcade.Window):
         self.player_update(delta_time)
         new_enemies = []
 
-        enemy : Enemy = None
-        object : Object = None
         for enemy in self.scene[ENEMIES_LAYER]:
             self.move_enemy(enemy, delta_time)
             if not enemy.has_color:
@@ -236,12 +219,38 @@ class Game(arcade.Window):
         self.physics_engine.step()
 
     def move_enemy(self, enemy, delta_time):
-        enemy.time += delta_time
-        if enemy.time > enemy.move_time:
-            enemy.time = 0
-            jump_chance = random.random() * 100
-            if jump_chance <  50 and self.physics_engine.is_on_ground(enemy):
-                self.physics_engine.apply_impulse(enemy, (0, random.uniform(1, 1.5) * GRAVITY))
+        if self.physics_engine.is_on_ground(enemy):
+            enemy.time += delta_time
+            if enemy.time > enemy.move_time:
+                enemy.time = 0
+                jump_chance = random.random()
+                if jump_chance < 0.5:
+                    self.jump(enemy)
+                else:
+                    self.walk(enemy)
+
+    def jump(self, enemy):
+        if enemy.has_color:
+            if abs(MAX_RIGHT - enemy.center_x) > abs(MAX_LEFT - enemy.center_x):
+                jump_angle = random.uniform(-45, 0)
+            else:
+                jump_angle = random.uniform(0, 45)
+            if random.random() < 0.25:
+                jump_angle =- jump_angle
+        else:
+            jump_angle = random.uniform(-45, 45)
+
+        angle_rad = math.radians(jump_angle)
+        force = random.uniform(1, 1.5) * GRAVITY
+        self.physics_engine.apply_impulse(enemy, (math.sin(angle_rad) * force, math.cos(angle_rad) * force))
+
+    def walk(self, enemy):
+        if enemy.has_color:
+            if abs(MAX_RIGHT - enemy.center_x) > abs(MAX_LEFT - enemy.center_x):
+                enemy.move_force = -100
+            else:
+                enemy.move_force = 100
+        else:
             enemy.move_force = random.choice([-100, 100])
         self.physics_engine.set_velocity(enemy, (enemy.move_force, self.physics_engine.get_physics_object(enemy).body.velocity[1]))
 
@@ -297,7 +306,7 @@ class Game(arcade.Window):
                 force = (-PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
-            self.physics_engine.set_friction(self.player_sprite, 0.2)
+            self.physics_engine.set_friction(self.player_sprite, 0)
         elif self.right_pressed and not self.left_pressed:
             # Create a force to the right. Apply it.
             if is_on_ground:
@@ -307,10 +316,10 @@ class Game(arcade.Window):
                 force = (PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
-            self.physics_engine.set_friction(self.player_sprite, 0.2)
+            self.physics_engine.set_friction(self.player_sprite, 0)
         else:
             # Player's feet are not moving. Therefore up the friction so we stop.
-            self.physics_engine.set_friction(self.player_sprite, 1.0)
+            self.physics_engine.set_friction(self.player_sprite, 10.0)
 
         if self.player_sprite.center_x > MAX_RIGHT:
             self.physics_engine.set_position(self.player_sprite, (MAX_RIGHT, self.player_sprite.center_y))

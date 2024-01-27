@@ -25,7 +25,7 @@ class Enemy(arcade.Sprite):
         self.has_color = True
 
     def split(self):
-        n = random.sample([1, 2], counts=[7, 3], k=1)[0]
+        n = random.sample([1, 2], counts=[1, 1], k=1)[0]
         return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(n)]
 
 
