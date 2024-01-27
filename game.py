@@ -102,12 +102,12 @@ class Game(arcade.Window):
         self.create_objects_spritelist()
 
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
-        enemy = Enemy(center_x=450, center_y=400)
+        enemy = Enemy(center_x=450, center_y=400, distance_to_change = 40, main_path = './resources/egg ', walk_sprites = 8)
         enemy.color = arcade.color.LIGHT_GRAY
         self.scene.add_sprite(ENEMIES_LAYER, enemy)
 
         self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
-        self.player_sprite = Player(center_x=600, center_y=100)
+        self.player_sprite = Player(center_x=600, center_y=100, distance_to_change = 20, main_path = './resources/mr carrot ', walk_sprites = 8)
         self.scene.add_sprite(PLAYER_LAYER, self.player_sprite)
 
         self.physics_engine.add_sprite_list(self.scene[WALLS_LAYER],
@@ -353,6 +353,9 @@ class Game(arcade.Window):
         Called when a user releases a mouse button.
         """
         pass
+
+
+
 
 
 def main():
