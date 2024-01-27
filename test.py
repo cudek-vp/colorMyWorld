@@ -53,7 +53,6 @@ class Enemy(arcade.Sprite):
 
 
 class Object(arcade.Sprite):
-
     def __init__(self, filename: str = None, scale: float = 0.2, image_x: float = 0, image_y: float = 0,
                  image_width: float = 0, image_height: float = 0, center_x: float = 0, center_y: float = 0,
                  repeat_count_x: int = 1, repeat_count_y: int = 1, flipped_horizontally: bool = False,
@@ -69,6 +68,10 @@ class Object(arcade.Sprite):
     def remove_color(self):
         self.color = arcade.color.LIGHT_GRAY
         self.has_color = False
+
+    def give_color(self, color):
+        self.color = color
+        self.has_color = True
 
 
 class Game(arcade.Window):
@@ -87,30 +90,44 @@ class Game(arcade.Window):
     def setup(self):
         """ Set up the game variables. Call to re-start the game. """
         # Create your sprites and sprite lists here
-        # self.tile_map = arcade.load_tilemap("./resources/tiledJason.tmj", 0.2)
+        self.tile_map = arcade.load_tilemap("./resources/small_kitchen.tmj", 0.2)
         #
-        # self.scene = arcade.Scene.from_tilemap(self.tile_map)
+        self.scene = arcade.Scene.from_tilemap(self.tile_map)
 
-        self.scene = arcade.Scene()
-        self.scene.add_sprite_list(OBJECTS_LAYER, True, arcade.SpriteList())
+        # self.scene = arcade.Scene()
+        # self.scene.add_sprite_list(OBJECTS_LAYER, True, arcade.SpriteList())
         sprite = Object("./resources/table.png")
         sprite.center_x = 300
         sprite.center_y = 300
         sprite.color = arcade.color.BROWN
 
         colors = vars(arcade.color)
-        for object in self.scene[OBJECTS_LAYER]:
-            object.has_color = True
-            arcade.color.WHITE
+        objects = arcade.SpriteList()
+        sprites = []
+        for sprite in self.scene[OBJECTS_LAYER]:
+            o = Object()
+            o.texture = sprite.texture
+            o.scale = sprite.scale
+            o.center_x = sprite.center_x
+            o.center_y  =   sprite.center_y
+            sprites.append(sprite)
+            objects.append(o)
+            o.color = colors[sprite.properties["color"]]
+
+        for sprite in sprites:
+            sprite.remove_from_sprite_lists()
+
+        for object in objects:
+            self.scene.add_sprite(OBJECTS_LAYER, object)
 
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
         enemy = Enemy()
-        enemy.center_x = 700
+        enemy.center_x = 900
         enemy.center_y = 300
         enemy.change_x = -Enemy.velocity_ratio
         enemy.color = arcade.color.LIGHT_GRAY
 
-        self.scene.add_sprite(OBJECTS_LAYER, sprite)
+        # self.scene.add_sprite(OBJECTS_LAYER, sprite)
         self.scene.add_sprite(ENEMIES_LAYER, enemy)
 
     def on_draw(self):
@@ -175,22 +192,20 @@ class Game(arcade.Window):
         if enemy.has_color:
             closest_sprite = self.get_closest_colored_sprite(enemy)
             if closest_sprite:
-                closest_sprite.color = enemy.color
+                closest_sprite.give_color(enemy.color)
 
         enemy.destroy()
-        pass
 
-
-    def get_closest_colored_sprite(self, sprite):
+    def get_closest_colored_sprite(self, sprite) -> Object:
         min = inf
         closest_sprite = None
-        for object in self.scene[OBJECTS_LAYER]:
-            if not object.has_color:
-                distance = arcade.get_distance_between_sprites(sprite, object)
+        for o in self.scene[OBJECTS_LAYER]:
+            if not o.has_color:
+                distance = arcade.get_distance_between_sprites(sprite, o)
                 if distance < min:
                     min = distance
-                    closest_sprite = object
-        return object
+                    closest_sprite = o
+        return closest_sprite
     def on_mouse_release(self, x, y, button, key_modifiers):
         """
         Called when a user releases a mouse button.
