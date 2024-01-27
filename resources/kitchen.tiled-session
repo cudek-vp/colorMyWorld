@@ -29,16 +29,19 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1720,
-                "y": 1240
+                "x": 1716,
+                "y": 1236
             }
         },
         "small_kitchen.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
             "scale": 0.33,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2903.030303030303,
-                "y": 1566.6666666666665
+                "x": 1839.3939393939395,
+                "y": 1400
             }
         }
     },
