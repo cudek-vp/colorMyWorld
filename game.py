@@ -6,6 +6,7 @@ from math import inf
 
 from typing import Optional
 
+from _testcapi import pytime_object_to_time_t
 from arcade import Texture
 
 """
@@ -21,8 +22,8 @@ import arcade
 from Object import Object
 from Enemy import Enemy
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 800
 SCREEN_TITLE = "Starting Template"
 
 OBJECTS_LAYER = "objects0"
@@ -119,6 +120,13 @@ class Game(arcade.Window):
         def enemy_enemy_collide(_enemy1, _enemy2, _arbiter, _space, _data):
             return False
 
+        def enemy_wall_collide(enemy, _wall, _arbiter, _space, _data):
+            enemy.move_force = -enemy.move_force
+            enemy.change_y = 0
+            enemy.set_position(enemy.center_x, enemy.center_y+100)
+            return True
+
+
         self.physics_engine.add_sprite_list(self.scene[WALLS_LAYER],
                                             friction=WALL_FRICTION,
                                             collision_type="wall",
@@ -128,10 +136,8 @@ class Game(arcade.Window):
         #                                     collision_type="platforms",
         #                                     body_type=arcade.PymunkPhysicsEngine.STATIC
         #                                     )
-        self.scene.remove_sprite_list_by_name(PLATFORMS_LAYER)
         self.scene.add_sprite(ENEMIES_LAYER, enemy)
         self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
-                                            friction=0,
                                             mass=PLAYER_MASS,
                                             collision_type="enemy"
                                             )
@@ -141,7 +147,7 @@ class Game(arcade.Window):
         # self.physics_engine.add_collision_handler()
         # self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
-
+        self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
 
 
     def on_draw(self):
@@ -152,7 +158,8 @@ class Game(arcade.Window):
         # This command should happen before we start drawing. It will clear
         # the screen to the background color, and erase what we drew last frame.
         self.clear()
-        self.scene.draw()
+        self.scene[ENEMIES_LAYER].draw()
+        self.scene[WALLS_LAYER].draw()
 
         # Call draw() on all your sprite lists below
 
@@ -174,7 +181,7 @@ class Game(arcade.Window):
                 objects = arcade.check_for_collision_with_list(enemy, self.scene[OBJECTS_LAYER])
                 for object in objects:
                     if object.has_color:
-                        self.steal(object.color)
+                        self.steal_color(enemy, object.color)
                         enemy.change_x = -enemy.change_x
                         object.remove_color()
                         break
@@ -185,17 +192,16 @@ class Game(arcade.Window):
         enemy.time += delta_time
         if enemy.time > enemy.move_time:
             enemy.time = 0
-            enemy.move_force = random.choice([-500, 500])
-        self.physics_engine.apply_force(enemy, (enemy.move_force, 0))
-        self.physics_engine.set_friction(enemy, 0.0)
+            enemy.move_force = random.choice([-100, 100])
+        self.physics_engine.set_velocity(enemy, (enemy.move_force, self.physics_engine.get_physics_object(enemy).body.velocity[1]))
 
 
 
     def steal_color(self, enemy, color):
         enemy.steal(color)
         for new_enemy in enemy.split():
-            self.game.scene.add_sprite(ENEMIES_LAYER, new_enemy)
-            self.game.physics_engine.add_sprite(new_enemy, friction=1.0,
+            self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
+            self.physics_engine.add_sprite(new_enemy, friction=0,
                                                 mass=2.5,
                                                 collision_type="enemy")
 

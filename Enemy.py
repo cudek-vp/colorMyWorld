@@ -16,8 +16,8 @@ class Enemy(arcade.Sprite):
                          repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
                          hit_box_algorithm, hit_box_detail, texture, angle)
         self.has_color = False
-        self.move_time = 0
-        self.time = 0
+        self.move_time = 2
+        self.time = self.move_time
         self.move_force = 0
 
     def steal(self, color):
