@@ -32,9 +32,10 @@ PLAYER_LAYER = "player"
 PLATFORMS_LAYER = "platforms"
 WALLS_LAYER = "walls"
 
+
 # Gravity
 GRAVITY = 1500
-PLAYER_MOVE_FORCE_ON_GROUND = 4000
+PLAYER_MOVE_FORCE_ON_GROUND = 2000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
 PLAYER_DAMPING = 0.4
@@ -55,6 +56,9 @@ PLAYER_MAX_VERTICAL_SPEED = 1600
 PLAYER_MOVE_FORCE_IN_AIR = 900
 # Strength of a jump
 PLAYER_JUMP_IMPULSE = 1800
+
+MAX_RIGHT = -inf
+MAX_LEFT = inf
 
 class Game(arcade.Window):
 
@@ -122,22 +126,28 @@ class Game(arcade.Window):
                                             friction=WALL_FRICTION,
                                             collision_type="wall",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
+        self.physics_engine.add_sprite_list(self.scene[PLATFORMS_LAYER],
+                                            friction=WALL_FRICTION,
+                                            collision_type="platform",
+                                            body_type=arcade.PymunkPhysicsEngine.STATIC)
 
+        # self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
+        #                                     mass=PLAYER_MASS,
+        #                                     collision_type="enemy"
+        #                                     )
+        self.add_enemy_phisic(enemy)
 
+        self.physics_engine.add_sprite(self.player_sprite,
+                                        friction=0,
+                                        mass=PLAYER_MASS,
+                                        collision_type="player",
+                                        max_vertical_velocity=PLAYER_MAX_VERTICAL_SPEED,
+                                       moment_of_inertia=inf)
 
-        self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
-                                            mass=PLAYER_MASS,
-                                            collision_type="enemy"
-                                            )
-
-        self.physics_engine.add_sprite_list(self.scene[PLAYER_LAYER],
-                                            friction=0,
-                                            mass=PLAYER_MASS,
-                                            collision_type="player"
-                                            )
 
         # self.physics_engine.add_collision_handler()
-        # self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
+        self.physics_engine.add_collision_handler("player", "platform", begin_handler=enemy_platform_jump_collide)
+        self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
         self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
@@ -145,11 +155,18 @@ class Game(arcade.Window):
 
         # player.color = arcade.color.LIGHT_GRAY
 
+    def add_enemy_phisic(self, enemy):
+        self.physics_engine.add_sprite(enemy,
+                                       mass=PLAYER_MASS,
+                                       collision_type="enemy",
+                                       friction=0,
+                                       moment_of_inertia=inf)
 
     def create_objects_spritelist(self):
         colors = vars(arcade.color)
         objects = arcade.SpriteList()
         sprites = []
+
         for sprite in self.scene[OBJECTS_LAYER]:
             o = Object()
             o.texture = sprite.texture
@@ -162,6 +179,12 @@ class Game(arcade.Window):
                 o.color = colors[sprite.properties["color"]]
             except KeyError:
                 o.color = arcade.color.WHITE
+            global MAX_RIGHT
+            global MAX_LEFT
+            if o.center_x > MAX_RIGHT:
+                MAX_RIGHT = o.center_x
+            if o.center_x < MAX_LEFT:
+                MAX_LEFT = o.center_x
 
         for sprite in sprites:
             sprite.remove_from_sprite_lists()
@@ -228,9 +251,7 @@ class Game(arcade.Window):
         enemy.steal(color)
         for new_enemy in enemy.split():
             self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
-            self.physics_engine.add_sprite(new_enemy, friction=0,
-                                                mass=2.5,
-                                                collision_type="enemy")
+            self.add_enemy_phisic(new_enemy)
 
     def on_key_press(self, key, key_modifiers):
         """
@@ -276,17 +297,27 @@ class Game(arcade.Window):
                 force = (-PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
-            self.physics_engine.set_friction(self.player_sprite, 0)
+            self.physics_engine.set_friction(self.player_sprite, 0.2)
         elif self.right_pressed and not self.left_pressed:
             # Create a force to the right. Apply it.
             if is_on_ground:
                 force = (PLAYER_MOVE_FORCE_ON_GROUND, 0)
+
             else:
                 force = (PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
-            self.physics_engine.set_friction(self.player_sprite, 0)
+            self.physics_engine.set_friction(self.player_sprite, 0.2)
+        else:
+            # Player's feet are not moving. Therefore up the friction so we stop.
+            self.physics_engine.set_friction(self.player_sprite, 1.0)
 
+        if self.player_sprite.center_x > MAX_RIGHT:
+            self.physics_engine.set_position(self.player_sprite, (MAX_RIGHT, self.player_sprite.center_y))
+            self.physics_engine.set_velocity(self.player_sprite, (0, 0))
+        if self.player_sprite.center_x < MAX_LEFT:
+            self.physics_engine.set_position(self.player_sprite, (MAX_LEFT, self.player_sprite.center_y))
+            self.physics_engine.set_velocity(self.player_sprite, (0, 0))
 
     def on_mouse_motion(self, x, y, delta_x, delta_y):
         """

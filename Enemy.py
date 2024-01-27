@@ -1,5 +1,5 @@
 from typing import Optional
-
+import random
 import arcade
 from arcade import Texture
 
@@ -16,7 +16,7 @@ class Enemy(arcade.Sprite):
                          repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
                          hit_box_algorithm, hit_box_detail, texture, angle)
         self.has_color = False
-        self.move_time = 2
+        self.move_time = 1
         self.time = self.move_time
         self.move_force = 0
 
@@ -25,7 +25,8 @@ class Enemy(arcade.Sprite):
         self.has_color = True
 
     def split(self):
-        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(2)]
+        n = random.sample([1, 2], counts=[7, 3], k=1)[0]
+        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(n)]
 
 
     def on_update(self, delta_time: float = 1 / 60):
