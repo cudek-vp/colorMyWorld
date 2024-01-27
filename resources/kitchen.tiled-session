@@ -14,6 +14,18 @@
             "scaleInDock": 0.015625,
             "scaleInEditor": 0.06
         },
+        "bedroom.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 0.25,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 2360,
+                "y": 692
+            }
+        },
         "bez nazwy.tmx": {
             "expandedObjectLayers": [
                 2
@@ -38,13 +50,24 @@
         },
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
+                3,
+                4,
+                5,
                 2
             ],
-            "scale": 0.5,
-            "selectedLayer": 2,
+            "scale": 5.5,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 1849,
-                "y": 670
+                "x": 3807.2727272727275,
+                "y": 78.18181818181819
+            }
+        },
+        "walls.tmj": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1532,
+                "y": 820
             }
         }
     },
