@@ -16,13 +16,15 @@
         },
         "bathroom.tmx": {
             "expandedObjectLayers": [
-                3
+                3,
+                6,
+                2
             ],
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "scale": 0.25,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 3133.333333333333,
-                "y": 1100
+                "x": 1964,
+                "y": 900
             }
         },
         "bedroom.tmx": {
@@ -70,8 +72,8 @@
             "scale": 0.25,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 3424,
-                "y": 1008
+                "x": 2136,
+                "y": 1048
             }
         },
         "walls.tmj": {
