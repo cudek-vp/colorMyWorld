@@ -34,7 +34,7 @@ WALLS_LAYER = "walls"
 
 # Gravity
 GRAVITY = 1500
-PLAYER_MOVE_FORCE_ON_GROUND = 4000
+PLAYER_MOVE_FORCE_ON_GROUND = 2000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
 PLAYER_DAMPING = 0.4
@@ -276,7 +276,7 @@ class Game(arcade.Window):
                 force = (-PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
-            self.physics_engine.set_friction(self.player_sprite, 0)
+            self.physics_engine.set_friction(self.player_sprite, 0.2)
         elif self.right_pressed and not self.left_pressed:
             # Create a force to the right. Apply it.
             if is_on_ground:
@@ -285,7 +285,10 @@ class Game(arcade.Window):
                 force = (PLAYER_MOVE_FORCE_IN_AIR, 0)
             self.physics_engine.apply_force(self.player_sprite, force)
             # Set friction to zero for the player while moving
-            self.physics_engine.set_friction(self.player_sprite, 0)
+            self.physics_engine.set_friction(self.player_sprite, 0.2)
+        else:
+            # Player's feet are not moving. Therefore up the friction so we stop.
+            self.physics_engine.set_friction(self.player_sprite, 1.0)
 
 
     def on_mouse_motion(self, x, y, delta_x, delta_y):
