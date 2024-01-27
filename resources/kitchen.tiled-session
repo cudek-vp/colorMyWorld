@@ -3,13 +3,16 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "small_kitchen.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "file.lastUsedOpenFilter": "Wszystkie pliki (*)",
     "fileStates": {
         "Obiekty.tsx": {
-            "dynamicWrapping": true
+            "dynamicWrapping": true,
+            "scaleInDock": 0.0625,
+            "scaleInEditor": 0.12
         },
         "bez nazwy.tmx": {
             "expandedObjectLayers": [
@@ -18,8 +21,8 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2104,
-                "y": 908
+                "x": 2100,
+                "y": 904
             }
         },
         "kitchen.tmx": {
@@ -29,19 +32,19 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1716,
-                "y": 1236
+                "x": 1708,
+                "y": 1228
             }
         },
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.33,
+            "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1839.3939393939395,
-                "y": 1400
+                "x": 2260,
+                "y": 1192
             }
         }
     },
@@ -55,9 +58,17 @@
     "map.tileWidth": 3840,
     "map.width": 1,
     "openFiles": [
+        "Obiekty.tsx",
+        "bez nazwy.tmx",
+        "kitchen.tmx",
+        "small_kitchen.tmx"
     ],
     "project": "kitchen.tiled-project",
     "recentFiles": [
+        "kitchen.tmx",
+        "bez nazwy.tmx",
+        "Obiekty.tsx",
+        "small_kitchen.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.type": 1
