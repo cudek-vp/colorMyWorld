@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="69" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="77" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -207,5 +207,29 @@
  </tile>
  <tile id="68">
   <image width="271" height="255" source="plantHolder.png"/>
+ </tile>
+ <tile id="69">
+  <image width="308" height="419" source="toiletDesk.png"/>
+ </tile>
+ <tile id="70">
+  <image width="306" height="297" source="toilet.png"/>
+ </tile>
+ <tile id="71">
+  <image width="230" height="192" source="paper.png"/>
+ </tile>
+ <tile id="72">
+  <image width="38" height="27" source="younglingEye.png"/>
+ </tile>
+ <tile id="73">
+  <image width="283" height="205" source="younglingHair.png"/>
+ </tile>
+ <tile id="74">
+  <image width="356" height="284" source="younglingShorts.png"/>
+ </tile>
+ <tile id="75">
+  <image width="243" height="343" source="younglingShirt.png"/>
+ </tile>
+ <tile id="76">
+  <image width="571" height="603" source="younglingSkin.png"/>
  </tile>
 </tileset>

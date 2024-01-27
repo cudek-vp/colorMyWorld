@@ -14,18 +14,27 @@
             "scaleInDock": 0.015625,
             "scaleInEditor": 0.06
         },
+        "bathroom.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 3133.333333333333,
+                "y": 1100
+            }
+        },
         "bedroom.tmx": {
             "expandedObjectLayers": [
-                3,
-                7,
-                5,
+                8,
                 2
             ],
             "scale": 0.25,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1928,
-                "y": 1324
+                "x": 2060,
+                "y": 1056
             }
         },
         "bez nazwy.tmx": {
@@ -61,8 +70,8 @@
             "scale": 0.25,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 1972,
-                "y": 1084
+                "x": 3424,
+                "y": 1008
             }
         },
         "walls.tmj": {
@@ -89,6 +98,7 @@
     ],
     "project": "kitchen.tiled-project",
     "recentFiles": [
+        "walls.tmj",
         "Obiekty.tsx",
         "small_kitchen.tmx",
         "kitchen.tmx",
