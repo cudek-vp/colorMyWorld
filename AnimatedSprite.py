@@ -55,7 +55,7 @@ class AnimatedSprite(arcade.Sprite):
         self.x_odometer += dx
 
         # Have we moved far enough to change the texture?
-        if abs(self.x_odometer) > AnimatedSprite.DISTANCE_TO_CHANGE_TEXTURE:
+        if abs(self.x_odometer) > self.walk_sprites:
 
             # Reset the odometer
             self.x_odometer = 0

@@ -11,7 +11,7 @@ class Enemy(AnimatedSprite):
                  center_y: float = 0, repeat_count_x: int = 1, repeat_count_y: int = 1,
                  flipped_horizontally: bool = False, flipped_vertically: bool = False, flipped_diagonally: bool = False,
                  hit_box_algorithm: Optional[str] = "Simple", hit_box_detail: float = 4.5, texture: Texture = None,
-                 angle: float = 0, distance_to_change: int = 20, main_path=None, walk_sprites: int = 8):
+                 angle: float = 0, distance_to_change: int = 20, main_path='./resources/egg ', walk_sprites: int = 8):
         super().__init__(filename, scale, image_x, image_y, image_width, image_height, center_x, center_y,
                          repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
                          hit_box_algorithm, hit_box_detail, texture, angle, distance_to_change, main_path, walk_sprites)
