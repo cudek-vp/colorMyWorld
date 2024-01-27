@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="127">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="133">
  <editorsettings>
   <export target="kitchen.tmj" format="json"/>
  </editorsettings>
@@ -33,13 +33,14 @@
   <object id="118" gid="48" x="-1.33333" y="2173.33" width="48" height="1072"/>
   <object id="125" gid="41" x="144" y="896" width="714" height="104"/>
   <object id="126" gid="41" x="339" y="725" width="312" height="104"/>
+  <object id="131" gid="41" x="170.42" y="1498" width="422.964" height="99.2962"/>
  </objectgroup>
  <objectgroup id="3" name="walls">
   <object id="18" gid="18" x="959.677" y="2160.27" width="2880" height="58"/>
   <object id="33" gid="32" x="912.978" y="36.0054" width="2927" height="36"/>
   <object id="34" gid="31" x="3804.03" y="671" width="36" height="671"/>
   <object id="35" gid="30" x="913" y="2109.91" width="90" height="2110"/>
-  <object id="115" gid="18" x="-11.3333" y="2173.67" width="979.333" height="49.3333"/>
+  <object id="115" gid="18" x="-11.3333" y="2173.67" width="973.708" height="49.3333"/>
   <object id="116" gid="47" x="-0.333333" y="477.667" width="487" height="478">
    <properties>
     <property name="color" value="SCHOOL_BUS_YELLOW"/>
@@ -314,29 +315,44 @@
     <property name="color" value="SANDSTORM"/>
    </properties>
   </object>
-  <object id="119" gid="51" x="483.25" y="2147.13" width="26" height="1386">
+  <object id="119" gid="51" x="480.583" y="2130.79" width="26" height="1386">
    <properties>
     <property name="color" value="MODE_BEIGE"/>
    </properties>
   </object>
-  <object id="120" gid="49" x="401" y="789" width="204" height="124">
+  <object id="120" gid="49" x="398.333" y="772.667" width="204" height="124">
    <properties>
     <property name="color" value="PUMPKIN"/>
    </properties>
   </object>
-  <object id="121" gid="53" x="327" y="685" width="336" height="130">
+  <object id="121" gid="53" x="324.333" y="668.667" width="336" height="130">
    <properties>
     <property name="color" value="PAKISTAN_GREEN"/>
    </properties>
   </object>
-  <object id="122" gid="52" x="192" y="1283" width="608" height="534">
+  <object id="122" gid="52" x="189.333" y="1266.67" width="608" height="534">
    <properties>
     <property name="color" value="PRUNE"/>
    </properties>
   </object>
-  <object id="123" gid="50" x="110" y="933" width="772" height="269">
+  <object id="123" gid="50" x="107.333" y="916.667" width="772" height="269">
    <properties>
     <property name="color" value="MIKADO_YELLOW"/>
+   </properties>
+  </object>
+  <object id="127" gid="33" x="1070.59" y="2107.98" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="PANSY_PURPLE"/>
+   </properties>
+  </object>
+  <object id="128" gid="33" x="1040.5" y="2108.25" width="190" height="23.1667" rotation="270">
+   <properties>
+    <property name="color" value="NEON_GREEN"/>
+   </properties>
+  </object>
+  <object id="129" gid="33" x="1021.33" y="2107.75" width="182" height="30.8334" rotation="270">
+   <properties>
+    <property name="color" value="MIDNIGHT_BLUE"/>
    </properties>
   </object>
  </objectgroup>
@@ -424,5 +440,11 @@
   <object id="103" gid="5" x="3056.83" y="1428.83" width="79" height="138" rotation="-50"/>
   <object id="104" gid="5" x="2053" y="759" width="79" height="138"/>
   <object id="105" gid="5" x="2338.92" y="2026.58" width="79" height="138" rotation="100"/>
+  <object id="130" gid="54" x="158.167" y="2131.33" width="447.788" height="742.812"/>
+  <object id="132" gid="55" x="979.999" y="497.902" width="439" height="470">
+   <properties>
+    <property name="color" value="NEON_FUCHSIA"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

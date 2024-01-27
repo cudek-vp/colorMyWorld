@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="53" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="55" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -159,5 +159,11 @@
  </tile>
  <tile id="52">
   <image width="336" height="130" source="pumpkinHat.png"/>
+ </tile>
+ <tile id="53">
+  <image width="395" height="650" source="trash.png"/>
+ </tile>
+ <tile id="54">
+  <image width="439" height="470" source="web.png"/>
  </tile>
 </tileset>
