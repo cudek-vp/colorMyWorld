@@ -60,8 +60,6 @@ class Enemy(arcade.Sprite):
         super().__init__(filename, scale, image_x, image_y, image_width, image_height, center_x, center_y,
                          repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
                          hit_box_algorithm, hit_box_detail, texture, angle)
-        print("New")
-
         self.has_color = False
         self.game = game
         self.move_time = 0
@@ -80,25 +78,9 @@ class Enemy(arcade.Sprite):
                                            collision_type="enemy")
 
     def on_update(self, delta_time: float = 1 / 60):
-        physics_engine = self.game.physics_engine
-        po: arcade.PymunkPhysicsObject = physics_engine.get_physics_object(self)
-        #print(po.body.velocity.x, po.body.velocity.y)
-        if self.center_y < -10:
-            self.remove_from_sprite_lists()
-            return
-        self.time += delta_time
-
-        if abs(po.body.velocity[1]) > 1:
-            return
-        if self.time > self.move_time:
-            self.move_time = random.uniform(0.5, 2)
-            self.time = 0
-            self.change_x = random.choice([-1000, 1000])
-
-        # physics_engine.apply_force(self, (self.change_x, 0))
-
-
-
+        super().on_update()
+        self.game.physics_engine.apply_force(self, force=(-100, 0))
+        self.game.physics_engine.set_friction(self, 0)
 
     def destroy(self):
         self.remove_from_sprite_lists()
@@ -264,7 +246,7 @@ class Game(arcade.Window):
     def on_mouse_press(self, x, y, button, key_modifiers):
         if not len(self.scene[ENEMIES_LAYER]):
             return
-        enemy = self.scene[ENEMIES_LAYER][0]
+        enemy: Enemy = self.scene[ENEMIES_LAYER][0]
         if button == arcade.MOUSE_BUTTON_LEFT:
 
             if enemy.has_color:
@@ -274,7 +256,7 @@ class Game(arcade.Window):
 
             enemy.destroy()
         elif button == arcade.MOUSE_BUTTON_RIGHT:
-            self.physics_engine.apply_impulse(enemy, (0, 1*GRAVITY))
+            enemy.split()
 
     def get_closest_colored_sprite(self, sprite) -> Object:
         min = inf
@@ -286,6 +268,7 @@ class Game(arcade.Window):
                     min = distance
                     closest_sprite = o
         return closest_sprite
+
     def on_mouse_release(self, x, y, button, key_modifiers):
         """
         Called when a user releases a mouse button.
