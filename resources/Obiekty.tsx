@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="77" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="78" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -231,5 +231,8 @@
  </tile>
  <tile id="76">
   <image width="571" height="603" source="younglingSkin.png"/>
+ </tile>
+ <tile id="77">
+  <image width="873" height="954" source="window.png"/>
  </tile>
 </tileset>
