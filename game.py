@@ -78,23 +78,78 @@ class Game(arcade.Window):
 
 
     def setup(self):
-        """ Set up the game variables. Call to re-start the game. """
-        # Create your sprites and sprite lists here
-        layer_options = {
-            WALLS_LAYER: {
-                "use_spatial_hash": True,
-                "hit_box_algorithm": "Simple"
-            }
-        }
+        def enemy_platform_jump_collide(enemy, _platform, _arbiter, _space, _data):
+            po : arcade.PymunkPhysicsObject = self.physics_engine.get_physics_object(enemy)
+            return po.body.velocity[1] < 0
 
+        def enemy_enemy_collide(_enemy1, _enemy2, _arbiter, _space, _data):
+            return False
 
-        self.tile_map = arcade.load_tilemap("./resources/kitchen.tmj", 0.2, layer_options)
-        #
-        self.scene = arcade.Scene.from_tilemap(self.tile_map)
+        def enemy_wall_collide(enemy, _wall, _arbiter, _space, _data):
+            enemy.move_force = -enemy.move_force
+            enemy.change_y = 0
+            enemy.set_position(enemy.center_x, enemy.center_y+100)
+            return True
+
+        def player_wall_collide(player, _wall, _arbiter, _space, _data):
+            player.change_y = 0
+            return True
 
         self.physics_engine = arcade.PymunkPhysicsEngine(damping=DEFAULT_DAMPING,
                                                          gravity=(0, -GRAVITY))
 
+        tile_map = arcade.load_tilemap("./resources/kitchen.tmj", 0.2, {
+            WALLS_LAYER: {
+                "use_spatial_hash": True,
+                "hit_box_algorithm": "Simple"
+            }
+        })
+
+        self.scene = arcade.Scene.from_tilemap(tile_map)
+
+        self.create_objects_spritelist()
+
+        self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
+        enemy = Enemy(center_x=450, center_y=400)
+        enemy.color = arcade.color.LIGHT_GRAY
+        self.scene.add_sprite(ENEMIES_LAYER, enemy)
+
+        self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
+        self.player_sprite = Player(center_x=600, center_y=100)
+        self.scene.add_sprite(PLAYER_LAYER, self.player_sprite)
+
+        self.physics_engine.add_sprite_list(self.scene[WALLS_LAYER],
+                                            friction=WALL_FRICTION,
+                                            collision_type="wall",
+                                            body_type=arcade.PymunkPhysicsEngine.STATIC)
+        # self.physics_engine.add_sprite_list(self.scene[PLATFORMS_LAYER],
+        #                                     friction=WALL_FRICTION,
+        #                                     collision_type="platforms",
+        #                                     body_type=arcade.PymunkPhysicsEngine.STATIC
+        #                                     )
+
+        self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
+                                            mass=PLAYER_MASS,
+                                            collision_type="enemy"
+                                            )
+
+        self.physics_engine.add_sprite_list(self.scene[PLAYER_LAYER],
+                                            friction=0,
+                                            mass=PLAYER_MASS,
+                                            collision_type="player"
+                                            )
+
+        # self.physics_engine.add_collision_handler()
+        # self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
+        self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
+        self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
+        self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
+
+
+        # player.color = arcade.color.LIGHT_GRAY
+
+
+    def create_objects_spritelist(self):
         colors = vars(arcade.color)
         objects = arcade.SpriteList()
         sprites = []
@@ -117,62 +172,6 @@ class Game(arcade.Window):
         for object in objects:
             self.scene.add_sprite(OBJECTS_LAYER, object)
 
-        self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
-        enemy = Enemy(center_x=450, center_y=400)
-        enemy.color = arcade.color.LIGHT_GRAY
-
-        def enemy_platform_jump_collide(enemy, _platform, _arbiter, _space, _data):
-            po : arcade.PymunkPhysicsObject = self.physics_engine.get_physics_object(enemy)
-            return po.body.velocity[1] < 0
-
-        def enemy_enemy_collide(_enemy1, _enemy2, _arbiter, _space, _data):
-            return False
-
-        def enemy_wall_collide(enemy, _wall, _arbiter, _space, _data):
-            enemy.move_force = -enemy.move_force
-            enemy.change_y = 0
-            enemy.set_position(enemy.center_x, enemy.center_y+100)
-            return True
-
-        def player_wall_collide(player, _wall, _arbiter, _space, _data):
-
-            player.change_y = 0
-            return True
-
-        self.physics_engine.add_sprite_list(self.scene[WALLS_LAYER],
-                                            friction=WALL_FRICTION,
-                                            collision_type="wall",
-                                            body_type=arcade.PymunkPhysicsEngine.STATIC)
-        # self.physics_engine.add_sprite_list(self.scene[PLATFORMS_LAYER],
-        #                                     friction=WALL_FRICTION,
-        #                                     collision_type="platforms",
-        #                                     body_type=arcade.PymunkPhysicsEngine.STATIC
-        #                                     )
-        self.scene.add_sprite(ENEMIES_LAYER, enemy)
-        self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
-                                            mass=PLAYER_MASS,
-                                            collision_type="enemy"
-                                            )
-
-
-
-        # self.physics_engine.add_collision_handler()
-        # self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
-        self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
-        self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
-        self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
-
-        self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
-        self.player_sprite = Player(center_x=450, center_y=400)
-        self.scene.add_sprite(PLAYER_LAYER, self.player_sprite)
-        # player.color = arcade.color.LIGHT_GRAY
-
-        self.physics_engine.add_sprite_list(self.scene[PLAYER_LAYER],
-                                            friction=0,
-                                            mass=PLAYER_MASS,
-                                            collision_type="player"
-                                            )
-
     def on_draw(self):
         """
             Render the screen.
@@ -186,11 +185,6 @@ class Game(arcade.Window):
         # Call draw() on all your sprite lists below
 
     def on_update(self, delta_time):
-        """
-        All the logic to move, and the game logic goes here.
-        Normally, you'll call update() on the sprite lists that
-        need it.
-        """
         self.scene.on_update(delta_time)
         self.player_update(delta_time)
         new_enemies = []
@@ -304,19 +298,7 @@ class Game(arcade.Window):
         pass
 
     def on_mouse_press(self, x, y, button, key_modifiers):
-        if not len(self.scene[ENEMIES_LAYER]):
-            return
-        enemy: Enemy = self.scene[ENEMIES_LAYER][0]
-        if button == arcade.MOUSE_BUTTON_LEFT:
-
-            if enemy.has_color:
-                closest_sprite = self.get_closest_colored_sprite(enemy)
-                if closest_sprite:
-                    closest_sprite.give_color(enemy.color)
-
-            enemy.destroy()
-        elif button == arcade.MOUSE_BUTTON_RIGHT:
-            enemy.split()
+        pass
 
     def get_closest_colored_sprite(self, sprite) -> Object:
         min = inf
