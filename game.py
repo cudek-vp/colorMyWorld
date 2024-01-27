@@ -210,12 +210,8 @@ class Game(arcade.Window):
         enemies = arcade.check_for_collision_with_list(self.player_sprite, self.scene[ENEMIES_LAYER])
         for enemy in enemies:
             if enemy.has_color:
-                closest_sprite = self.get_closest_colored_sprite(enemy)
-                if closest_sprite:
-                    closest_sprite.give_color(enemy.color)
-                    enemy.destroy()
-            else:
-                enemy.destroy()
+                self.retrive_color(enemy)
+            enemy.destroy()
 
         self.physics_engine.step()
 
@@ -263,6 +259,11 @@ class Game(arcade.Window):
         for new_enemy in enemy.split():
             self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
             self.add_enemy_phisic(new_enemy)
+
+    def retrive_color(self, enemy):
+        closest_sprite = self.get_closest_colored_sprite(enemy)
+        if closest_sprite:
+            closest_sprite.give_color(enemy.color)
 
     def on_key_press(self, key, key_modifiers):
         """
