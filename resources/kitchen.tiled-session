@@ -40,11 +40,11 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.25,
-            "selectedLayer": 4,
+            "scale": 0.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 3472,
-                "y": 908
+                "x": 1849,
+                "y": 670
             }
         }
     },

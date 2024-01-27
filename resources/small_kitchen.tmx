@@ -38,9 +38,9 @@
  <objectgroup id="3" name="walls">
   <object id="18" gid="18" x="959.677" y="2160.27" width="2880" height="58"/>
   <object id="33" gid="32" x="912.978" y="36.0054" width="2927" height="36"/>
-  <object id="34" gid="31" x="3804.03" y="671" width="36" height="671"/>
-  <object id="35" gid="30" x="913" y="2109.91" width="90" height="2110"/>
-  <object id="115" gid="18" x="-11.3333" y="2173.67" width="973.708" height="49.3333"/>
+  <object id="34" gid="31" x="3755.86" y="699.02" width="91.0036" height="671"/>
+  <object id="35" gid="30" x="913" y="2161.91" width="90" height="2162"/>
+  <object id="115" gid="18" x="-11.3333" y="2173.67" width="933.708" height="49.3333"/>
   <object id="116" gid="47" x="-0.333333" y="477.667" width="487" height="478">
    <properties>
     <property name="color" value="SCHOOL_BUS_YELLOW"/>
@@ -164,7 +164,7 @@
     <property name="color" value="RUST"/>
    </properties>
   </object>
-  <object id="23" gid="21" x="1273.48" y="668.375" width="46" height="642">
+  <object id="23" gid="21" x="1230.48" y="670.125" width="126" height="643.75">
    <properties>
     <property name="color" value="YELLOW_ROSE"/>
    </properties>
