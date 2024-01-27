@@ -34,7 +34,7 @@ WALLS_LAYER = "walls"
 
 # Gravity
 GRAVITY = 1500
-PLAYER_MOVE_FORCE_ON_GROUND = 8000
+PLAYER_MOVE_FORCE_ON_GROUND = 4000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
 PLAYER_DAMPING = 0.4
@@ -122,11 +122,8 @@ class Game(arcade.Window):
                                             friction=WALL_FRICTION,
                                             collision_type="wall",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
-        # self.physics_engine.add_sprite_list(self.scene[PLATFORMS_LAYER],
-        #                                     friction=WALL_FRICTION,
-        #                                     collision_type="platforms",
-        #                                     body_type=arcade.PymunkPhysicsEngine.STATIC
-        #                                     )
+
+
 
         self.physics_engine.add_sprite_list(self.scene[ENEMIES_LAYER],
                                             mass=PLAYER_MASS,
