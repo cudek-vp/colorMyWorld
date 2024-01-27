@@ -84,7 +84,7 @@ class Game(arcade.Window):
         }
 
 
-        self.tile_map = arcade.load_tilemap("./resources/walls.tmj", 0.2, layer_options)
+        self.tile_map = arcade.load_tilemap("./resources/kitchen.tmj", 0.2, layer_options)
         #
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
 
