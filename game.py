@@ -51,8 +51,8 @@ PLAYER_JUMP_IMPULSE = 1800
 MAX_RIGHT = -inf
 MAX_LEFT = inf
 
-sound_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/sounds/'
-music_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/music/'
+sound_path = ':resources:/sounds/'
+music_path = ':resources:/music/'
 class GameView(arcade.View):
     arcade.Sound(f'{music_path}funkyrobot.mp3').play()
 
@@ -71,7 +71,6 @@ class GameView(arcade.View):
         self.left_pressed: bool = False
         self.right_pressed: bool = False
         self.up_pressed: bool = False
-        self.setup()
 
         self.max_score = 0
         self.score = self.max_score
@@ -472,8 +471,8 @@ def main():
     """ Main function """
     window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
     start_view = GameView()
-    window.show_view(start_view)
     start_view.setup()
+    window.show_view(start_view)
     arcade.run()
 
 

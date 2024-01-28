@@ -31,7 +31,7 @@ class Enemy(AnimatedSprite):
 
     def split(self):
         n = random.sample([1, 2], counts=[3, 1], k=1)[0]
-        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(0)]
+        return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(n)]
 
 
     def on_update(self, delta_time: float = 1 / 60):
