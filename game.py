@@ -379,7 +379,7 @@ class HighscoresView(arcade.View):
         arcade.set_background_color(arcade.color.AO)
 
         self.score = 0
-        self.user_name_input = UIInputText(x=340, y=200, width=200, height=50, text="Hello", text_color=arcade.color.BLACK)
+        self.user_name_input = UIInputText(width=200, height=50, text="Name", text_color=arcade.color.BLACK)
 
     def setup(self, score):
         arcade.set_viewport(0, SCREEN_WIDTH - 1, 0, SCREEN_HEIGHT - 1)
@@ -414,7 +414,8 @@ class HighscoresView(arcade.View):
 
         self.inputPanel = UIBoxLayout()
         self.inputPanel.add(UILabel(text=f"Congrats, you'v achieved an highscore ({self.score}%)! Enter your name:", font_size=14, bold=True))
-        self.inputPanel.add(UITexturePane(self.user_name_input, tex=bg_tex))
+        self.inputPanel.add()
+
         button = UIFlatButton(text="OK", width=200)
         button.on_click = self.save_highscores
         self.inputPanel.add(button)
