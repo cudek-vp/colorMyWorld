@@ -7,6 +7,8 @@ import math
 from typing import Optional
 
 import arcade
+from arcade.gui import UIManager, UIBoxLayout, UILabel, UITexturePane, UITextArea, UIFlatButton, UIPadding, UIInputText
+
 from Object import Object
 from Enemy import Enemy
 from Player import Player
@@ -68,7 +70,6 @@ class GameView(arcade.View):
         self.left_pressed: bool = False
         self.right_pressed: bool = False
         self.up_pressed: bool = False
-        self.setup()
 
         self.max_score = 0
         self.score = self.max_score
@@ -254,7 +255,7 @@ class GameView(arcade.View):
             jump_angle = random.uniform(-45, 45)
 
         angle_rad = math.radians(jump_angle)
-        force = random.uniform(1, 1.5) * GRAVITY
+        force = random.uniform(1.5, 2) * GRAVITY
         self.physics_engine.apply_impulse(enemy, (math.sin(angle_rad) * force, math.cos(angle_rad) * force))
 
     def walk(self, enemy):
@@ -413,7 +414,7 @@ class HighscoresView(arcade.View):
 
         self.inputPanel = UIBoxLayout()
         self.inputPanel.add(UILabel(text=f"Congrats, you'v achieved an highscore ({self.score}%)! Enter your name:", font_size=14, bold=True))
-        self.inputPanel.add()
+        self.inputPanel.add(self.user_name_input)
 
         button = UIFlatButton(text="OK", width=200)
         button.on_click = self.save_highscores
