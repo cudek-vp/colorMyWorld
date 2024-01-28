@@ -144,7 +144,8 @@ class Game(arcade.Window):
                                        mass=PLAYER_MASS,
                                        collision_type="enemy",
                                        friction=0,
-                                       moment_of_inertia=inf)
+                                       moment_of_inertia=inf,
+                                       max_horizontal_velocity=200)
 
     def create_objects_spritelist(self):
         colors = vars(arcade.color)
@@ -209,17 +210,14 @@ class Game(arcade.Window):
         enemies = arcade.check_for_collision_with_list(self.player_sprite, self.scene[ENEMIES_LAYER])
         for enemy in enemies:
             if enemy.has_color:
-                closest_sprite = self.get_closest_colored_sprite(enemy)
-                if closest_sprite:
-                    closest_sprite.give_color(enemy.color)
-                    enemy.destroy()
-            else:
-                enemy.destroy()
+                self.retrive_color(enemy)
+            enemy.destroy()
 
         self.physics_engine.step()
 
     def move_enemy(self, enemy, delta_time):
-        if self.physics_engine.is_on_ground(enemy):
+        is_on_ground = self.physics_engine.is_on_ground(enemy)
+        if is_on_ground:
             enemy.time += delta_time
             if enemy.time > enemy.move_time:
                 enemy.time = 0
@@ -235,7 +233,7 @@ class Game(arcade.Window):
                 jump_angle = random.uniform(-45, 0)
             else:
                 jump_angle = random.uniform(0, 45)
-            if random.random() < 0.25:
+            if random.random() < 0.33:
                 jump_angle =- jump_angle
         else:
             jump_angle = random.uniform(-45, 45)
@@ -261,6 +259,11 @@ class Game(arcade.Window):
         for new_enemy in enemy.split():
             self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
             self.add_enemy_phisic(new_enemy)
+
+    def retrive_color(self, enemy):
+        closest_sprite = self.get_closest_colored_sprite(enemy)
+        if closest_sprite:
+            closest_sprite.give_color(enemy.color)
 
     def on_key_press(self, key, key_modifiers):
         """
@@ -328,15 +331,6 @@ class Game(arcade.Window):
             self.physics_engine.set_position(self.player_sprite, (MAX_LEFT, self.player_sprite.center_y))
             self.physics_engine.set_velocity(self.player_sprite, (0, 0))
 
-    def on_mouse_motion(self, x, y, delta_x, delta_y):
-        """
-        Called whenever the mouse moves.
-        """
-        pass
-
-    def on_mouse_press(self, x, y, button, key_modifiers):
-        pass
-
     def get_closest_colored_sprite(self, sprite) -> Object:
         min = inf
         closest_sprite = None
@@ -347,13 +341,6 @@ class Game(arcade.Window):
                     min = distance
                     closest_sprite = o
         return closest_sprite
-
-    def on_mouse_release(self, x, y, button, key_modifiers):
-        """
-        Called when a user releases a mouse button.
-        """
-        pass
-
 
 def main():
     """ Main function """
