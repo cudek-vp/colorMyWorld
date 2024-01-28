@@ -39,11 +39,6 @@
   <object id="18" gid="18" x="959.677" y="2160.27" width="2880" height="58"/>
   <object id="33" gid="32" x="912.978" y="36.0054" width="2927" height="36"/>
   <object id="115" gid="18" x="-11.3333" y="2159.67" width="933.708" height="49.3333"/>
-  <object id="116" gid="47" x="-0.333333" y="477.667" width="487" height="478">
-   <properties>
-    <property name="color" value="SCHOOL_BUS_YELLOW"/>
-   </properties>
-  </object>
   <object id="117" gid="46" x="46.8182" y="171.545" width="223" height="149"/>
   <object id="133" gid="18" x="988" y="59" width="2854" height="58"/>
   <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
@@ -480,6 +475,11 @@
   <object id="132" gid="55" x="980.999" y="510.235" width="439" height="459.333">
    <properties>
     <property name="color" value="NAVY_PURPLE"/>
+   </properties>
+  </object>
+  <object id="116" gid="47" x="-0.333333" y="477.667" width="487" height="478">
+   <properties>
+    <property name="color" value="YELLOW"/>
    </properties>
   </object>
  </objectgroup>
