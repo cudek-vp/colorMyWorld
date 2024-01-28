@@ -96,7 +96,7 @@ class Game(arcade.Window):
         self.physics_engine = arcade.PymunkPhysicsEngine(damping=DEFAULT_DAMPING,
                                                          gravity=(0, -GRAVITY))
 
-        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.2, {
+        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.235, {
             WALLS_LAYER: {
                 "use_spatial_hash": True,
                 "hit_box_algorithm": "Simple"
@@ -131,7 +131,7 @@ class Game(arcade.Window):
                                             collision_type="platform",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
         for platform in self.scene[PLATFORMS_LAYER]:
-            platform.visible = True
+            platform.visible = False
 
         self.add_enemy_phisics(enemy)
 
