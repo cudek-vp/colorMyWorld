@@ -33,8 +33,8 @@
             "scale": 0.25,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1920,
-                "y": 1082
+                "x": 1916,
+                "y": 1080
             }
         },
         "bez nazwy.tmx": {
@@ -60,11 +60,11 @@
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.125,
+            "scale": 0.25,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 4936,
-                "y": 1032
+                "x": 5736,
+                "y": 1084
             }
         },
         "kitchen.tmx": {
@@ -81,6 +81,7 @@
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
                 5,
+                7,
                 3,
                 4,
                 6,
@@ -89,8 +90,8 @@
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1664,
-                "y": 888
+                "x": 1904,
+                "y": 820
             }
         },
         "walls.tmj": {

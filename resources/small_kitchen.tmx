@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="8" nextobjectid="146">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="8" nextobjectid="148">
  <editorsettings>
-  <export target="kitchen.tmj" format="json"/>
+  <export target="kitchen_smalltable.tmj" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="Obiekty.tsx"/>
  <layer id="1" name="Warstwa Kafelków 1" width="1" height="1">
@@ -10,8 +10,8 @@
   </data>
  </layer>
  <objectgroup id="7" name="Warstwa Obiektu 6">
-  <object id="144" name="floor" gid="137" x="905" y="2160" width="2975" height="2143"/>
-  <object id="145" name="sky" gid="137" x="-19.0152" y="2146.32" width="918.515" height="2144.82"/>
+  <object id="146" gid="138" x="-11" y="2188" width="923" height="2207"/>
+  <object id="147" gid="139" x="901" y="2192" width="2967" height="2215"/>
  </objectgroup>
  <objectgroup id="5" name="platforms">
   <object id="56" gid="36" x="2712" y="1478.33" width="283" height="34"/>
