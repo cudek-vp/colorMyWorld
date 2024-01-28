@@ -38,12 +38,12 @@ PLAYER_MASS = 2.5
 
 # Keep player from going too fast
 PLAYER_MAX_HORIZONTAL_SPEED = 50
-PLAYER_MAX_VERTICAL_SPEED = 1600
+PLAYER_MAX_VERTICAL_SPEED = 1000
 
 # Force applied when moving left/right in the air
-PLAYER_MOVE_FORCE_IN_AIR = 900
+PLAYER_MOVE_FORCE_IN_AIR = 1000
 # Strength of a jump
-PLAYER_JUMP_IMPULSE = 1800
+PLAYER_JUMP_IMPULSE = 2000
 
 MAX_RIGHT = -inf
 MAX_LEFT = inf
@@ -103,6 +103,7 @@ class Game(arcade.Window):
             }
         })
 
+
         self.scene = arcade.Scene.from_tilemap(tile_map)
 
         self.create_objects_spritelist("objects0")
@@ -150,8 +151,22 @@ class Game(arcade.Window):
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
         self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
 
+        punctation = round(self.score / self.max_score * 100, 2)
+        if punctation < 0.25:
+            faces = 'very sad'
+        if punctation < 0.5:
+            faces = 'sad'
+        if punctation < 0.75:
+            faces = 'happy'
+        else:
+            faces = 'very happy'
 
-        # player.color = arcade.color.LIGHT_GRAY
+        face_tile_map = arcade.load_tilemap(f"./resources/{faces}.tmj", 0.2, {
+            WALLS_LAYER: {
+                "use_spatial_hash": True,
+                "hit_box_algorithm": "Simple"
+            }
+        })
 
     def add_enemy_phisics(self, enemy):
         self.physics_engine.add_sprite(enemy,
