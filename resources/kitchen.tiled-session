@@ -18,13 +18,15 @@
             "expandedObjectLayers": [
                 3,
                 6,
-                2
+                4,
+                2,
+                9
             ],
             "scale": 0.25,
-            "selectedLayer": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 1964,
-                "y": 900
+                "x": 2436,
+                "y": 1500
             }
         },
         "bedroom.tmx": {
@@ -33,10 +35,10 @@
                 2
             ],
             "scale": 0.25,
-            "selectedLayer": 1,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 2060,
-                "y": 1056
+                "x": 1856,
+                "y": 1128
             }
         },
         "bez nazwy.tmx": {
@@ -69,11 +71,11 @@
                 5,
                 2
             ],
-            "scale": 0.25,
-            "selectedLayer": 5,
+            "scale": 0.0625,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 2136,
-                "y": 1048
+                "x": 6384,
+                "y": 3392
             }
         },
         "walls.tmj": {
