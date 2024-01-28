@@ -48,6 +48,8 @@ PLAYER_JUMP_IMPULSE = 1800
 MAX_RIGHT = -inf
 MAX_LEFT = inf
 
+sound_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/sounds/'
+
 class Game(arcade.Window):
 
     def __init__(self, width, height, title):
@@ -199,9 +201,8 @@ class Game(arcade.Window):
         self.clear()
         self.scene.draw()
         arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-20, font_size=18, text=f"{round(self.score / self.max_score * 100, 2)}%")
-        arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT - 50, font_size=18, text=f"Sorrows: {Enemy.sprites_number}")
-
-        # Call draw() on all your sprite lists below
+        arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-50, font_size=18, text=f"Sorrows: {Enemy.sprites_number}")
+        # change face by score
 
     def on_update(self, delta_time):
         self.scene.on_update(delta_time)
@@ -223,7 +224,9 @@ class Game(arcade.Window):
         for enemy in enemies:
             if enemy.has_color:
                 self.retrive_color(enemy)
+                arcade.Sound(f'{sound_path}hurt5.wav').play()
             enemy.destroy()
+            arcade.Sound(f'{sound_path}hurt4.wav').play()
 
         self.physics_engine.step()
 
@@ -295,6 +298,7 @@ class Game(arcade.Window):
             # find out if player is standing on ground, and not on a ladder
             if self.physics_engine.is_on_ground(self.player_sprite):
                 impulse = (0, PLAYER_JUMP_IMPULSE)
+                arcade.Sound(f'{sound_path}jump3.wav').play()
                 self.physics_engine.apply_impulse(self.player_sprite, impulse)
 
     def on_key_release(self, key, key_modifiers):
