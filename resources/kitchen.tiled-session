@@ -16,29 +16,27 @@
         },
         "bathroom.tmx": {
             "expandedObjectLayers": [
-                3,
                 6,
-                4,
-                2,
-                9
+                2
             ],
             "scale": 0.25,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 2436,
-                "y": 1500
+                "x": 3294,
+                "y": 740
             }
         },
         "bedroom.tmx": {
             "expandedObjectLayers": [
-                8,
+                3,
+                7,
                 2
             ],
             "scale": 0.25,
-            "selectedLayer": 5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1856,
-                "y": 1128
+                "x": 1886,
+                "y": 360
             }
         },
         "bez nazwy.tmx": {
@@ -50,6 +48,17 @@
             "viewCenter": {
                 "x": 2100,
                 "y": 904
+            }
+        },
+        "house.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 0.25,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 6638,
+                "y": 1172
             }
         },
         "kitchen.tmx": {
@@ -65,17 +74,13 @@
         },
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
-                3,
-                6,
-                4,
-                5,
-                2
+                4
             ],
-            "scale": 0.0625,
-            "selectedLayer": 2,
+            "scale": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 6384,
-                "y": 3392
+                "x": 381.625,
+                "y": 1547.25
             }
         },
         "walls.tmj": {
@@ -95,7 +100,7 @@
     "map.layerDataFormat": null,
     "map.tileHeight": 2160,
     "map.tileWidth": 3840,
-    "map.width": 1,
+    "map.width": 3,
     "openFiles": [
         "Obiekty.tsx",
         "small_kitchen.tmx"

@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="3" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="480">
+ <editorsettings>
+  <export target="house.tmj" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" source="Obiekty.tsx"/>
+ <layer id="1" name="Warstwa Kafelków 1" width="3" height="1">
+  <data encoding="csv">
+0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="walls">
+  <object id="1" gid="18" x="968.227" y="2160.69" width="2880" height="58"/>
+  <object id="2" gid="32" x="921.528" y="36.427" width="2927" height="36"/>
+  <object id="3" gid="18" x="-0.0957937" y="2160.12" width="933.708" height="49.3333"/>
+  <object id="4" gid="46" x="47.944" y="172.815" width="223" height="149"/>
+  <object id="5" gid="18" x="996.55" y="59.4216" width="2854" height="58"/>
+  <object id="6" gid="57" x="3762.37" y="623.513" width="93" height="566"/>
+  <object id="7" gid="18" x="832.459" y="58.6943" width="3018" height="58"/>
+  <object id="8" gid="57" x="815.944" y="615.441" width="194.818" height="565.678"/>
+  <object id="9" gid="2147483705" x="1004.12" y="1257.86" width="191.848" height="900.625" rotation="-180"/>
+  <object id="10" gid="18" x="3842.45" y="2161.06" width="3840.3" height="58"/>
+  <object id="11" gid="18" x="3842.65" y="58.0559" width="3840.3" height="58"/>
+  <object id="12" gid="57" x="7597.88" y="621.708" width="93" height="566"/>
+  <object id="13" gid="57" x="3835.45" y="621.996" width="93" height="566"/>
+  <object id="14" gid="18" x="7679.56" y="2160.95" width="3840.3" height="58"/>
+  <object id="15" gid="18" x="7679.75" y="57.942" width="3840.3" height="58"/>
+  <object id="16" gid="57" x="11435" y="621.594" width="93" height="566"/>
+  <object id="17" gid="57" x="7672.55" y="621.882" width="93" height="566"/>
+  <object id="18" gid="2147483705" x="11526.8" y="1208.17" width="88.8179" height="900.625" rotation="-180"/>
+ </objectgroup>
+ <objectgroup id="3" name="platforms">
+  <object id="440" gid="41" x="2092.34" y="605.784" width="824" height="104"/>
+  <object id="441" gid="41" x="1841.68" y="811.117" width="824" height="104"/>
+  <object id="442" gid="41" x="1642.28" y="1525.1" width="940" height="104"/>
+  <object id="443" gid="41" x="3007.31" y="469.215" width="499" height="104"/>
+  <object id="444" gid="41" x="3011.18" y="1117.7" width="490" height="104"/>
+  <object id="445" gid="41" x="2735.61" y="1552.37" width="286" height="104"/>
+  <object id="446" gid="41" x="3004.4" y="1509.79" width="494" height="104"/>
+  <object id="447" gid="41" x="3485.61" y="1549.34" width="290" height="104"/>
+  <object id="448" gid="41" x="1072.58" y="1534.19" width="460" height="104"/>
+  <object id="449" gid="41" x="1055.1" y="998.193" width="488" height="104"/>
+  <object id="450" gid="41" x="1716.15" y="351.031" width="258" height="104"/>
+  <object id="451" gid="41" x="827.878" y="2160.37" width="169.879" height="891.758"/>
+  <object id="453" gid="41" x="143.007" y="867.117" width="714" height="104"/>
+  <object id="454" gid="41" x="338.007" y="696.117" width="312" height="104"/>
+  <object id="455" gid="41" x="173.177" y="1498.37" width="422.964" height="99.2962"/>
+  <object id="456" gid="41" x="2.54535" y="2114.7" width="143.879" height="1047.76"/>
+  <object id="457" gid="41" x="4062.75" y="482.75" width="824" height="104"/>
+  <object id="458" gid="41" x="4306.75" y="686.75" width="824" height="104"/>
+  <object id="459" gid="41" x="4304.75" y="1538.75" width="490" height="104"/>
+  <object id="460" gid="41" x="3978.75" y="1958.75" width="257.333" height="104"/>
+  <object id="461" gid="41" x="4938.75" y="1866.75" width="1422" height="104"/>
+  <object id="462" gid="41" x="6198.75" y="1986.75" width="222" height="104"/>
+  <object id="463" gid="41" x="6556.75" y="682.75" width="914" height="104"/>
+  <object id="464" gid="41" x="5714.75" y="747.75" width="824" height="104"/>
+  <object id="465" gid="41" x="5454.84" y="947.78" width="824" height="104"/>
+  <object id="466" gid="41" x="5522.75" y="302.75" width="404" height="120"/>
+  <object id="467" gid="41" x="9759.53" y="355" width="491.588" height="146.016"/>
+  <object id="468" gid="41" x="7923.77" y="808.591" width="494.667" height="104"/>
+  <object id="469" gid="41" x="7927.27" y="1013.59" width="487" height="104"/>
+  <object id="470" gid="41" x="8626.11" y="498.091" width="480" height="104"/>
+  <object id="471" gid="41" x="9316.77" y="660.091" width="790" height="104"/>
+  <object id="472" gid="41" x="9280.77" y="1570.09" width="860" height="104"/>
+  <object id="473" gid="41" x="8620.77" y="1514.09" width="490" height="104"/>
+  <object id="474" gid="41" x="7940.11" y="1514.09" width="454.667" height="104"/>
+  <object id="475" gid="41" x="10336.8" y="1962.09" width="264" height="104"/>
+  <object id="476" gid="41" x="11087.4" y="1958.09" width="260" height="104"/>
+  <object id="477" gid="41" x="10660.8" y="1798.09" width="368" height="104"/>
+  <object id="478" gid="41" x="10312.8" y="894.091" width="824" height="104"/>
+  <object id="479" gid="41" x="10566.8" y="689.091" width="824" height="104"/>
+ </objectgroup>
+ <objectgroup id="4" name="objects0">
+  <object id="19" gid="40" x="1840.61" y="736.652" width="1084" height="234">
+   <properties>
+    <property name="color" value="SMOKEY_TOPAZ"/>
+   </properties>
+  </object>
+  <object id="20" gid="2147483686" x="1702.28" y="1005.57" width="336" height="560">
+   <properties>
+    <property name="color" value="SPRING_BUD"/>
+   </properties>
+  </object>
+  <object id="21" gid="2147483687" x="1702.28" y="1005.69" width="336" height="560">
+   <properties>
+    <property name="color" value="SPANISH_GREEN"/>
+   </properties>
+  </object>
+  <object id="22" gid="37" x="2096.86" y="509.402" width="141" height="111">
+   <properties>
+    <property name="color" value="SPANISH_VIRIDIAN"/>
+   </properties>
+  </object>
+  <object id="23" gid="37" x="2273.61" y="509.652" width="141" height="111">
+   <properties>
+    <property name="color" value="SPRING_GREEN"/>
+   </properties>
+  </object>
+  <object id="24" gid="37" x="2451.28" y="509.652" width="141" height="111">
+   <properties>
+    <property name="color" value="TANGELO"/>
+   </properties>
+  </object>
+  <object id="25" gid="45" x="3048.11" y="1272.15" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="26" gid="33" x="1525.11" y="1923.15" width="222" height="36" rotation="60">
+   <properties>
+    <property name="color" value="PAKISTAN_GREEN"/>
+   </properties>
+  </object>
+  <object id="27" gid="33" x="1562.61" y="1933.15" width="255.234" height="26.8076" rotation="45">
+   <properties>
+    <property name="color" value="PASTEL_RED"/>
+   </properties>
+  </object>
+  <object id="28" gid="33" x="1677.16" y="2019.91" width="187.352" height="38.1213" rotation="30">
+   <properties>
+    <property name="color" value="PATRIARCH"/>
+   </properties>
+  </object>
+  <object id="29" gid="48" x="1.16761" y="2117.23" width="145" height="1060.33">
+   <properties>
+    <property name="color" value="UCLA_GOLD"/>
+   </properties>
+  </object>
+  <object id="30" gid="2147483703" x="7181.91" y="520.097" width="439" height="470">
+   <properties>
+    <property name="color" value="DARK_RED"/>
+   </properties>
+  </object>
+  <object id="31" gid="62" x="4932.96" y="2111.43" width="1411" height="782">
+   <properties>
+    <property name="color" value="DEEP_CARROT_ORANGE"/>
+   </properties>
+  </object>
+  <object id="32" gid="61" x="4978.09" y="2082.53" width="1321" height="321">
+   <properties>
+    <property name="color" value="DEEP_SKY_BLUE"/>
+   </properties>
+  </object>
+  <object id="33" gid="42" x="6140.39" y="652.243" width="283" height="366">
+   <properties>
+    <property name="color" value="DUKE_BLUE"/>
+   </properties>
+  </object>
+  <object id="34" gid="43" x="6140.33" y="652.347" width="283" height="366"/>
+  <object id="35" gid="44" x="6140.52" y="652.388" width="283" height="366">
+   <properties>
+    <property name="color" value="ELECTRIC_GREEN"/>
+   </properties>
+  </object>
+  <object id="36" gid="45" x="5503.91" y="1154.1" width="78" height="285">
+   <properties>
+    <property name="color" value="FLAVESCENT"/>
+   </properties>
+  </object>
+  <object id="37" gid="45" x="5797.58" y="1192.43" width="78" height="324">
+   <properties>
+    <property name="color" value="FLAVESCENT"/>
+   </properties>
+  </object>
+  <object id="38" gid="45" x="6167.58" y="1124.43" width="78" height="256">
+   <properties>
+    <property name="color" value="FLAVESCENT"/>
+   </properties>
+  </object>
+  <object id="39" gid="37" x="6774.58" y="589.097" width="141" height="111">
+   <properties>
+    <property name="color" value="ELECTRIC_INDIGO"/>
+   </properties>
+  </object>
+  <object id="40" gid="5" x="7177.65" y="559.856" width="79" height="138" rotation="33.8845">
+   <properties>
+    <property name="color" value="ELECTRIC_LIME"/>
+   </properties>
+  </object>
+  <object id="41" gid="33" x="4986.58" y="2112.76" width="293" height="54">
+   <properties>
+    <property name="color" value="FANDANGO"/>
+   </properties>
+  </object>
+  <object id="42" gid="5" x="6471.08" y="2079.93" width="79" height="138" rotation="33.8845">
+   <properties>
+    <property name="color" value="FLUORESCENT_YELLOW"/>
+   </properties>
+  </object>
+  <object id="43" gid="45" x="4938.91" y="884.93" width="78" height="285">
+   <properties>
+    <property name="color" value="FLAVESCENT"/>
+   </properties>
+  </object>
+  <object id="44" gid="45" x="4463.64" y="885.214" width="78" height="285">
+   <properties>
+    <property name="color" value="FLAVESCENT"/>
+   </properties>
+  </object>
+  <object id="45" gid="45" x="4130.04" y="681.385" width="78" height="285">
+   <properties>
+    <property name="color" value="FLAVESCENT"/>
+   </properties>
+  </object>
+  <object id="46" gid="45" x="9359.87" y="1840.71" width="117.767" height="342.732">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="47" gid="45" x="9921.45" y="1839.89" width="117.767" height="342.732">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="objects1">
+  <object id="48" gid="4" x="2997.67" y="2120.16" width="511" height="725">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="49" gid="7" x="3122.71" y="1428.27" width="281" height="196">
+   <properties>
+    <property name="color" value="MUSTARD"/>
+   </properties>
+  </object>
+  <object id="50" gid="3" x="2728.29" y="2111.35" width="302" height="670">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="51" gid="6" x="3480.63" y="2111.35" width="292" height="670">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="52" gid="8" x="1639.11" y="2103.07" width="946" height="694">
+   <properties>
+    <property name="color" value="BISTRE_BROWN"/>
+   </properties>
+  </object>
+  <object id="53" gid="9" x="1907.94" y="2078" width="397" height="1150">
+   <properties>
+    <property name="color" value="JASMINE"/>
+   </properties>
+  </object>
+  <object id="54" gid="10" x="1907.97" y="1418.01" width="397" height="490">
+   <properties>
+    <property name="color" value="CARROT_ORANGE"/>
+   </properties>
+  </object>
+  <object id="55" gid="5" x="2066.93" y="1415.09" width="79" height="138">
+   <properties>
+    <property name="color" value="BITTER_LEMON"/>
+   </properties>
+  </object>
+  <object id="56" gid="14" x="1907.96" y="1528.1" width="397" height="600">
+   <properties>
+    <property name="color" value="INDIGO"/>
+   </properties>
+  </object>
+  <object id="57" gid="11" x="1811.93" y="214.713" width="59" height="155">
+   <properties>
+    <property name="color" value="ITALIAN_SKY_BLUE"/>
+   </properties>
+  </object>
+  <object id="58" gid="13" x="1701.93" y="305.38" width="279" height="99">
+   <properties>
+    <property name="color" value="HAN_PURPLE"/>
+   </properties>
+  </object>
+  <object id="59" gid="12" x="1811.93" y="305.046" width="59" height="44">
+   <properties>
+    <property name="color" value="GOLD"/>
+   </properties>
+  </object>
+  <object id="60" gid="15" x="1934.88" y="1967.12" width="343" height="500">
+   <properties>
+    <property name="color" value="RED_DEVIL"/>
+   </properties>
+  </object>
+  <object id="61" gid="16" x="2021.98" y="2111.17" width="169" height="60">
+   <properties>
+    <property name="color" value="SHOCKING_PINK"/>
+   </properties>
+  </object>
+  <object id="62" gid="17" x="1934.89" y="2111.06" width="344" height="765">
+   <properties>
+    <property name="color" value="RUST"/>
+   </properties>
+  </object>
+  <object id="63" gid="20" x="1058.17" y="900.581" width="478" height="166">
+   <properties>
+    <property name="color" value="UP_MAROON"/>
+   </properties>
+  </object>
+  <object id="64" gid="22" x="1042.65" y="925.549" width="506" height="239">
+   <properties>
+    <property name="color" value="SPIRO_DISCO_BALL"/>
+   </properties>
+  </object>
+  <object id="65" gid="26" x="1064.38" y="2114.3" width="474" height="745">
+   <properties>
+    <property name="color" value="PUMPKIN"/>
+   </properties>
+  </object>
+  <object id="66" gid="25" x="1064.21" y="2110.87" width="474" height="745">
+   <properties>
+    <property name="color" value="PERIDOT"/>
+   </properties>
+  </object>
+  <object id="67" gid="27" x="1117.54" y="1870" width="368" height="360">
+   <properties>
+    <property name="color" value="UP_MAROON"/>
+   </properties>
+  </object>
+  <object id="68" gid="24" x="1087.12" y="1622.96" width="428" height="127">
+   <properties>
+    <property name="color" value="VIVID_VIOLET"/>
+   </properties>
+  </object>
+  <object id="69" gid="23" x="1064.41" y="2110.85" width="474" height="745">
+   <properties>
+    <property name="color" value="YANKEES_BLUE"/>
+   </properties>
+  </object>
+  <object id="70" gid="28" x="1135.36" y="1319.84" width="160" height="48">
+   <properties>
+    <property name="color" value="RED"/>
+   </properties>
+  </object>
+  <object id="71" gid="29" x="1141.41" y="1413.74" width="148" height="106">
+   <properties>
+    <property name="color" value="PICTON_BLUE"/>
+   </properties>
+  </object>
+  <object id="72" gid="29" x="1310.36" y="1413.72" width="148" height="106">
+   <properties>
+    <property name="color" value="SELECTIVE_YELLOW"/>
+   </properties>
+  </object>
+  <object id="73" gid="28" x="1304.36" y="1320.13" width="160" height="48">
+   <properties>
+    <property name="color" value="PERSIAN_BLUE"/>
+   </properties>
+  </object>
+  <object id="74" gid="1" x="3002.22" y="1040.6" width="506" height="677">
+   <properties>
+    <property name="color" value="MEAT_BROWN"/>
+   </properties>
+  </object>
+  <object id="75" gid="33" x="2213.86" y="712.717" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TERRA_COTTA"/>
+   </properties>
+  </object>
+  <object id="76" gid="33" x="2227.53" y="712.8" width="185.5" height="20" rotation="270">
+   <properties>
+    <property name="color" value="TITANIUM_YELLOW"/>
+   </properties>
+  </object>
+  <object id="77" gid="33" x="2262.03" y="712.8" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="TRACTOR_RED"/>
+   </properties>
+  </object>
+  <object id="78" gid="33" x="2287.76" y="713.277" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TURQUOISE_BLUE"/>
+   </properties>
+  </object>
+  <object id="79" gid="33" x="2428.25" y="711.925" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TYRIAN_PURPLE"/>
+   </properties>
+  </object>
+  <object id="80" gid="33" x="2303.42" y="713.175" width="185.5" height="20" rotation="270">
+   <properties>
+    <property name="color" value="ULTRAMARINE"/>
+   </properties>
+  </object>
+  <object id="81" gid="33" x="2337.42" y="712.425" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="ULTRA_PINK"/>
+   </properties>
+  </object>
+  <object id="82" gid="33" x="2402.15" y="711.652" width="144.667" height="32" rotation="270">
+   <properties>
+    <property name="color" value="UNIVERSITY_OF_TENNESSEE_ORANGE"/>
+   </properties>
+  </object>
+  <object id="83" gid="33" x="2375.53" y="711.717" width="179.333" height="44.8333" rotation="270">
+   <properties>
+    <property name="color" value="USC_CARDINAL"/>
+   </properties>
+  </object>
+  <object id="84" gid="33" x="2538.53" y="704.383" width="192.333" height="28.8333" rotation="240">
+   <properties>
+    <property name="color" value="VIVID_ORCHID"/>
+   </properties>
+  </object>
+  <object id="85" gid="42" x="2597.03" y="511.8" width="283" height="366">
+   <properties>
+    <property name="color" value="WATERSPOUT"/>
+   </properties>
+  </object>
+  <object id="86" gid="43" x="2597.36" y="511.8" width="283" height="366"/>
+  <object id="87" gid="44" x="2597.03" y="511.8" width="283" height="366">
+   <properties>
+    <property name="color" value="UP_FOREST_GREEN"/>
+   </properties>
+  </object>
+  <object id="88" gid="38" x="3315.76" y="662.436" width="336" height="560">
+   <properties>
+    <property name="color" value="SANGRIA"/>
+   </properties>
+  </object>
+  <object id="89" gid="39" x="3315.66" y="662.3" width="336" height="560">
+   <properties>
+    <property name="color" value="SHEEN_GREEN"/>
+   </properties>
+  </object>
+  <object id="90" gid="45" x="2711.7" y="808.467" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="91" gid="45" x="2268.03" y="1012.8" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="92" gid="45" x="2432.03" y="1012.8" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="93" gid="51" x="483.609" y="2117.92" width="26" height="1386">
+   <properties>
+    <property name="color" value="MODE_BEIGE"/>
+   </properties>
+  </object>
+  <object id="94" gid="49" x="401.359" y="759.8" width="204" height="124">
+   <properties>
+    <property name="color" value="PUMPKIN"/>
+   </properties>
+  </object>
+  <object id="95" gid="53" x="327.359" y="655.8" width="336" height="130">
+   <properties>
+    <property name="color" value="PAKISTAN_GREEN"/>
+   </properties>
+  </object>
+  <object id="96" gid="52" x="192.359" y="1253.8" width="608" height="534">
+   <properties>
+    <property name="color" value="PRUNE"/>
+   </properties>
+  </object>
+  <object id="97" gid="50" x="110.359" y="903.8" width="772" height="269">
+   <properties>
+    <property name="color" value="MIKADO_YELLOW"/>
+   </properties>
+  </object>
+  <object id="98" gid="33" x="1071.62" y="2108.78" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="PANSY_PURPLE"/>
+   </properties>
+  </object>
+  <object id="99" gid="33" x="1041.53" y="2109.05" width="190" height="23.1667" rotation="270">
+   <properties>
+    <property name="color" value="NEON_GREEN"/>
+   </properties>
+  </object>
+  <object id="100" gid="33" x="1022.36" y="2108.55" width="182" height="30.8334" rotation="270">
+   <properties>
+    <property name="color" value="MIDNIGHT_BLUE"/>
+   </properties>
+  </object>
+  <object id="101" gid="56" x="1227.07" y="696.027" width="124" height="639">
+   <properties>
+    <property name="color" value="MARDI_GRAS"/>
+   </properties>
+  </object>
+  <object id="102" gid="69" x="6172.77" y="2109.4" width="237.274" height="223.265">
+   <properties>
+    <property name="color" value="FRENCH_MAUVE"/>
+   </properties>
+  </object>
+  <object id="103" gid="68" x="6144.44" y="1892.18" width="285.429" height="795.875">
+   <properties>
+    <property name="color" value="GREEN"/>
+   </properties>
+  </object>
+  <object id="180" gid="71" x="10648.8" y="2107.68" width="388.052" height="376.639">
+   <properties>
+    <property name="color" value="STIL_DE_GRAIN_YELLOW"/>
+   </properties>
+  </object>
+  <object id="181" gid="70" x="10647.5" y="1731" width="390.589" height="531.353">
+   <properties>
+    <property name="color" value="STIL_DE_GRAIN_YELLOW"/>
+   </properties>
+  </object>
+  <object id="182" gid="69" x="11084.5" y="2107.01" width="271" height="255">
+   <properties>
+    <property name="color" value="STEEL_PINK"/>
+   </properties>
+  </object>
+  <object id="183" gid="68" x="11054.9" y="1858.68" width="326" height="909">
+   <properties>
+    <property name="color" value="SPRING_BUD"/>
+   </properties>
+  </object>
+  <object id="184" gid="2147483717" x="10333.5" y="2106.34" width="271" height="255">
+   <properties>
+    <property name="color" value="STEEL_PINK"/>
+   </properties>
+  </object>
+  <object id="185" gid="2147483716" x="10303.9" y="1858.01" width="326" height="909">
+   <properties>
+    <property name="color" value="SPRING_BUD"/>
+   </properties>
+  </object>
+  <object id="186" gid="40" x="10309.9" y="818.015" width="1084" height="234">
+   <properties>
+    <property name="color" value="TOPAZ"/>
+   </properties>
+  </object>
+  <object id="187" gid="2147483686" x="10168.5" y="1087.32" width="336" height="560">
+   <properties>
+    <property name="color" value="TUSCAN_RED"/>
+   </properties>
+  </object>
+  <object id="188" gid="2147483687" x="10168.5" y="1087.31" width="336" height="560">
+   <properties>
+    <property name="color" value="UFO_GREEN"/>
+   </properties>
+  </object>
+  <object id="189" gid="42" x="11136.8" y="593.176" width="283" height="366">
+   <properties>
+    <property name="color" value="WINE"/>
+   </properties>
+  </object>
+  <object id="190" gid="43" x="11136.8" y="593.212" width="283" height="366"/>
+  <object id="191" gid="44" x="11136.8" y="593.218" width="283" height="366">
+   <properties>
+    <property name="color" value="YELLOW_GREEN"/>
+   </properties>
+  </object>
+  <object id="192" gid="78" x="9277.25" y="1508.68" width="873" height="954">
+   <properties>
+    <property name="color" value="YALE_BLUE"/>
+   </properties>
+  </object>
+  <object id="193" gid="47" x="9398.92" y="981.015" width="341.308" height="335">
+   <properties>
+    <property name="color" value="YELLOW"/>
+   </properties>
+  </object>
+  <object id="194" gid="46" x="9431.9" y="766.52" width="156.287" height="104.425"/>
+  <object id="195" gid="4" x="8614.92" y="2117.34" width="511" height="725">
+   <properties>
+    <property name="color" value="WINDSOR_TAN"/>
+   </properties>
+  </object>
+  <object id="196" gid="7" x="8739.67" y="1425.26" width="281" height="196">
+   <properties>
+    <property name="color" value="USC_GOLD"/>
+   </properties>
+  </object>
+  <object id="197" gid="42" x="8956.3" y="1409.39" width="189" height="244.431">
+   <properties>
+    <property name="color" value="UNMELLOW_YELLOW"/>
+   </properties>
+  </object>
+  <object id="198" gid="43" x="8956.3" y="1409.38" width="189" height="244.431"/>
+  <object id="199" gid="44" x="8956.3" y="1409.39" width="189" height="244.431">
+   <properties>
+    <property name="color" value="UP_FOREST_GREEN"/>
+   </properties>
+  </object>
+  <object id="200" gid="2147483685" x="8609.42" y="1411.51" width="129" height="133">
+   <properties>
+    <property name="color" value="UTAH_CRIMSON"/>
+   </properties>
+  </object>
+  <object id="201" gid="13" x="8728.67" y="1002.26" width="279" height="99">
+   <properties>
+    <property name="color" value="USC_CARDINAL"/>
+   </properties>
+  </object>
+  <object id="202" gid="12" x="8838.66" y="1002.22" width="59" height="44">
+   <properties>
+    <property name="color" value="USC_GOLD"/>
+   </properties>
+  </object>
+  <object id="203" gid="29" x="9125.48" y="2108.03" width="185.463" height="132.831">
+   <properties>
+    <property name="color" value="USC_GOLD"/>
+   </properties>
+  </object>
+  <object id="204" gid="28" x="9117.73" y="1990.35" width="200.5" height="60.15">
+   <properties>
+    <property name="color" value="VENETIAN_RED"/>
+   </properties>
+  </object>
+  <object id="205" gid="5" x="9127.93" y="1953.95" width="79" height="138" rotation="337.064">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="206" gid="79" x="7931.78" y="1568.92" width="474" height="206">
+   <properties>
+    <property name="color" value="UNMELLOW_YELLOW"/>
+   </properties>
+  </object>
+  <object id="207" gid="83" x="8013.79" y="1992.93" width="310" height="489">
+   <properties>
+    <property name="color" value="TIFFANY_BLUE"/>
+   </properties>
+  </object>
+  <object id="208" gid="82" x="8013.79" y="1992.9" width="310" height="310">
+   <properties>
+    <property name="color" value="TEAL_GREEN"/>
+   </properties>
+  </object>
+  <object id="209" gid="81" x="7931.79" y="2107.93" width="474" height="548">
+   <properties>
+    <property name="color" value="TITANIUM_YELLOW"/>
+   </properties>
+  </object>
+  <object id="210" gid="80" x="7954.78" y="1548.9" width="428" height="56">
+   <properties>
+    <property name="color" value="TANGERINE_YELLOW"/>
+   </properties>
+  </object>
+  <object id="211" gid="42" x="9562.75" y="2108.37" width="263.667" height="340.996">
+   <properties>
+    <property name="color" value="STIZZA"/>
+   </properties>
+  </object>
+  <object id="212" gid="43" x="9562.75" y="2108.35" width="263.667" height="340.996"/>
+  <object id="213" gid="44" x="9562.75" y="2108.37" width="263.667" height="340.996">
+   <properties>
+    <property name="color" value="SPRING_BUD"/>
+   </properties>
+  </object>
+  <object id="214" gid="84" x="7923.92" y="938.015" width="500" height="234">
+   <properties>
+    <property name="color" value="SUNGLOW"/>
+   </properties>
+  </object>
+  <object id="215" gid="42" x="8025.68" y="712.944" width="304.646" height="393.993">
+   <properties>
+    <property name="color" value="SINOPIA"/>
+   </properties>
+  </object>
+  <object id="216" gid="43" x="8025.68" y="712.921" width="304.646" height="393.993"/>
+  <object id="217" gid="44" x="8025.68" y="712.944" width="304.646" height="393.993">
+   <properties>
+    <property name="color" value="SHAMROCK_GREEN"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="objects2">
+  <object id="240" gid="29" x="1104.75" y="1455.51" width="148" height="106">
+   <properties>
+    <property name="color" value="PERSIAN_PLUM"/>
+   </properties>
+  </object>
+  <object id="241" gid="28" x="1098.75" y="1362.01" width="160" height="48">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="242" gid="29" x="1347.68" y="1455.56" width="148" height="106">
+   <properties>
+    <property name="color" value="PATRIARCH"/>
+   </properties>
+  </object>
+  <object id="243" gid="28" x="1341.83" y="1361.83" width="160" height="48">
+   <properties>
+    <property name="color" value="PERSIMMON"/>
+   </properties>
+  </object>
+  <object id="244" gid="33" x="1676.11" y="1406.37" width="222" height="36">
+   <properties>
+    <property name="color" value="YELLOW_GREEN"/>
+   </properties>
+  </object>
+  <object id="245" gid="33" x="1693.38" y="1375.26" width="222" height="24.5">
+   <properties>
+    <property name="color" value="SPANISH_CRIMSON"/>
+   </properties>
+  </object>
+  <object id="246" gid="33" x="1665.75" y="1429.01" width="252.5" height="28">
+   <properties>
+    <property name="color" value="SCHOOL_BUS_YELLOW"/>
+   </properties>
+  </object>
+  <object id="247" gid="33" x="3037.92" y="376.432" width="278" height="34">
+   <properties>
+    <property name="color" value="SEA_GREEN"/>
+   </properties>
+  </object>
+  <object id="248" gid="33" x="3522.25" y="1453.01" width="222" height="36">
+   <properties>
+    <property name="color" value="SCHAUSS_PINK"/>
+   </properties>
+  </object>
+  <object id="249" gid="33" x="3506.25" y="1424.34" width="198" height="28">
+   <properties>
+    <property name="color" value="SANGRIA"/>
+   </properties>
+  </object>
+  <object id="250" gid="33" x="1743.38" y="1354.8" width="151.333" height="20.6667">
+   <properties>
+    <property name="color" value="SAPPHIRE_BLUE"/>
+   </properties>
+  </object>
+  <object id="251" gid="29" x="2841.58" y="1465.34" width="148" height="106">
+   <properties>
+    <property name="color" value="USC_GOLD"/>
+   </properties>
+  </object>
+  <object id="252" gid="28" x="2835.4" y="1371.43" width="160" height="48">
+   <properties>
+    <property name="color" value="VENETIAN_RED"/>
+   </properties>
+  </object>
+  <object id="253" gid="2147483685" x="2318.25" y="1416.01" width="142.333" height="123">
+   <properties>
+    <property name="color" value="VIVID_AUBURN"/>
+   </properties>
+  </object>
+  <object id="254" gid="2147483685" x="2730.25" y="1454.01" width="95.6667" height="99">
+   <properties>
+    <property name="color" value="VIVID_SKY_BLUE"/>
+   </properties>
+  </object>
+  <object id="255" gid="37" x="3565.25" y="1403.01" width="91.5" height="83">
+   <properties>
+    <property name="color" value="WILD_ORCHID"/>
+   </properties>
+  </object>
+  <object id="256" gid="5" x="3058.08" y="1429.84" width="79" height="138" rotation="-50">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="257" gid="5" x="2054.25" y="760.015" width="79" height="138">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="258" gid="5" x="2340.17" y="2027.59" width="79" height="138" rotation="100">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="259" gid="54" x="159.421" y="2119.01" width="447.788" height="742.812">
+   <properties>
+    <property name="color" value="MUGHAL_GREEN"/>
+   </properties>
+  </object>
+  <object id="260" gid="55" x="982.253" y="511.25" width="439" height="459.333">
+   <properties>
+    <property name="color" value="NAVY_PURPLE"/>
+   </properties>
+  </object>
+  <object id="261" gid="47" x="0.920889" y="478.682" width="487" height="478">
+   <properties>
+    <property name="color" value="YELLOW"/>
+   </properties>
+  </object>
+  <object id="262" gid="1" x="4304.27" y="2111.77" width="506" height="677">
+   <properties>
+    <property name="color" value="GOLDEN_BROWN"/>
+   </properties>
+  </object>
+  <object id="263" gid="1" x="7006.96" y="2111.26" width="474" height="1529">
+   <properties>
+    <property name="color" value="COCOA_BROWN"/>
+   </properties>
+  </object>
+  <object id="264" gid="2147483649" x="6559.71" y="2111.26" width="474" height="1529">
+   <properties>
+    <property name="color" value="COCOA_BROWN"/>
+   </properties>
+  </object>
+  <object id="265" gid="37" x="4655.63" y="1441.26" width="141" height="111">
+   <properties>
+    <property name="color" value="CARNELIAN"/>
+   </properties>
+  </object>
+  <object id="266" gid="49" x="4359.63" y="1447.92" width="204" height="124">
+   <properties>
+    <property name="color" value="BURNT_ORANGE"/>
+   </properties>
+  </object>
+  <object id="267" gid="53" x="4285.63" y="1343.84" width="336" height="130">
+   <properties>
+    <property name="color" value="CATALINA_BLUE"/>
+   </properties>
+  </object>
+  <object id="268" gid="38" x="7277.71" y="884.63" width="336" height="560">
+   <properties>
+    <property name="color" value="CARNELIAN"/>
+   </properties>
+  </object>
+  <object id="269" gid="2147483686" x="6399.27" y="881.464" width="336" height="560">
+   <properties>
+    <property name="color" value="CERULEAN_BLUE"/>
+   </properties>
+  </object>
+  <object id="270" gid="39" x="7277.63" y="884.587" width="336" height="560">
+   <properties>
+    <property name="color" value="CITRINE"/>
+   </properties>
+  </object>
+  <object id="271" gid="2147483687" x="6399.26" y="881.462" width="336" height="560">
+   <properties>
+    <property name="color" value="BRITISH_RACING_GREEN"/>
+   </properties>
+  </object>
+  <object id="272" gid="40" x="5459.63" y="877.587" width="1084" height="234">
+   <properties>
+    <property name="color" value="DARK_BROWN"/>
+   </properties>
+  </object>
+  <object id="273" gid="2147483688" x="4067.63" y="609.587" width="1084" height="234">
+   <properties>
+    <property name="color" value="BISTRE_BROWN"/>
+   </properties>
+  </object>
+  <object id="274" gid="42" x="6884.47" y="591.428" width="283" height="366">
+   <properties>
+    <property name="color" value="BRILLIANT_LAVENDER"/>
+   </properties>
+  </object>
+  <object id="275" gid="43" x="6884.35" y="591.455" width="283" height="366"/>
+  <object id="276" gid="44" x="6884.45" y="591.428" width="283" height="366">
+   <properties>
+    <property name="color" value="BRONZE_YELLOW"/>
+   </properties>
+  </object>
+  <object id="277" gid="33" x="4189.57" y="387.098" width="253.946" height="46.4628" rotation="282.245">
+   <properties>
+    <property name="color" value="BULGARIAN_ROSE"/>
+   </properties>
+  </object>
+  <object id="278" gid="33" x="4280.74" y="378.132" width="180.328" height="33.6439" rotation="260.748">
+   <properties>
+    <property name="color" value="CANARY_YELLOW"/>
+   </properties>
+  </object>
+  <object id="279" gid="33" x="4319.35" y="378.036" width="223.045" height="26.4179" rotation="255.352">
+   <properties>
+    <property name="color" value="CANDY_APPLE_RED"/>
+   </properties>
+  </object>
+  <object id="280" gid="33" x="4357.95" y="375.229" width="197.267" height="32.7723" rotation="252.208">
+   <properties>
+    <property name="color" value="CARMINE"/>
+   </properties>
+  </object>
+  <object id="281" gid="33" x="4391.33" y="378.634" width="252.862" height="22.0715" rotation="248.264">
+   <properties>
+    <property name="color" value="CATAWBA"/>
+   </properties>
+  </object>
+  <object id="282" gid="33" x="4484.05" y="366.562" width="197.267" height="32.7723" rotation="228.197">
+   <properties>
+    <property name="color" value="CATALINA_BLUE"/>
+   </properties>
+  </object>
+  <object id="283" gid="33" x="4617.47" y="367.779" width="230.023" height="21.8835" rotation="205.339">
+   <properties>
+    <property name="color" value="CELESTE"/>
+   </properties>
+  </object>
+  <object id="284" gid="33" x="4682.03" y="361.585" width="126.619" height="21.8835" rotation="198.071">
+   <properties>
+    <property name="color" value="CG_BLUE"/>
+   </properties>
+  </object>
+  <object id="285" gid="38" x="5001.27" y="833.587" width="283.388" height="472.313">
+   <properties>
+    <property name="color" value="CERULEAN_BLUE"/>
+   </properties>
+  </object>
+  <object id="286" gid="39" x="5001.27" y="831.9" width="283.388" height="472.313">
+   <properties>
+    <property name="color" value="CHARTREUSE"/>
+   </properties>
+  </object>
+  <object id="287" gid="2147483687" x="5331.96" y="1146.92" width="336" height="560">
+   <properties>
+    <property name="color" value="CITRON"/>
+   </properties>
+  </object>
+  <object id="288" gid="2147483686" x="5331.63" y="1146.59" width="336" height="560">
+   <properties>
+    <property name="color" value="DARK_ORANGE"/>
+   </properties>
+  </object>
+  <object id="289" gid="33" x="4451.17" y="585.28" width="169.146" height="43.3106" rotation="270">
+   <properties>
+    <property name="color" value="DARK_RASPBERRY"/>
+   </properties>
+  </object>
+  <object id="290" gid="33" x="4465.75" y="585.322" width="178.328" height="18.1439" rotation="270">
+   <properties>
+    <property name="color" value="DARK_RED"/>
+   </properties>
+  </object>
+  <object id="291" gid="33" x="4485.72" y="584.428" width="150.661" height="23.4772" rotation="270">
+   <properties>
+    <property name="color" value="DARK_SLATE_BLUE"/>
+   </properties>
+  </object>
+  <object id="292" gid="33" x="4507.6" y="585.015" width="170.828" height="26.4621" rotation="270">
+   <properties>
+    <property name="color" value="DARK_TANGERINE"/>
+   </properties>
+  </object>
+  <object id="293" gid="33" x="4925.69" y="576.785" width="181.955" height="38.6396" rotation="248.264">
+   <properties>
+    <property name="color" value="DARK_VIOLET"/>
+   </properties>
+  </object>
+  <object id="294" gid="33" x="5002.27" y="573.943" width="166.343" height="24.3486" rotation="228.197">
+   <properties>
+    <property name="color" value="DARTMOUTH_GREEN"/>
+   </properties>
+  </object>
+  <object id="295" gid="33" x="4543.64" y="584.723" width="159.479" height="43.3106" rotation="270">
+   <properties>
+    <property name="color" value="DEBIAN_RED"/>
+   </properties>
+  </object>
+  <object id="296" gid="33" x="4566.23" y="586.01" width="180.479" height="30.9317" rotation="270">
+   <properties>
+    <property name="color" value="DEEP_LEMON"/>
+   </properties>
+  </object>
+  <object id="297" gid="33" x="4604.5" y="582.422" width="164.134" height="29.7613" rotation="264.648">
+   <properties>
+    <property name="color" value="DEEP_PINK"/>
+   </properties>
+  </object>
+  <object id="298" gid="33" x="4630.83" y="582.386" width="144.42" height="22.1071" rotation="260.882">
+   <properties>
+    <property name="color" value="DEEP_SAFFRON"/>
+   </properties>
+  </object>
+  <object id="299" gid="33" x="4691.78" y="576.81" width="125.325" height="28.7744" rotation="241.919">
+   <properties>
+    <property name="color" value="DODGER_BLUE"/>
+   </properties>
+  </object>
+  <object id="300" gid="33" x="5841.53" y="852.969" width="159.079" height="40.7329" rotation="270">
+   <properties>
+    <property name="color" value="DIAMOND"/>
+   </properties>
+  </object>
+  <object id="301" gid="33" x="5855.25" y="853.008" width="167.715" height="17.064" rotation="270">
+   <properties>
+    <property name="color" value="DUKE_BLUE"/>
+   </properties>
+  </object>
+  <object id="302" gid="33" x="5874.02" y="852.167" width="141.694" height="22.0799" rotation="270">
+   <properties>
+    <property name="color" value="ELECTRIC_PURPLE"/>
+   </properties>
+  </object>
+  <object id="303" gid="33" x="5894.61" y="852.719" width="160.661" height="24.8872" rotation="270">
+   <properties>
+    <property name="color" value="ELECTRIC_YELLOW"/>
+   </properties>
+  </object>
+  <object id="304" gid="33" x="5928.5" y="852.445" width="149.987" height="40.7329" rotation="270">
+   <properties>
+    <property name="color" value="ENGLISH_VIOLET"/>
+   </properties>
+  </object>
+  <object id="305" gid="33" x="5949.74" y="853.655" width="169.738" height="29.0908" rotation="270">
+   <properties>
+    <property name="color" value="FASHION_FUCHSIA"/>
+   </properties>
+  </object>
+  <object id="306" gid="33" x="5985.74" y="850.281" width="154.365" height="27.99" rotation="264.648">
+   <properties>
+    <property name="color" value="FERRARI_RED"/>
+   </properties>
+  </object>
+  <object id="307" gid="33" x="6010.5" y="850.247" width="135.825" height="20.7914" rotation="260.882">
+   <properties>
+    <property name="color" value="FLIRT"/>
+   </properties>
+  </object>
+  <object id="308" gid="33" x="6067.83" y="845.003" width="117.866" height="27.0619" rotation="241.919">
+   <properties>
+    <property name="color" value="FLAME"/>
+   </properties>
+  </object>
+  <object id="309" gid="33" x="6184.73" y="854.299" width="168.399" height="28.2144" rotation="275.002">
+   <properties>
+    <property name="color" value="FRENCH_LIME"/>
+   </properties>
+  </object>
+  <object id="310" gid="33" x="6157.14" y="852.831" width="140.725" height="23.7044" rotation="277.146">
+   <properties>
+    <property name="color" value="FRENCH_PUCE"/>
+   </properties>
+  </object>
+  <object id="311" gid="33" x="6117.59" y="853.506" width="126.808" height="16.8439" rotation="286.307">
+   <properties>
+    <property name="color" value="FUCHSIA"/>
+   </properties>
+  </object>
+  <object id="312" gid="33" x="4770.56" y="586.832" width="144.428" height="25.4716" rotation="286.307">
+   <properties>
+    <property name="color" value="GAMBOGE"/>
+   </properties>
+  </object>
+  <object id="313" gid="2147483685" x="4694.01" y="381.462" width="159.5" height="86.5">
+   <properties>
+    <property name="color" value="GRAPE"/>
+   </properties>
+  </object>
+  <object id="314" gid="5" x="4415.97" y="1237.59" width="79" height="138">
+   <properties>
+    <property name="color" value="HARLEQUIN"/>
+   </properties>
+  </object>
+  <object id="315" gid="64" x="4976.11" y="1808.55" width="672" height="567">
+   <properties>
+    <property name="color" value="OXFORD_BLUE"/>
+   </properties>
+  </object>
+  <object id="316" gid="65" x="4943.19" y="1375.65" width="275" height="188">
+   <properties>
+    <property name="color" value="OU_CRIMSON_RED"/>
+   </properties>
+  </object>
+  <object id="317" gid="59" x="4892.07" y="1281.59" width="340" height="281">
+   <properties>
+    <property name="color" value="ORANGE_PEEL"/>
+   </properties>
+  </object>
+  <object id="318" gid="58" x="4973.13" y="1456.69" width="630" height="441">
+   <properties>
+    <property name="color" value="PALE_GOLDENROD"/>
+   </properties>
+  </object>
+  <object id="319" gid="63" x="5376.09" y="1808.66" width="286" height="45">
+   <properties>
+    <property name="color" value="OTTER_BROWN"/>
+   </properties>
+  </object>
+  <object id="320" gid="60" x="5094.07" y="1163.92" width="103" height="54"/>
+  <object id="321" gid="28" x="6458.84" y="2126.92" width="252.724" height="73.3807" rotation="304.12">
+   <properties>
+    <property name="color" value="GOLD"/>
+   </properties>
+  </object>
+  <object id="322" gid="33" x="4850.43" y="2107.15" width="199.405" height="33.7575" rotation="261.565">
+   <properties>
+    <property name="color" value="JASPER"/>
+   </properties>
+  </object>
+  <object id="323" gid="33" x="4878.3" y="2106.56" width="163.301" height="20.2833" rotation="257.159">
+   <properties>
+    <property name="color" value="LAPIS_LAZULI"/>
+   </properties>
+  </object>
+  <object id="324" gid="33" x="4914.85" y="2103.8" width="135.825" height="20.7914" rotation="248.275">
+   <properties>
+    <property name="color" value="LAVA"/>
+   </properties>
+  </object>
+  <object id="325" gid="33" x="4938.94" y="2103.01" width="117.866" height="13.6896" rotation="241.919">
+   <properties>
+    <property name="color" value="LAVENDER_INDIGO"/>
+   </properties>
+  </object>
+  <object id="326" gid="67" x="5503.51" y="304.587" width="461.25" height="246">
+   <properties>
+    <property name="color" value="LEMON_GLACIER"/>
+   </properties>
+  </object>
+  <object id="327" gid="66" x="5503.51" y="304.587" width="461.25" height="246">
+   <properties>
+    <property name="color" value="DARK_RED"/>
+   </properties>
+  </object>
+  <object id="328" gid="33" x="5751.26" y="846.347" width="221.735" height="39.7329" rotation="249.195">
+   <properties>
+    <property name="color" value="NEW_CAR"/>
+   </properties>
+  </object>
+  <object id="329" gid="69" x="3980.18" y="2111.68" width="271" height="255">
+   <properties>
+    <property name="color" value="ORANGE"/>
+   </properties>
+  </object>
+  <object id="330" gid="68" x="3947.82" y="1863.59" width="326" height="909">
+   <properties>
+    <property name="color" value="PAKISTAN_GREEN"/>
+   </properties>
+  </object>
+  <object id="331" gid="2147483685" x="5723.46" y="1778.09" width="221" height="191">
+   <properties>
+    <property name="color" value="OU_CRIMSON_RED"/>
+   </properties>
+  </object>
+  <object id="382" gid="72" x="10945.5" y="2129.45" width="230" height="192">
+   <properties>
+    <property name="color" value="DRAB"/>
+   </properties>
+  </object>
+  <object id="383" gid="72" x="10906.1" y="605.159" width="230" height="192">
+   <properties>
+    <property name="color" value="DARK_TANGERINE"/>
+   </properties>
+  </object>
+  <object id="384" gid="72" x="10688.2" y="605.204" width="230" height="192">
+   <properties>
+    <property name="color" value="DARK_SPRING_GREEN"/>
+   </properties>
+  </object>
+  <object id="385" gid="72" x="10467.7" y="604.371" width="230" height="192">
+   <properties>
+    <property name="color" value="DARK_SLATE_BLUE"/>
+   </properties>
+  </object>
+  <object id="386" gid="33" x="10685.9" y="793.965" width="172.001" height="36" rotation="270.035">
+   <properties>
+    <property name="color" value="SELECTIVE_YELLOW"/>
+   </properties>
+  </object>
+  <object id="387" gid="33" x="10703.1" y="793.706" width="173.992" height="21.3321" rotation="270.035">
+   <properties>
+    <property name="color" value="SEA_GREEN"/>
+   </properties>
+  </object>
+  <object id="388" gid="33" x="10720.6" y="793.082" width="142.003" height="21.4988" rotation="270.035">
+   <properties>
+    <property name="color" value="SEA_BLUE"/>
+   </properties>
+  </object>
+  <object id="389" gid="33" x="10774.8" y="789.496" width="142.003" height="21.4988" rotation="254.022">
+   <properties>
+    <property name="color" value="SCREAMIN_GREEN"/>
+   </properties>
+  </object>
+  <object id="390" gid="37" x="10822.1" y="797.454" width="160.333" height="137">
+   <properties>
+    <property name="color" value="SAPPHIRE"/>
+   </properties>
+  </object>
+  <object id="391" gid="45" x="10527" y="1094.45" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="392" gid="45" x="10786.2" y="1094.28" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="393" gid="45" x="11184.5" y="890.53" width="78" height="285">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="394" gid="5" x="10717.6" y="2094.44" width="79" height="138" rotation="253.779">
+   <properties>
+    <property name="color" value="PEAR"/>
+   </properties>
+  </object>
+  <object id="395" gid="77" x="9361.55" y="1483.43" width="571" height="603">
+   <properties>
+    <property name="color" value="HANSA_YELLOW"/>
+   </properties>
+  </object>
+  <object id="396" gid="75" x="9740.47" y="1467.45" width="356" height="284">
+   <properties>
+    <property name="color" value="FLUORESCENT_ORANGE"/>
+   </properties>
+  </object>
+  <object id="397" gid="74" x="9694.56" y="1024.42" width="283" height="205">
+   <properties>
+    <property name="color" value="GOLDEN_YELLOW"/>
+   </properties>
+  </object>
+  <object id="398" gid="73" x="9744.58" y="996.423" width="38" height="27"/>
+  <object id="399" gid="76" x="9853.51" y="1346.46" width="243" height="343">
+   <properties>
+    <property name="color" value="FLIRT"/>
+   </properties>
+  </object>
+  <object id="400" gid="2147483686" x="9175.31" y="854.05" width="336" height="560">
+   <properties>
+    <property name="color" value="FALU_RED"/>
+   </properties>
+  </object>
+  <object id="401" gid="2147483687" x="9175.27" y="854.04" width="336" height="560">
+   <properties>
+    <property name="color" value="FERN_GREEN"/>
+   </properties>
+  </object>
+  <object id="402" gid="67" x="9729.45" y="354.363" width="561.25" height="299.333">
+   <properties>
+    <property name="color" value="LEMON_GLACIER"/>
+   </properties>
+  </object>
+  <object id="403" gid="66" x="9729.45" y="354.363" width="561.25" height="299.333">
+   <properties>
+    <property name="color" value="DARK_RED"/>
+   </properties>
+  </object>
+  <object id="404" gid="33" x="9775.66" y="563.485" width="221.996" height="44.0305">
+   <properties>
+    <property name="color" value="FLUORESCENT_YELLOW"/>
+   </properties>
+  </object>
+  <object id="405" gid="33" x="9656.33" y="562.825" width="239.875" height="26.6965" rotation="343.823">
+   <properties>
+    <property name="color" value="FERRARI_RED"/>
+   </properties>
+  </object>
+  <object id="406" gid="3" x="8622.81" y="952.121" width="255.845" height="567.603">
+   <properties>
+    <property name="color" value="FIELD_DRAB"/>
+   </properties>
+  </object>
+  <object id="407" gid="6" x="8862.56" y="952.114" width="247.373" height="567.603">
+   <properties>
+    <property name="color" value="FIELD_DRAB"/>
+   </properties>
+  </object>
+  <object id="408" gid="37" x="8016.47" y="1433.45" width="141" height="111">
+   <properties>
+    <property name="color" value="ELECTRIC_ULTRAMARINE"/>
+   </properties>
+  </object>
+  <object id="409" gid="2147483686" x="8488.04" y="686.974" width="336" height="560">
+   <properties>
+    <property name="color" value="ELECTRIC_PURPLE"/>
+   </properties>
+  </object>
+  <object id="410" gid="2147483687" x="8488" y="686.964" width="336" height="560">
+   <properties>
+    <property name="color" value="ELECTRIC_GREEN"/>
+   </properties>
+  </object>
+  <object id="411" gid="33" x="8168.16" y="1432.07" width="256.996" height="48.0305">
+   <properties>
+    <property name="color" value="EARTH_YELLOW"/>
+   </properties>
+  </object>
+  <object id="412" gid="33" x="8157.38" y="1391.57" width="307.496" height="39.0305">
+   <properties>
+    <property name="color" value="EGGPLANT"/>
+   </properties>
+  </object>
+  <object id="413" gid="33" x="8206.22" y="1359.43" width="244.996" height="33.5305">
+   <properties>
+    <property name="color" value="DIAMOND"/>
+   </properties>
+  </object>
+  <object id="414" gid="33" x="8221.13" y="1329.29" width="196.329" height="16.8638">
+   <properties>
+    <property name="color" value="DRAB"/>
+   </properties>
+  </object>
+  <object id="415" gid="33" x="8497.04" y="2097.85" width="181.955" height="38.6396" rotation="248.264">
+   <properties>
+    <property name="color" value="DARK_VIOLET"/>
+   </properties>
+  </object>
+  <object id="416" gid="33" x="8573.62" y="2095.01" width="166.343" height="24.3486" rotation="228.197">
+   <properties>
+    <property name="color" value="DARTMOUTH_GREEN"/>
+   </properties>
+  </object>
+  <object id="417" gid="45" x="8638.98" y="1172.17" width="78" height="227">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="418" gid="45" x="9012.7" y="1172.07" width="78" height="227">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="419" gid="2147483720" x="10067.5" y="2126.12" width="230" height="192">
+   <properties>
+    <property name="color" value="DARK_SKY_BLUE"/>
+   </properties>
+  </object>
+  <object id="420" gid="45" x="7943.81" y="275.106" width="78" height="227">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="421" gid="45" x="8317.84" y="275.227" width="78" height="227">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+  <object id="422" gid="37" x="8280.74" y="710.083" width="136.333" height="89.6667">
+   <properties>
+    <property name="color" value="DARK_TANGERINE"/>
+   </properties>
+  </object>
+  <object id="423" gid="2147483685" x="7931.67" y="710.212" width="136.333" height="89.6667">
+   <properties>
+    <property name="color" value="DARK_RED"/>
+   </properties>
+  </object>
+  <object id="424" gid="33" x="8029.78" y="913.984" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TURQUOISE_BLUE"/>
+   </properties>
+  </object>
+  <object id="425" gid="33" x="8170.27" y="912.632" width="178" height="32" rotation="270">
+   <properties>
+    <property name="color" value="TYRIAN_PURPLE"/>
+   </properties>
+  </object>
+  <object id="426" gid="33" x="8045.44" y="913.882" width="185.5" height="20" rotation="270">
+   <properties>
+    <property name="color" value="ULTRAMARINE"/>
+   </properties>
+  </object>
+  <object id="427" gid="33" x="8079.44" y="913.132" width="165" height="37.5" rotation="270">
+   <properties>
+    <property name="color" value="ULTRA_PINK"/>
+   </properties>
+  </object>
+  <object id="428" gid="33" x="8144.17" y="912.359" width="144.667" height="32" rotation="270">
+   <properties>
+    <property name="color" value="UNIVERSITY_OF_TENNESSEE_ORANGE"/>
+   </properties>
+  </object>
+  <object id="429" gid="33" x="8117.55" y="912.424" width="179.333" height="44.8333" rotation="270">
+   <properties>
+    <property name="color" value="USC_CARDINAL"/>
+   </properties>
+  </object>
+  <object id="430" gid="33" x="8280.55" y="905.09" width="192.333" height="28.8333" rotation="240">
+   <properties>
+    <property name="color" value="VIVID_ORCHID"/>
+   </properties>
+  </object>
+  <object id="431" gid="45" x="8124.84" y="1158.37" width="78" height="227">
+   <properties>
+    <property name="color" value="SANDSTORM"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
