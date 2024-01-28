@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="3" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="480">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="3" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="19" nextobjectid="514">
  <editorsettings>
   <export target="house.tmj" format="json"/>
  </editorsettings>
@@ -213,7 +213,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="5" name="objects1">
+ <objectgroup id="5" name="objects1" visible="0">
   <object id="48" gid="4" x="2997.67" y="2120.16" width="511" height="725">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>

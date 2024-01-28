@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="3" nextobjectid="22">
+ <editorsettings>
+  <export target="facemap.tmj" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" source="Obiekty.tsx"/>
+ <layer id="1" name="Warstwa Kafelków 1" width="1" height="1">
+  <data encoding="csv">
+0
+</data>
+ </layer>
+ <objectgroup id="2" name="a"/>
+ <objectgroup id="7" name="vampire0-25">
+  <object id="480" gid="133" x="2673.24" y="2160.01" width="602.879" height="535.002"/>
+  <object id="481" gid="90" x="2673.24" y="2160.01" width="602.879" height="535.002"/>
+  <object id="482" gid="94" x="2673.24" y="2160.01" width="602.879" height="535.002"/>
+  <object id="483" gid="98" x="2673.24" y="2160.01" width="602.879" height="535.002"/>
+  <object id="484" gid="86" x="2673.24" y="2160.01" width="602.879" height="535.002"/>
+ </objectgroup>
+ <objectgroup id="8" name="vampire25-50">
+  <object id="485" gid="134" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="486" gid="87" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="487" gid="91" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="488" gid="98" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="489" gid="95" x="2673.24" y="2160.01" width="602.88" height="535"/>
+ </objectgroup>
+ <objectgroup id="9" name="vampire50-75">
+  <object id="490" gid="135" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="491" gid="96" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="492" gid="99" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="493" gid="92" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="494" gid="88" x="2673.24" y="2160.01" width="602.88" height="535"/>
+ </objectgroup>
+ <objectgroup id="10" name="vampire75-100">
+  <object id="495" gid="136" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="496" gid="97" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="497" gid="100" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="498" gid="89" x="2673.24" y="2160.01" width="602.88" height="535"/>
+  <object id="499" gid="93" x="2673.24" y="2160.01" width="602.88" height="535"/>
+ </objectgroup>
+ <objectgroup id="11" name="kid0-25">
+  <object id="6" gid="125" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="7" gid="129" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="8" gid="121" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="9" gid="117" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+ </objectgroup>
+ <objectgroup id="12" name="kid25-50">
+  <object id="10" gid="126" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="11" gid="122" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="12" gid="130" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="13" gid="118" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+ </objectgroup>
+ <objectgroup id="13" name="kid50-75">
+  <object id="14" gid="127" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="15" gid="123" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="16" gid="131" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="17" gid="119" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+ </objectgroup>
+ <objectgroup id="14" name="kid75-100">
+  <object id="18" gid="128" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="19" gid="132" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="20" gid="120" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+  <object id="21" gid="124" x="3324.3" y="2164.58" width="398.333" height="430.644"/>
+ </objectgroup>
+ <objectgroup id="15" name="woman0-25">
+  <object id="500" gid="116" x="2115.18" y="2160.01" width="511.357" height="576.55"/>
+  <object id="501" gid="112" x="2115.18" y="2160.01" width="511.357" height="576.55"/>
+  <object id="502" gid="104" x="2115.18" y="2160.01" width="511.357" height="576.55"/>
+  <object id="503" gid="108" x="2115.18" y="2160.01" width="511.357" height="576.55"/>
+ </objectgroup>
+ <objectgroup id="16" name="woman25-50">
+  <object id="504" gid="101" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="505" gid="105" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="506" gid="113" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="507" gid="109" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+ </objectgroup>
+ <objectgroup id="17" name="woman50-75">
+  <object id="508" gid="102" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="509" gid="114" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="510" gid="110" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="513" gid="107" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+ </objectgroup>
+ <objectgroup id="18" name="woman75-100">
+  <object id="2" gid="103" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="3" gid="106" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="4" gid="111" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+  <object id="5" gid="115" x="2115.18" y="2160.01" width="511.36" height="576.55"/>
+ </objectgroup>
+</map>
