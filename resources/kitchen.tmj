@@ -3,8 +3,7 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"kitchen.tmj"
+         "format":"json"
         }
     },
  "height":1,
@@ -168,8 +167,8 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":940,
-                 "x":1639.52,
+                 "width":889.10941475827,
+                 "x":1658.60396946565,
                  "y":1524.73
                 },
             
@@ -301,32 +300,6 @@
                  "width":48,
                  "x":-1.33333,
                  "y":2173.33
-                },
-            
-                {
-                 "gid":41,
-                 "height":104,
-                 "id":125,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":714,
-                 "x":144,
-                 "y":896
-                },
-            
-                {
-                 "gid":41,
-                 "height":104,
-                 "id":126,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":312,
-                 "x":339,
-                 "y":725
                 },
             
                 {

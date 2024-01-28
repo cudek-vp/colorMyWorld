@@ -67,6 +67,9 @@ class Game(arcade.Window):
         self.up_pressed: bool = False
         self.setup()
 
+        self.max_score = 0
+        self.score = self.max_score
+
 
 
     def setup(self):
@@ -100,6 +103,9 @@ class Game(arcade.Window):
         self.scene = arcade.Scene.from_tilemap(tile_map)
 
         self.create_objects_spritelist()
+
+        self.max_score = len(self.scene[OBJECTS_LAYER])
+        self.score = self.max_score
 
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
         enemy = Enemy(center_x=450, center_y=400)
@@ -167,10 +173,10 @@ class Game(arcade.Window):
                 o.color = arcade.color.WHITE
             global MAX_RIGHT
             global MAX_LEFT
-            if o.center_x > MAX_RIGHT:
-                MAX_RIGHT = o.center_x
-            if o.center_x < MAX_LEFT:
-                MAX_LEFT = o.center_x
+            if o.right > MAX_RIGHT:
+                MAX_RIGHT = o.right
+            if o.left < MAX_LEFT:
+                MAX_LEFT = o.left
 
         for sprite in sprites:
             sprite.remove_from_sprite_lists()
@@ -187,6 +193,7 @@ class Game(arcade.Window):
         # the screen to the background color, and erase what we drew last frame.
         self.clear()
         self.scene.draw()
+        arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-20, font_size=18, text=f"{round(self.score / self.max_score * 100, 2)}%")
 
         # Call draw() on all your sprite lists below
 
@@ -205,7 +212,6 @@ class Game(arcade.Window):
                         enemy.change_x = -enemy.change_x
                         object.remove_color()
                         break
-
 
         enemies = arcade.check_for_collision_with_list(self.player_sprite, self.scene[ENEMIES_LAYER])
         for enemy in enemies:
@@ -228,7 +234,7 @@ class Game(arcade.Window):
                     self.walk(enemy)
 
     def jump(self, enemy):
-        if enemy.has_color:
+        if enemy.has_color and random.random() < 0.2:
             if abs(MAX_RIGHT - enemy.center_x) > abs(MAX_LEFT - enemy.center_x):
                 jump_angle = random.uniform(-45, 0)
             else:
@@ -243,7 +249,7 @@ class Game(arcade.Window):
         self.physics_engine.apply_impulse(enemy, (math.sin(angle_rad) * force, math.cos(angle_rad) * force))
 
     def walk(self, enemy):
-        if enemy.has_color:
+        if enemy.has_color and random.random() < 0.2:
             if abs(MAX_RIGHT - enemy.center_x) > abs(MAX_LEFT - enemy.center_x):
                 enemy.move_force = -100
             else:
@@ -256,11 +262,13 @@ class Game(arcade.Window):
 
     def steal_color(self, enemy, color):
         enemy.steal(color)
+        self.score -= 1
         for new_enemy in enemy.split():
             self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
             self.add_enemy_phisic(new_enemy)
 
     def retrive_color(self, enemy):
+        self.score += 1
         closest_sprite = self.get_closest_colored_sprite(enemy)
         if closest_sprite:
             closest_sprite.give_color(enemy.color)
