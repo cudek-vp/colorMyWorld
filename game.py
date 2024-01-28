@@ -49,8 +49,9 @@ MAX_RIGHT = -inf
 MAX_LEFT = inf
 
 sound_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/sounds/'
-
+music_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/music/'
 class Game(arcade.Window):
+    arcade.Sound(f'{music_path}funkyrobot.mp3').play()
 
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
