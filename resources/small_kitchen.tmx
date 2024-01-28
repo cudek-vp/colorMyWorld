@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="142">
  <editorsettings>
-  <export target="kitchen.tmj" format="json"/>
+  <export target="kitchen_smalltable.tmj" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="Obiekty.tsx"/>
  <layer id="1" name="Warstwa Kafelków 1" width="1" height="1">
