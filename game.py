@@ -11,11 +11,8 @@ from Object import Object
 from Enemy import Enemy
 from Player import Player
 
-from arcade.gui import UIManager, UITexturePane
-from arcade.gui.widgets import UITextArea, UIInputText, UILabel, UIFlatButton, UIBoxLayout, UIPadding
-
-SCREEN_WIDTH = 900
-SCREEN_HEIGHT = 510
+SCREEN_WIDTH = 1350
+SCREEN_HEIGHT = 765
 SCREEN_TITLE = "Color My World"
 
 OBJECTS_LAYER = "objects"
@@ -46,7 +43,7 @@ PLAYER_MAX_VERTICAL_SPEED = 1300
 # Force applied when moving left/right in the air
 PLAYER_MOVE_FORCE_IN_AIR = 10000
 # Strength of a jump
-PLAYER_JUMP_IMPULSE = 1800
+PLAYER_JUMP_IMPULSE = 2500
 
 MAX_RIGHT = -inf
 MAX_LEFT = inf
@@ -71,6 +68,7 @@ class GameView(arcade.View):
         self.left_pressed: bool = False
         self.right_pressed: bool = False
         self.up_pressed: bool = False
+        self.setup()
 
         self.max_score = 0
         self.score = self.max_score
@@ -98,7 +96,7 @@ class GameView(arcade.View):
         self.physics_engine = arcade.PymunkPhysicsEngine(damping=DEFAULT_DAMPING,
                                                          gravity=(0, -GRAVITY))
 
-        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.237, {
+        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.356, {
             WALLS_LAYER: {
                 "use_spatial_hash": True,
                 "hit_box_algorithm": "Simple"
@@ -197,8 +195,8 @@ class GameView(arcade.View):
     def on_draw(self):
         self.clear()
         self.scene.draw()
-        arcade.draw_text(start_x=100, start_y=SCREEN_HEIGHT-50, font_size=18, color=(0,0,0), text=f"{round(self.score / self.max_score * 100, 2)}%")
-        arcade.draw_text(start_x=100, start_y=SCREEN_HEIGHT-70, font_size=18, color=(0,0,0), text=f"Sorrows: {Enemy.sprites_number}")
+        arcade.draw_text(start_x=175, start_y=SCREEN_HEIGHT-50, font_size=18, color=(0,0,0), text=f"{round(self.score / self.max_score * 100, 2)}%")
+        arcade.draw_text(start_x=175, start_y=SCREEN_HEIGHT-70, font_size=18, color=(0,0,0), text=f"Sorrows: {Enemy.sprites_number}")
         # change face by score
 
     def on_update(self, delta_time):
@@ -209,6 +207,7 @@ class GameView(arcade.View):
 
         self.scene.on_update(delta_time)
         self.player_update(delta_time)
+        new_enemies = []
 
         for enemy in self.scene[ENEMIES_LAYER]:
             self.move_enemy(enemy, delta_time)
