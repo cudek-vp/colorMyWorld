@@ -112,6 +112,7 @@ class Game(arcade.Window):
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
         enemy = Enemy(center_x=450, center_y=400)
         enemy.color = arcade.color.LIGHT_GRAY
+        self.enemies = 1
         self.scene.add_sprite(ENEMIES_LAYER, enemy)
 
         self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
@@ -198,6 +199,7 @@ class Game(arcade.Window):
         self.clear()
         self.scene.draw()
         arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-20, font_size=18, text=f"{round(self.score / self.max_score * 100, 2)}%")
+        arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT - 50, font_size=18, text=f"Sorrows: {Enemy.sprites_number}")
 
         # Call draw() on all your sprite lists below
 

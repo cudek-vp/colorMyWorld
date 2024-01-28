@@ -5,6 +5,7 @@ from arcade import Texture
 from AnimatedSprite import AnimatedSprite
 class Enemy(AnimatedSprite):
     velocity_ratio = 100
+    sprites_number = 0
 
     def __init__(self, filename: str = './resources/egg 0.png', scale: float = 0.04, image_x: float = 0,
                  image_y: float = 0, image_width: float = 0, image_height: float = 0, center_x: float = 0,
@@ -20,6 +21,7 @@ class Enemy(AnimatedSprite):
         self.move_time = 1
         self.time = self.move_time
         self.move_force = 0
+        Enemy.sprites_number += 1
 
     def steal(self, color):
         self.color = color
@@ -32,7 +34,10 @@ class Enemy(AnimatedSprite):
 
     def on_update(self, delta_time: float = 1 / 60):
         super().on_update()
+        if self.center_y < -10:
+            self.destroy()
 
 
     def destroy(self):
         self.remove_from_sprite_lists()
+        Enemy.sprites_number -= 1
