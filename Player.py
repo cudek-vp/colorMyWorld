@@ -18,3 +18,4 @@ class Player(AnimatedSprite):
                          repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
                          hit_box_algorithm, hit_box_detail, texture, angle, distance_to_change, jump_path, walk_path,
                          idle_path, sprites, idle_bool)
+        self.color = arcade.color.BITTER_LEMON
