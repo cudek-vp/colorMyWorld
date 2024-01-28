@@ -12,7 +12,7 @@ from Enemy import Enemy
 from Player import Player
 
 SCREEN_WIDTH = 900
-SCREEN_HEIGHT = 700
+SCREEN_HEIGHT = 510
 SCREEN_TITLE = "Colour My World"
 
 OBJECTS_LAYER = "objects"
@@ -96,7 +96,7 @@ class Game(arcade.Window):
         self.physics_engine = arcade.PymunkPhysicsEngine(damping=DEFAULT_DAMPING,
                                                          gravity=(0, -GRAVITY))
 
-        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.235, {
+        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.237, {
             WALLS_LAYER: {
                 "use_spatial_hash": True,
                 "hit_box_algorithm": "Simple"
