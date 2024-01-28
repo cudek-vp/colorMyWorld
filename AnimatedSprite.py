@@ -82,23 +82,23 @@ class AnimatedSprite(arcade.Sprite):
                 self.cur_texture = 0
             self.texture = self.walk_textures[self.cur_texture][self.character_face_direction]
 
-        elif abs(self.y_odometer) > self.distance_to_change:
-
-            # Reset the odometer
-            self.y_odometer = 0
-
-            # Advance the jumping animation
-            self.cur_texture += 1
-            if self.cur_texture > 7:
-                self.cur_texture = 0
-            self.texture = self.jump_textures[self.cur_texture][self.character_face_direction]
-
-        else:
-            if self.idle_bool and self.idle_count%20 == 0:
-                self.idle_count = 1
-                self.cur_texture += 1
-                if self.cur_texture > 7:
-                    self.cur_texture = 0
-                self.texture = self.idle_textures[self.cur_texture][self.character_face_direction]
-            else:
-                self.idle_count += 1
+        # elif abs(self.y_odometer) > self.distance_to_change:
+        #
+        #     # Reset the odometer
+        #     self.y_odometer = 0
+        #
+        #     # Advance the jumping animation
+        #     self.cur_texture += 1
+        #     if self.cur_texture > 7:
+        #         self.cur_texture = 0
+        #     self.texture = self.jump_textures[self.cur_texture][self.character_face_direction]
+        #
+        # else:
+        #     if self.idle_bool and self.idle_count%20 == 0:
+        #         self.idle_count = 1
+        #         self.cur_texture += 1
+        #         if self.cur_texture > 7:
+        #             self.cur_texture = 0
+        #         self.texture = self.idle_textures[self.cur_texture][self.character_face_direction]
+        #     else:
+        #         self.idle_count += 1

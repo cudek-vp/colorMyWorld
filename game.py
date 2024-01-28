@@ -23,10 +23,10 @@ WALLS_LAYER = "walls"
 
 # Gravity
 GRAVITY = 1500
-PLAYER_MOVE_FORCE_ON_GROUND = 4000
+PLAYER_MOVE_FORCE_ON_GROUND = 10000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
-PLAYER_DAMPING = 0.4
+PLAYER_DAMPING = 0.06
 
 # Friction between objects
 PLAYER_FRICTION = 1.0
@@ -37,11 +37,11 @@ DYNAMIC_ITEM_FRICTION = 0.6
 PLAYER_MASS = 2.5
 
 # Keep player from going too fast
-PLAYER_MAX_HORIZONTAL_SPEED = 50
-PLAYER_MAX_VERTICAL_SPEED = 1600
+PLAYER_MAX_HORIZONTAL_SPEED = 500
+PLAYER_MAX_VERTICAL_SPEED = 1300
 
 # Force applied when moving left/right in the air
-PLAYER_MOVE_FORCE_IN_AIR = 900
+PLAYER_MOVE_FORCE_IN_AIR = 10000
 # Strength of a jump
 PLAYER_JUMP_IMPULSE = 1800
 
@@ -96,12 +96,13 @@ class Game(arcade.Window):
         self.physics_engine = arcade.PymunkPhysicsEngine(damping=DEFAULT_DAMPING,
                                                          gravity=(0, -GRAVITY))
 
-        tile_map = arcade.load_tilemap("./resources/kitchen.tmj", 0.2, {
+        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.2, {
             WALLS_LAYER: {
                 "use_spatial_hash": True,
                 "hit_box_algorithm": "Simple"
             }
         })
+
 
         self.scene = arcade.Scene.from_tilemap(tile_map)
 
@@ -115,7 +116,6 @@ class Game(arcade.Window):
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
         enemy = Enemy(center_x=450, center_y=400)
         enemy.color = arcade.color.LIGHT_GRAY
-        self.enemies = 1
         self.scene.add_sprite(ENEMIES_LAYER, enemy)
 
         self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
@@ -131,7 +131,7 @@ class Game(arcade.Window):
                                             collision_type="platform",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
         for platform in self.scene[PLATFORMS_LAYER]:
-            platform.visible = False
+            platform.visible = True
 
         self.add_enemy_phisics(enemy)
 
@@ -140,6 +140,7 @@ class Game(arcade.Window):
                                         mass=PLAYER_MASS,
                                         collision_type="player",
                                         max_vertical_velocity=PLAYER_MAX_VERTICAL_SPEED,
+                                        max_horizontal_velocity=PLAYER_MAX_HORIZONTAL_SPEED,
                                         moment_of_inertia=inf)
 
 
@@ -149,9 +150,6 @@ class Game(arcade.Window):
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
         self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
-
-
-        # player.color = arcade.color.LIGHT_GRAY
 
     def add_enemy_phisics(self, enemy):
         self.physics_engine.add_sprite(enemy,
@@ -170,6 +168,8 @@ class Game(arcade.Window):
             o = Object()
             o.texture = sprite.texture
             o.scale = sprite.scale
+            o.width = sprite.width
+            o.height = sprite.height
             o.center_x = sprite.center_x
             o.center_y = sprite.center_y
             o.angle = sprite.angle
@@ -193,12 +193,6 @@ class Game(arcade.Window):
             self.scene.add_sprite(OBJECTS_LAYER, object)
 
     def on_draw(self):
-        """
-            Render the screen.
-            """
-
-        # This command should happen before we start drawing. It will clear
-        # the screen to the background color, and erase what we drew last frame.
         self.clear()
         self.scene.draw()
         arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-20, font_size=18, text=f"{round(self.score / self.max_score * 100, 2)}%")
@@ -279,7 +273,7 @@ class Game(arcade.Window):
 
     def retrive_color(self, enemy):
         self.score += 1
-        closest_sprite = self.get_closest_colored_sprite(enemy)
+        closest_sprite = self.get_random_colored_sprite(enemy)
         if closest_sprite:
             closest_sprite.give_color(enemy.color)
 
@@ -340,6 +334,7 @@ class Game(arcade.Window):
             # Set friction to zero for the player while moving
             self.physics_engine.set_friction(self.player_sprite, 0)
         else:
+            self.physics_engine.set_horizontal_velocity(self.player_sprite, 0)
             # Player's feet are not moving. Therefore up the friction so we stop.
             self.physics_engine.set_friction(self.player_sprite, 10.0)
 
@@ -360,6 +355,16 @@ class Game(arcade.Window):
                     min = distance
                     closest_sprite = o
         return closest_sprite
+
+    def get_random_colored_sprite(self, sprite) -> Object:
+        index = random.randint(0, self.score-1)
+        closest_sprite = None
+        i = 0
+        o: Object = None
+        for o in self.scene[OBJECTS_LAYER]:
+            if i == index:
+                return o
+            i+=1
 
 def main():
     """ Main function """
