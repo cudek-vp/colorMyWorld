@@ -15,7 +15,7 @@ SCREEN_WIDTH = 900
 SCREEN_HEIGHT = 700
 SCREEN_TITLE = "Colour My World"
 
-OBJECTS_LAYER = "objects0"
+OBJECTS_LAYER = "objects"
 ENEMIES_LAYER = "enemies"
 PLAYER_LAYER = "player"
 PLATFORMS_LAYER = "platforms"
@@ -102,7 +102,9 @@ class Game(arcade.Window):
 
         self.scene = arcade.Scene.from_tilemap(tile_map)
 
-        self.create_objects_spritelist()
+        self.create_objects_spritelist("objects0")
+        self.create_objects_spritelist("objects2")
+        self.create_objects_spritelist("objects1")
 
         self.max_score = len(self.scene[OBJECTS_LAYER])
         self.score = self.max_score
@@ -124,8 +126,10 @@ class Game(arcade.Window):
                                             friction=WALL_FRICTION,
                                             collision_type="platform",
                                             body_type=arcade.PymunkPhysicsEngine.STATIC)
+        for platform in self.scene[PLATFORMS_LAYER]:
+            platform.visible = False
 
-        self.add_enemy_phisic(enemy)
+        self.add_enemy_phisics(enemy)
 
         self.physics_engine.add_sprite(self.player_sprite,
                                         friction=0,
@@ -145,7 +149,7 @@ class Game(arcade.Window):
 
         # player.color = arcade.color.LIGHT_GRAY
 
-    def add_enemy_phisic(self, enemy):
+    def add_enemy_phisics(self, enemy):
         self.physics_engine.add_sprite(enemy,
                                        mass=PLAYER_MASS,
                                        collision_type="enemy",
@@ -153,12 +157,12 @@ class Game(arcade.Window):
                                        moment_of_inertia=inf,
                                        max_horizontal_velocity=200)
 
-    def create_objects_spritelist(self):
+    def create_objects_spritelist(self, layer):
         colors = vars(arcade.color)
         objects = arcade.SpriteList()
         sprites = []
 
-        for sprite in self.scene[OBJECTS_LAYER]:
+        for sprite in self.scene[layer]:
             o = Object()
             o.texture = sprite.texture
             o.scale = sprite.scale
@@ -265,7 +269,7 @@ class Game(arcade.Window):
         self.score -= 1
         for new_enemy in enemy.split():
             self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
-            self.add_enemy_phisic(new_enemy)
+            self.add_enemy_phisics(new_enemy)
 
     def retrive_color(self, enemy):
         self.score += 1
