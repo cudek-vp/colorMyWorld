@@ -30,7 +30,7 @@ class Enemy(AnimatedSprite):
         self.has_color = True
 
     def split(self):
-        n = random.sample([1, 2], counts=[3, 1], k=1)[0]
+        n = random.sample([1, 2], counts=[2, 2], k=1)[0]
         return [Enemy(center_x=self.center_x, center_y=self.center_y) for i in range(n)]
 
 
