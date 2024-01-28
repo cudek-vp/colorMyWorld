@@ -60,11 +60,11 @@
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.25,
+            "scale": 0.125,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 2896,
-                "y": 2436
+                "x": 4936,
+                "y": 1032
             }
         },
         "kitchen.tmx": {
@@ -80,13 +80,17 @@
         },
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
-                5
+                5,
+                3,
+                4,
+                6,
+                2
             ],
-            "scale": 4,
+            "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1931.75,
-                "y": 1079.875
+                "x": 1664,
+                "y": 888
             }
         },
         "walls.tmj": {
