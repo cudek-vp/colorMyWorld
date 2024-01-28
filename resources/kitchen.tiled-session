@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "small_kitchen.tmx",
+    "activeFile": "house.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -16,17 +16,13 @@
         },
         "bathroom.tmx": {
             "expandedObjectLayers": [
-                3,
-                6,
-                4,
-                2,
-                9
+                4
             ],
             "scale": 0.25,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 2436,
-                "y": 1500
+                "x": 1920,
+                "y": 1082
             }
         },
         "bedroom.tmx": {
@@ -35,10 +31,10 @@
                 2
             ],
             "scale": 0.25,
-            "selectedLayer": 5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1856,
-                "y": 1128
+                "x": 1916,
+                "y": 1080
             }
         },
         "bez nazwy.tmx": {
@@ -50,6 +46,25 @@
             "viewCenter": {
                 "x": 2100,
                 "y": 904
+            }
+        },
+        "facemap.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 2188,
+                "y": 1344
+            }
+        },
+        "house.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 0.25,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 5736,
+                "y": 1084
             }
         },
         "kitchen.tmx": {
@@ -65,17 +80,18 @@
         },
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
-                3,
-                6,
-                4,
                 5,
+                7,
+                3,
+                4,
+                6,
                 2
             ],
-            "scale": 0.0625,
-            "selectedLayer": 2,
+            "scale": 0.25,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 6384,
-                "y": 3392
+                "x": 1900,
+                "y": 816
             }
         },
         "walls.tmj": {
@@ -98,13 +114,20 @@
     "map.width": 1,
     "openFiles": [
         "Obiekty.tsx",
-        "small_kitchen.tmx"
+        "small_kitchen.tmx",
+        "bedroom.tmx",
+        "bathroom.tmx",
+        "house.tmx"
     ],
     "project": "kitchen.tiled-project",
     "recentFiles": [
-        "small_kitchen.tmx",
-        "walls.tmj",
+        "facemap.tmx",
         "Obiekty.tsx",
+        "small_kitchen.tmx",
+        "bedroom.tmx",
+        "bathroom.tmx",
+        "house.tmx",
+        "walls.tmj",
         "kitchen.tmx",
         "bez nazwy.tmx"
     ],

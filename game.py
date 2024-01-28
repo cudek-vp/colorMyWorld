@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import random
-import xml.etree.ElementTree
 from math import inf
 import math
 
@@ -16,7 +15,7 @@ from arcade.gui import UIManager, UITexturePane
 from arcade.gui.widgets import UITextArea, UIInputText, UILabel, UIFlatButton, UIBoxLayout, UIPadding
 
 SCREEN_WIDTH = 900
-SCREEN_HEIGHT = 700
+SCREEN_HEIGHT = 510
 SCREEN_TITLE = "Color My World"
 
 OBJECTS_LAYER = "objects"
@@ -27,10 +26,10 @@ WALLS_LAYER = "walls"
 
 # Gravity
 GRAVITY = 1500
-PLAYER_MOVE_FORCE_ON_GROUND = 4000
+PLAYER_MOVE_FORCE_ON_GROUND = 10000
 # Damping - Amount of speed lost per second
 DEFAULT_DAMPING = 1.0
-PLAYER_DAMPING = 0.4
+PLAYER_DAMPING = 0.06
 
 # Friction between objects
 PLAYER_FRICTION = 1.0
@@ -41,18 +40,21 @@ DYNAMIC_ITEM_FRICTION = 0.6
 PLAYER_MASS = 2.5
 
 # Keep player from going too fast
-PLAYER_MAX_HORIZONTAL_SPEED = 50
-PLAYER_MAX_VERTICAL_SPEED = 1600
+PLAYER_MAX_HORIZONTAL_SPEED = 500
+PLAYER_MAX_VERTICAL_SPEED = 1300
 
 # Force applied when moving left/right in the air
-PLAYER_MOVE_FORCE_IN_AIR = 900
+PLAYER_MOVE_FORCE_IN_AIR = 10000
 # Strength of a jump
 PLAYER_JUMP_IMPULSE = 1800
 
 MAX_RIGHT = -inf
 MAX_LEFT = inf
 
+sound_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/sounds/'
+music_path = 'C:/Users/Lenovo/PycharmProjects/colorMyWorld/venv/Lib/site-packages/arcade/resources/music/'
 class GameView(arcade.View):
+    arcade.Sound(f'{music_path}funkyrobot.mp3').play()
 
     def __init__(self):
         super().__init__()
@@ -69,6 +71,7 @@ class GameView(arcade.View):
         self.left_pressed: bool = False
         self.right_pressed: bool = False
         self.up_pressed: bool = False
+        self.setup()
 
         self.max_score = 0
         self.score = self.max_score
@@ -96,12 +99,13 @@ class GameView(arcade.View):
         self.physics_engine = arcade.PymunkPhysicsEngine(damping=DEFAULT_DAMPING,
                                                          gravity=(0, -GRAVITY))
 
-        tile_map = arcade.load_tilemap("./resources/kitchen.tmj", 0.2, {
+        tile_map = arcade.load_tilemap("./resources/kitchen_smalltable.tmj", 0.237, {
             WALLS_LAYER: {
                 "use_spatial_hash": True,
                 "hit_box_algorithm": "Simple"
             }
         })
+
 
         self.scene = arcade.Scene.from_tilemap(tile_map)
 
@@ -139,6 +143,7 @@ class GameView(arcade.View):
                                         mass=PLAYER_MASS,
                                         collision_type="player",
                                         max_vertical_velocity=PLAYER_MAX_VERTICAL_SPEED,
+                                        max_horizontal_velocity=PLAYER_MAX_HORIZONTAL_SPEED,
                                         moment_of_inertia=inf)
 
 
@@ -148,9 +153,6 @@ class GameView(arcade.View):
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
         self.physics_engine.add_collision_handler("enemy", "wall", begin_handler=enemy_wall_collide)
         self.physics_engine.add_collision_handler("enemy", "player", begin_handler=enemy_enemy_collide)
-
-
-        # player.color = arcade.color.LIGHT_GRAY
 
     def add_enemy_phisics(self, enemy):
         self.physics_engine.add_sprite(enemy,
@@ -169,6 +171,8 @@ class GameView(arcade.View):
             o = Object()
             o.texture = sprite.texture
             o.scale = sprite.scale
+            o.width = sprite.width
+            o.height = sprite.height
             o.center_x = sprite.center_x
             o.center_y = sprite.center_y
             o.angle = sprite.angle
@@ -192,18 +196,11 @@ class GameView(arcade.View):
             self.scene.add_sprite(OBJECTS_LAYER, object)
 
     def on_draw(self):
-        """
-            Render the screen.
-            """
-
-        # This command should happen before we start drawing. It will clear
-        # the screen to the background color, and erase what we drew last frame.
         self.clear()
         self.scene.draw()
         arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-20, font_size=18, text=f"{round(self.score / self.max_score * 100, 2)}%")
-        arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT - 50, font_size=18, text=f"Sorrows: {Enemy.sprites_number}")
-
-        # Call draw() on all your sprite lists below
+        arcade.draw_text(start_x=20, start_y=SCREEN_HEIGHT-50, font_size=18, text=f"Sorrows: {Enemy.sprites_number}")
+        # change face by score
 
     def on_update(self, delta_time):
         if Enemy.sprites_number <= 0:
@@ -229,7 +226,9 @@ class GameView(arcade.View):
         for enemy in enemies:
             if enemy.has_color:
                 self.retrive_color(enemy)
+                arcade.Sound(f'{sound_path}hurt5.wav').play()
             enemy.destroy()
+            arcade.Sound(f'{sound_path}hurt4.wav').play()
 
         self.physics_engine.step()
 
@@ -281,7 +280,7 @@ class GameView(arcade.View):
 
     def retrive_color(self, enemy):
         self.score += 1
-        closest_sprite = self.get_closest_colored_sprite(enemy)
+        closest_sprite = self.get_random_colored_sprite(enemy)
         if closest_sprite:
             closest_sprite.give_color(enemy.color)
 
@@ -301,6 +300,7 @@ class GameView(arcade.View):
             # find out if player is standing on ground, and not on a ladder
             if self.physics_engine.is_on_ground(self.player_sprite):
                 impulse = (0, PLAYER_JUMP_IMPULSE)
+                arcade.Sound(f'{sound_path}jump3.wav').play()
                 self.physics_engine.apply_impulse(self.player_sprite, impulse)
 
     def on_key_release(self, key, key_modifiers):
@@ -341,6 +341,7 @@ class GameView(arcade.View):
             # Set friction to zero for the player while moving
             self.physics_engine.set_friction(self.player_sprite, 0)
         else:
+            self.physics_engine.set_horizontal_velocity(self.player_sprite, 0)
             # Player's feet are not moving. Therefore up the friction so we stop.
             self.physics_engine.set_friction(self.player_sprite, 10.0)
 
@@ -361,6 +362,16 @@ class GameView(arcade.View):
                     min = distance
                     closest_sprite = o
         return closest_sprite
+
+    def get_random_colored_sprite(self, sprite) -> Object:
+        index = random.randint(0, self.score-1)
+        closest_sprite = None
+        i = 0
+        o: Object = None
+        for o in self.scene[OBJECTS_LAYER]:
+            if i == index:
+                return o
+            i+=1
 
 class HighscoresView(arcade.View):
     def __init__(self):

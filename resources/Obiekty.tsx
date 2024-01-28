@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="84" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="139" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -252,5 +252,170 @@
  </tile>
  <tile id="83">
   <image width="576" height="234" source="smallShelf.png"/>
+ </tile>
+ <tile id="84">
+  <image width="1279" height="1135" source="vampireCoat75-100.png"/>
+ </tile>
+ <tile id="85">
+  <image width="1279" height="1135" source="vampireHair0-25.png"/>
+ </tile>
+ <tile id="86">
+  <image width="1279" height="1135" source="vampireHair25-50.png"/>
+ </tile>
+ <tile id="87">
+  <image width="1279" height="1135" source="vampireHair50-75.png"/>
+ </tile>
+ <tile id="88">
+  <image width="1279" height="1135" source="vampireHair75-100.png"/>
+ </tile>
+ <tile id="89">
+  <image width="1279" height="1135" source="vampireNeck0-25.png"/>
+ </tile>
+ <tile id="90">
+  <image width="1279" height="1135" source="vampireNeck25-50.png"/>
+ </tile>
+ <tile id="91">
+  <image width="1279" height="1135" source="vampireNeck50-75.png"/>
+ </tile>
+ <tile id="92">
+  <image width="1279" height="1135" source="vampireNeck75-100.png"/>
+ </tile>
+ <tile id="93">
+  <image width="1279" height="1135" source="vampireSkin0-25.png"/>
+ </tile>
+ <tile id="94">
+  <image width="1279" height="1135" source="vampireSkin25-50.png"/>
+ </tile>
+ <tile id="95">
+  <image width="1279" height="1135" source="vampireSkin50-75.png"/>
+ </tile>
+ <tile id="96">
+  <image width="1279" height="1135" source="vampireSkin75-100.png"/>
+ </tile>
+ <tile id="97">
+  <image width="1279" height="1135" source="vampireCoat0-25.png"/>
+ </tile>
+ <tile id="98">
+  <image width="1279" height="1135" source="vampireCoat25-50.png"/>
+ </tile>
+ <tile id="99">
+  <image width="1279" height="1135" source="vampireCoat50-75.png"/>
+ </tile>
+ <tile id="100">
+  <image width="1004" height="1132" source="woman25-50.png"/>
+ </tile>
+ <tile id="101">
+  <image width="1004" height="1132" source="woman50-75.png"/>
+ </tile>
+ <tile id="102">
+  <image width="1004" height="1132" source="woman75-100.png"/>
+ </tile>
+ <tile id="103">
+  <image width="1004" height="1132" source="womanHair0-25.png"/>
+ </tile>
+ <tile id="104">
+  <image width="1004" height="1132" source="womanHair25-50.png"/>
+ </tile>
+ <tile id="105">
+  <image width="1004" height="1132" source="womanHair75-100.png"/>
+ </tile>
+ <tile id="106">
+  <image width="1004" height="1132" source="womanHairt50-75.png"/>
+ </tile>
+ <tile id="107">
+  <image width="1004" height="1132" source="womanShirt0-25.png"/>
+ </tile>
+ <tile id="108">
+  <image width="1004" height="1132" source="womanShirt25-50.png"/>
+ </tile>
+ <tile id="109">
+  <image width="1004" height="1132" source="womanShirt50-75.png"/>
+ </tile>
+ <tile id="110">
+  <image width="1004" height="1132" source="womanShirt75-100.png"/>
+ </tile>
+ <tile id="111">
+  <image width="1004" height="1132" source="womanSkin0-25.png"/>
+ </tile>
+ <tile id="112">
+  <image width="1004" height="1132" source="womanSkin25-50.png"/>
+ </tile>
+ <tile id="113">
+  <image width="1004" height="1132" source="womanSkin50-75.png"/>
+ </tile>
+ <tile id="114">
+  <image width="1004" height="1132" source="womanSkin75-100.png"/>
+ </tile>
+ <tile id="115">
+  <image width="1004" height="1132" source="woman0-25.png"/>
+ </tile>
+ <tile id="116">
+  <image width="789" height="853" source="kidShirt0-25.png"/>
+ </tile>
+ <tile id="117">
+  <image width="789" height="853" source="kidShirt25-50.png"/>
+ </tile>
+ <tile id="118">
+  <image width="789" height="853" source="kidShirt50-75.png"/>
+ </tile>
+ <tile id="119">
+  <image width="789" height="853" source="kidShirt75-100.png"/>
+ </tile>
+ <tile id="120">
+  <image width="789" height="853" source="kidSkin0-25.png"/>
+ </tile>
+ <tile id="121">
+  <image width="789" height="853" source="kidSkin25-50.png"/>
+ </tile>
+ <tile id="122">
+  <image width="789" height="853" source="kidSkin50-75.png"/>
+ </tile>
+ <tile id="123">
+  <image width="789" height="853" source="kidSkin75-100.png"/>
+ </tile>
+ <tile id="124">
+  <image width="789" height="853" source="kid0-25.png"/>
+ </tile>
+ <tile id="125">
+  <image width="789" height="853" source="kid25-50.png"/>
+ </tile>
+ <tile id="126">
+  <image width="789" height="853" source="kid50-75.png"/>
+ </tile>
+ <tile id="127">
+  <image width="789" height="853" source="kid75-100.png"/>
+ </tile>
+ <tile id="128">
+  <image width="789" height="853" source="kidHair0-25.png"/>
+ </tile>
+ <tile id="129">
+  <image width="789" height="853" source="kidHair25-50.png"/>
+ </tile>
+ <tile id="130">
+  <image width="789" height="853" source="kidHair50-75.png"/>
+ </tile>
+ <tile id="131">
+  <image width="789" height="853" source="kidHair75-100.png"/>
+ </tile>
+ <tile id="132">
+  <image width="1279" height="1135" source="vampire0-25.png"/>
+ </tile>
+ <tile id="133">
+  <image width="1279" height="1135" source="vampire25-50.png"/>
+ </tile>
+ <tile id="134">
+  <image width="1279" height="1135" source="vampire50-75.png"/>
+ </tile>
+ <tile id="135">
+  <image width="1279" height="1135" source="vampire75-100.png"/>
+ </tile>
+ <tile id="136">
+  <image width="1279" height="1135" source="background.png"/>
+ </tile>
+ <tile id="137">
+  <image width="1279" height="1135" source="sky.png"/>
+ </tile>
+ <tile id="138">
+  <image width="1279" height="1135" source="wallBack.png"/>
  </tile>
 </tileset>
