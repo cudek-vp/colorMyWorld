@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import random
+import xml.etree.ElementTree
 from math import inf
 import math
 
@@ -11,9 +12,12 @@ from Object import Object
 from Enemy import Enemy
 from Player import Player
 
+from arcade.gui import UIManager, UITexturePane
+from arcade.gui.widgets import UITextArea, UIInputText, UILabel, UIFlatButton, UIBoxLayout, UIPadding
+
 SCREEN_WIDTH = 900
 SCREEN_HEIGHT = 700
-SCREEN_TITLE = "Colour My World"
+SCREEN_TITLE = "Color My World"
 
 OBJECTS_LAYER = "objects"
 ENEMIES_LAYER = "enemies"
@@ -48,10 +52,10 @@ PLAYER_JUMP_IMPULSE = 1800
 MAX_RIGHT = -inf
 MAX_LEFT = inf
 
-class Game(arcade.Window):
+class GameView(arcade.View):
 
-    def __init__(self, width, height, title):
-        super().__init__(width, height, title)
+    def __init__(self):
+        super().__init__()
 
         arcade.set_background_color(arcade.color.AMAZON)
 
@@ -65,7 +69,6 @@ class Game(arcade.Window):
         self.left_pressed: bool = False
         self.right_pressed: bool = False
         self.up_pressed: bool = False
-        self.setup()
 
         self.max_score = 0
         self.score = self.max_score
@@ -112,7 +115,6 @@ class Game(arcade.Window):
         self.scene.add_sprite_list(ENEMIES_LAYER, False, arcade.SpriteList())
         enemy = Enemy(center_x=450, center_y=400)
         enemy.color = arcade.color.LIGHT_GRAY
-        self.enemies = 1
         self.scene.add_sprite(ENEMIES_LAYER, enemy)
 
         self.scene.add_sprite_list(PLAYER_LAYER, False, arcade.SpriteList())
@@ -204,9 +206,13 @@ class Game(arcade.Window):
         # Call draw() on all your sprite lists below
 
     def on_update(self, delta_time):
+        if Enemy.sprites_number <= 0:
+            highscoresView = HighscoresView()
+            highscoresView.setup(self.score)
+            self.window.show_view(highscoresView)
+
         self.scene.on_update(delta_time)
         self.player_update(delta_time)
-        new_enemies = []
 
         for enemy in self.scene[ENEMIES_LAYER]:
             self.move_enemy(enemy, delta_time)
@@ -356,10 +362,107 @@ class Game(arcade.Window):
                     closest_sprite = o
         return closest_sprite
 
+class HighscoresView(arcade.View):
+    def __init__(self):
+        super().__init__()
+
+        arcade.set_background_color(arcade.color.AO)
+
+        self.score = 0
+        self.user_name_input = UIInputText(x=340, y=200, width=200, height=50, text="Hello", text_color=arcade.color.BLACK)
+
+    def setup(self, score):
+        arcade.set_viewport(0, SCREEN_WIDTH - 1, 0, SCREEN_HEIGHT - 1)
+
+        self.score = score
+        arcade.set_background_color(arcade.color.AO)
+        self.manager = UIManager()
+        self.manager.enable()
+
+        self.layout = UIBoxLayout(x=200, y=600, align="center")
+        self.manager.add(self.layout)
+
+        self.layout.add(UILabel(text="Highscores", font_size=18, bold=True))
+
+        self.text_area = UITextArea(x=100, y=100, width=200, height=200)
+        self.text_area.text = self.reload_text()
+
+        bg_tex = arcade.load_texture(":resources:gui_basic_assets/window/grey_panel.png")
+        text_area = UITextArea(width=200,
+                               height=300,
+                               text=self.text,
+                               text_color=(0, 0, 0, 255),
+                               bg_tex=bg_tex)
+
+        newHighscorePanel =  UITexturePane(
+                text_area.with_space_around(right=50),
+                tex=bg_tex,
+                padding=(10, 10, 10, 10)
+        )
+
+        self.layout.add(newHighscorePanel)
+
+        self.inputPanel = UIBoxLayout()
+        self.inputPanel.add(UILabel(text=f"Congrats, you'v achieved an highscore ({self.score}%)! Enter your name:", font_size=14, bold=True))
+        self.inputPanel.add(UITexturePane(self.user_name_input, tex=bg_tex))
+        button = UIFlatButton(text="OK", width=200)
+        button.on_click = self.save_highscores
+        self.inputPanel.add(button)
+
+        if score > self.scores[-1][1]:
+            self.layout.add(
+                self.inputPanel
+            )
+
+        reloadButton = UIFlatButton(text="Play again", width=200)
+        reloadButton.on_click = self.reload
+
+        self.layout.add(UIPadding(reloadButton, padding=(20, 20, 20, 20)))
+
+
+    def save_highscores(self, event):
+        file = open('./resources/highscores.csv', 'w')
+        self.scores.append((self.user_name_input.text, self.score))
+        self.scores.sort(reverse=True, key=lambda x: x[1])
+        for (user, points) in self.scores[:10]:
+            file.write(f'{user};{points}\n')
+        file.close()
+        self.layout.remove(self.inputPanel)
+
+    def reload_text(self):
+        file = open('./resources/highscores.csv')
+        self.scores = []
+        for line in file:
+            user, points = line.strip().split(';')
+            self.scores.append(line.strip().split(';'))
+        file.close()
+
+        self.scores = [(user, float(points)) for (user, points) in self.scores]
+        self.text = ''
+        i = 1
+        for (user, points) in self.scores:
+            self.text += (f'{i}. {user}\t{str(points)}\n')
+            i += 1
+        return self.text
+
+    def reload(self, event):
+        gameView = GameView()
+        gameView.setup()
+        self.window.show_view(gameView)
+    def on_draw(self):
+        self.clear()
+        self.manager.draw()
+
+    def on_update(self, delta_time: float):
+        self.manager.on_update(delta_time)
+
+
 def main():
     """ Main function """
-    game = Game(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
-    game.setup()
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    start_view = GameView()
+    window.show_view(start_view)
+    start_view.setup()
     arcade.run()
 
 
