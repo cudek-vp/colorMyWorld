@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="78" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Obiekty" tilewidth="2927" tileheight="2110" tilecount="84" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="506" height="677" source="credenss.png"/>
@@ -234,5 +234,23 @@
  </tile>
  <tile id="77">
   <image width="873" height="954" source="window.png"/>
+ </tile>
+ <tile id="78">
+  <image width="474" height="206" source="washingMachineUp.png"/>
+ </tile>
+ <tile id="79">
+  <image width="428" height="56" source="washingMachineButtons.png"/>
+ </tile>
+ <tile id="80">
+  <image width="474" height="548" source="washingMachineFront.png"/>
+ </tile>
+ <tile id="81">
+  <image width="310" height="310" source="fishAndWater.png"/>
+ </tile>
+ <tile id="82">
+  <image width="310" height="489" source="washingMachineScreen.png"/>
+ </tile>
+ <tile id="83">
+  <image width="576" height="234" source="smallShelf.png"/>
  </tile>
 </tileset>

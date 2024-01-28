@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="141">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="142">
  <editorsettings>
   <export target="kitchen.tmj" format="json"/>
  </editorsettings>
@@ -39,11 +39,6 @@
   <object id="18" gid="18" x="959.677" y="2160.27" width="2880" height="58"/>
   <object id="33" gid="32" x="912.978" y="36.0054" width="2927" height="36"/>
   <object id="115" gid="18" x="-11.3333" y="2159.67" width="933.708" height="49.3333"/>
-  <object id="116" gid="47" x="-0.333333" y="477.667" width="487" height="478">
-   <properties>
-    <property name="color" value="SCHOOL_BUS_YELLOW"/>
-   </properties>
-  </object>
   <object id="117" gid="46" x="46.8182" y="171.545" width="223" height="149"/>
   <object id="133" gid="18" x="988" y="59" width="2854" height="58"/>
   <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
@@ -102,6 +97,11 @@
     <property name="color" value="PATRIARCH"/>
    </properties>
   </object>
+  <object id="141" gid="48" x="-1.4375" y="2173.25" width="48" height="1072">
+   <properties>
+    <property name="color" value="UCLA_GOLD"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="2" name="objects0">
   <object id="1" gid="4" x="2996.64" y="2119.36" width="511" height="725">
@@ -131,7 +131,7 @@
   </object>
   <object id="7" gid="9" x="1906.91" y="2077.2" width="397" height="1150">
    <properties>
-    <property name="color" value="HANSA_YELLOW"/>
+    <property name="color" value="JASMINE"/>
    </properties>
   </object>
   <object id="8" gid="10" x="1906.94" y="1417.21" width="397" height="490">
@@ -474,7 +474,12 @@
   </object>
   <object id="132" gid="55" x="980.999" y="510.235" width="439" height="459.333">
    <properties>
-    <property name="color" value="NEON_FUCHSIA"/>
+    <property name="color" value="NAVY_PURPLE"/>
+   </properties>
+  </object>
+  <object id="116" gid="47" x="-0.333333" y="477.667" width="487" height="478">
+   <properties>
+    <property name="color" value="YELLOW"/>
    </properties>
   </object>
  </objectgroup>
