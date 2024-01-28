@@ -195,8 +195,8 @@ class Game(arcade.Window):
     def on_draw(self):
         self.clear()
         self.scene.draw()
-        arcade.draw_text(start_x=70, start_y=SCREEN_HEIGHT-50, font_size=18, color=(0,0,0), text=f"{round(self.score / self.max_score * 100, 2)}%")
-        arcade.draw_text(start_x=70, start_y=SCREEN_HEIGHT-70, font_size=18, color=(0,0,0), text=f"Sorrows: {Enemy.sprites_number}")
+        arcade.draw_text(start_x=100, start_y=SCREEN_HEIGHT-50, font_size=18, color=(0,0,0), text=f"{round(self.score / self.max_score * 100, 2)}%")
+        arcade.draw_text(start_x=100, start_y=SCREEN_HEIGHT-70, font_size=18, color=(0,0,0), text=f"Sorrows: {Enemy.sprites_number}")
         # change face by score
 
     def on_update(self, delta_time):
