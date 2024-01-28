@@ -13,7 +13,7 @@ class Player(AnimatedSprite):
                  flipped_horizontally: bool = False, flipped_vertically: bool = False, flipped_diagonally: bool = False,
                  hit_box_algorithm: Optional[str] = "Simple", hit_box_detail: float = 4.5, texture: Texture = None,
                  angle: float = 0, distance_to_change: int = 50, jump_path='./resources/mr carrot jump ', walk_path='./resources/mr carrot ', idle_path='./resources/mr carrot idle ',
-                 sprites: int = 8, idle_bool=True):
+                 sprites: int = 8, idle_bool=False):
         super().__init__(filename, scale, image_x, image_y, image_width, image_height, center_x, center_y,
                          repeat_count_x, repeat_count_y, flipped_horizontally, flipped_vertically, flipped_diagonally,
                          hit_box_algorithm, hit_box_detail, texture, angle, distance_to_change, jump_path, walk_path,

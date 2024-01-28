@@ -94,7 +94,7 @@ class AnimatedSprite(arcade.Sprite):
             self.texture = self.jump_textures[self.cur_texture][self.character_face_direction]
 
         else:
-            if self.idle_bool and self.idle_count%10 == 0:
+            if self.idle_bool and self.idle_count%20 == 0:
                 self.idle_count = 1
                 self.cur_texture += 1
                 if self.cur_texture > 7:
