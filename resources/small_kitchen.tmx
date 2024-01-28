@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="7" nextobjectid="142">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="3840" tileheight="2160" infinite="0" nextlayerid="8" nextobjectid="146">
  <editorsettings>
-  <export target="kitchen_smalltable.tmj" format="json"/>
+  <export target="kitchen.tmj" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="Obiekty.tsx"/>
  <layer id="1" name="Warstwa Kafelków 1" width="1" height="1">
@@ -9,10 +9,14 @@
    eJxjYGBgAAAABAAB
   </data>
  </layer>
+ <objectgroup id="7" name="Warstwa Obiektu 6">
+  <object id="144" name="floor" gid="137" x="905" y="2160" width="2975" height="2143"/>
+  <object id="145" name="sky" gid="137" x="-19.0152" y="2146.32" width="918.515" height="2144.82"/>
+ </objectgroup>
  <objectgroup id="5" name="platforms">
-  <object id="56" gid="36" x="2784" y="1478.33" width="283" height="34"/>
-  <object id="57" gid="2147483684" x="3545.58" y="1478.25" width="283" height="34"/>
-  <object id="58" gid="35" x="3054" y="1439.67" width="506" height="34"/>
+  <object id="56" gid="36" x="2712" y="1478.33" width="283" height="34"/>
+  <object id="57" gid="2147483684" x="3473.58" y="1478.25" width="283" height="34"/>
+  <object id="58" gid="35" x="2982" y="1439.67" width="506" height="34"/>
   <object id="59" gid="35" x="3057" y="383.667" width="506" height="34"/>
   <object id="60" gid="35" x="3059.67" y="1026" width="497.333" height="28"/>
   <object id="61" gid="35" x="1180" y="899" width="506" height="34"/>
@@ -22,9 +26,9 @@
   <object id="90" gid="41" x="1773.52" y="1524.73" width="702" height="104"/>
   <object id="91" gid="41" x="3060.55" y="455.848" width="499" height="104"/>
   <object id="92" gid="41" x="3064.42" y="1104.33" width="490" height="104"/>
-  <object id="93" gid="41" x="2789.85" y="1552" width="286" height="104"/>
-  <object id="94" gid="41" x="3058.64" y="1509.42" width="494" height="104"/>
-  <object id="95" gid="41" x="3539.85" y="1548.97" width="290" height="104"/>
+  <object id="93" gid="41" x="2717.85" y="1552" width="286" height="104"/>
+  <object id="94" gid="41" x="2986.64" y="1509.42" width="494" height="104"/>
+  <object id="95" gid="41" x="3467.85" y="1548.97" width="290" height="104"/>
   <object id="96" gid="41" x="987.82" y="1533.82" width="460" height="104"/>
   <object id="97" gid="41" x="1189.34" y="997.826" width="488" height="104"/>
   <object id="98" gid="41" x="1713.39" y="350.664" width="258" height="104"/>
@@ -32,6 +36,7 @@
   <object id="118" gid="48" x="-1.33333" y="2173.33" width="48" height="1072"/>
   <object id="126" gid="41" x="291" y="805" width="312" height="104"/>
   <object id="131" gid="41" x="170.42" y="1498" width="422.964" height="99.2962"/>
+  <object id="142" gid="41" x="3846.68" y="2108.99" width="70.0074" height="761.338"/>
  </objectgroup>
  <objectgroup id="3" name="walls">
   <object id="18" gid="18" x="974.666" y="2160.27" width="2922.01" height="58"/>
@@ -41,8 +46,9 @@
   <object id="133" gid="18" x="988" y="59" width="2854" height="58"/>
   <object id="137" gid="57" x="3753.82" y="623.091" width="93" height="566"/>
   <object id="134" gid="18" x="919.909" y="58.2727" width="2922" height="58"/>
-  <object id="138" gid="57" x="816.424" y="615.019" width="185.788" height="611.133"/>
+  <object id="138" gid="57" x="816.424" y="615.019" width="185.788" height="615.133"/>
   <object id="139" gid="2147483705" x="988.534" y="1325.44" width="172.743" height="832.771" rotation="-180"/>
+  <object id="143" gid="2147483705" x="3917.18" y="1338.43" width="159.496" height="768.908" rotation="-180"/>
  </objectgroup>
  <objectgroup id="6" name="objects2">
   <object id="70" gid="40" x="1904" y="781" width="924" height="234">
@@ -102,22 +108,22 @@
   </object>
  </objectgroup>
  <objectgroup id="2" name="objects0">
-  <object id="1" gid="4" x="3053.64" y="2119.36" width="511" height="725">
+  <object id="1" gid="4" x="2981.64" y="2119.36" width="511" height="725">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
    </properties>
   </object>
-  <object id="2" gid="7" x="3178.68" y="1427.47" width="281" height="196">
+  <object id="2" gid="7" x="3106.68" y="1427.47" width="281" height="196">
    <properties>
     <property name="color" value="MUSTARD"/>
    </properties>
   </object>
-  <object id="3" gid="3" x="2784.26" y="2110.55" width="302" height="670">
+  <object id="3" gid="3" x="2712.26" y="2110.55" width="302" height="670">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
    </properties>
   </object>
-  <object id="4" gid="6" x="3536.6" y="2110.55" width="292" height="670">
+  <object id="4" gid="6" x="3464.6" y="2110.55" width="292" height="670">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
    </properties>
@@ -343,17 +349,17 @@
     <property name="color" value="MIKADO_YELLOW"/>
    </properties>
   </object>
-  <object id="127" gid="33" x="2806.92" y="2107.92" width="165" height="37.5" rotation="270">
+  <object id="127" gid="33" x="2734.92" y="2107.92" width="165" height="37.5" rotation="270">
    <properties>
     <property name="color" value="PANSY_PURPLE"/>
    </properties>
   </object>
-  <object id="128" gid="33" x="2776.83" y="2108.19" width="190" height="23.1667" rotation="270">
+  <object id="128" gid="33" x="2704.83" y="2108.19" width="190" height="23.1667" rotation="270">
    <properties>
     <property name="color" value="NEON_GREEN"/>
    </properties>
   </object>
-  <object id="129" gid="33" x="2757.66" y="2107.69" width="182" height="30.8334" rotation="270">
+  <object id="129" gid="33" x="2685.66" y="2107.69" width="182" height="30.8334" rotation="270">
    <properties>
     <property name="color" value="MIDNIGHT_BLUE"/>
    </properties>
@@ -405,12 +411,12 @@
     <property name="color" value="SEA_GREEN"/>
    </properties>
   </object>
-  <object id="46" gid="33" x="3578" y="1452" width="222" height="36">
+  <object id="46" gid="33" x="3506" y="1452" width="222" height="36">
    <properties>
     <property name="color" value="SCHAUSS_PINK"/>
    </properties>
   </object>
-  <object id="47" gid="33" x="3562" y="1423.33" width="198" height="28">
+  <object id="47" gid="33" x="3490" y="1423.33" width="198" height="28">
    <properties>
     <property name="color" value="SANGRIA"/>
    </properties>
@@ -420,12 +426,12 @@
     <property name="color" value="SAPPHIRE_BLUE"/>
    </properties>
   </object>
-  <object id="63" gid="29" x="2897.33" y="1464.33" width="148" height="106">
+  <object id="63" gid="29" x="2825.33" y="1464.33" width="148" height="106">
    <properties>
     <property name="color" value="USC_GOLD"/>
    </properties>
   </object>
-  <object id="64" gid="28" x="2891.15" y="1370.42" width="160" height="48">
+  <object id="64" gid="28" x="2819.15" y="1370.42" width="160" height="48">
    <properties>
     <property name="color" value="VENETIAN_RED"/>
    </properties>
@@ -435,17 +441,17 @@
     <property name="color" value="VIVID_AUBURN"/>
    </properties>
   </object>
-  <object id="66" gid="2147483685" x="2786" y="1453" width="95.6667" height="99">
+  <object id="66" gid="2147483685" x="2714" y="1453" width="95.6667" height="99">
    <properties>
     <property name="color" value="VIVID_SKY_BLUE"/>
    </properties>
   </object>
-  <object id="67" gid="37" x="3621" y="1402" width="91.5" height="83">
+  <object id="67" gid="37" x="3549" y="1402" width="91.5" height="83">
    <properties>
     <property name="color" value="WILD_ORCHID"/>
    </properties>
   </object>
-  <object id="103" gid="5" x="3113.83" y="1428.83" width="79" height="138" rotation="-50">
+  <object id="103" gid="5" x="3041.83" y="1428.83" width="79" height="138" rotation="-50">
    <properties>
     <property name="color" value="PEAR"/>
    </properties>
