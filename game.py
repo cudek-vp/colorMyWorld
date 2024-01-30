@@ -52,6 +52,8 @@ MAX_LEFT = inf
 
 sound_path = ':resources:/sounds/'
 music_path = ':resources:/music/'
+
+
 class GameView(arcade.View):
     arcade.Sound(f'{music_path}funkyrobot.mp3').play()
 
@@ -60,12 +62,10 @@ class GameView(arcade.View):
 
         arcade.set_background_color(arcade.color.AMAZON)
 
-        self.scene : Optional[arcade.Scene]
+        self.scene: Optional[arcade.Scene] = None
 
-        self.physics_engine : Optional[arcade.PymunkPhysicsEngine]
+        self.physics_engine: Optional[arcade.PymunkPhysicsEngine] = None
         self.player_sprite: Optional[arcade.Sprite] = None
-        # If you have sprite lists, you should create them here,
-        # and set them to None
 
         self.left_pressed: bool = False
         self.right_pressed: bool = False
@@ -74,11 +74,9 @@ class GameView(arcade.View):
         self.max_score = 0
         self.score = self.max_score
 
-
-
     def setup(self):
         def enemy_platform_jump_collide(enemy, _platform, _arbiter, _space, _data):
-            po : arcade.PymunkPhysicsObject = self.physics_engine.get_physics_object(enemy)
+            po: arcade.PymunkPhysicsObject = self.physics_engine.get_physics_object(enemy)
             return po.body.velocity[1] < 0
 
         def enemy_enemy_collide(_enemy1, _enemy2, _arbiter, _space, _data):
@@ -103,7 +101,6 @@ class GameView(arcade.View):
                 "hit_box_algorithm": "Simple"
             }
         })
-
 
         self.scene = arcade.Scene.from_tilemap(tile_map)
 
@@ -137,15 +134,13 @@ class GameView(arcade.View):
         self.add_enemy_phisics(enemy)
 
         self.physics_engine.add_sprite(self.player_sprite,
-                                        friction=0,
-                                        mass=PLAYER_MASS,
-                                        collision_type="player",
-                                        max_vertical_velocity=PLAYER_MAX_VERTICAL_SPEED,
-                                        max_horizontal_velocity=PLAYER_MAX_HORIZONTAL_SPEED,
-                                        moment_of_inertia=inf)
+                                       friction=0,
+                                       mass=PLAYER_MASS,
+                                       collision_type="player",
+                                       max_vertical_velocity=PLAYER_MAX_VERTICAL_SPEED,
+                                       max_horizontal_velocity=PLAYER_MAX_HORIZONTAL_SPEED,
+                                       moment_of_inertia=inf)
 
-
-        # self.physics_engine.add_collision_handler()
         self.physics_engine.add_collision_handler("player", "platform", begin_handler=enemy_platform_jump_collide)
         self.physics_engine.add_collision_handler("enemy", "platform", begin_handler=enemy_platform_jump_collide)
         self.physics_engine.add_collision_handler("enemy", "enemy", begin_handler=enemy_enemy_collide)
@@ -196,19 +191,20 @@ class GameView(arcade.View):
     def on_draw(self):
         self.clear()
         self.scene.draw()
-        arcade.draw_text(start_x=175, start_y=SCREEN_HEIGHT-50, font_size=18, color=(0,0,0), text=f"{round(self.score / self.max_score * 100, 2)}%")
-        arcade.draw_text(start_x=175, start_y=SCREEN_HEIGHT-70, font_size=18, color=(0,0,0), text=f"Sorrows: {Enemy.sprites_number}")
+        arcade.draw_text(start_x=175, start_y=SCREEN_HEIGHT-50, font_size=18, color=arcade.color.BLACK,
+                         text=f"{round(self.score / self.max_score * 100, 2)}%")
+        arcade.draw_text(start_x=175, start_y=SCREEN_HEIGHT-70, font_size=18, color=arcade.color.BLACK,
+                         text=f"Sorrows: {Enemy.sprites_number}")
         # change face by score
 
     def on_update(self, delta_time):
         if Enemy.sprites_number <= 0:
-            highscoresView = HighscoresView()
-            highscoresView.setup(self.score)
-            self.window.show_view(highscoresView)
+            highscores_view = HighscoresView()
+            highscores_view.setup(self.score)
+            self.window.show_view(highscores_view)
 
         self.scene.on_update(delta_time)
         self.player_update(delta_time)
-        new_enemies = []
 
         for enemy in self.scene[ENEMIES_LAYER]:
             self.move_enemy(enemy, delta_time)
@@ -224,7 +220,7 @@ class GameView(arcade.View):
         enemies = arcade.check_for_collision_with_list(self.player_sprite, self.scene[ENEMIES_LAYER])
         for enemy in enemies:
             if enemy.has_color:
-                self.retrive_color(enemy)
+                self.retrieve_color(enemy)
                 arcade.Sound(f'{sound_path}hurt5.wav').play()
             enemy.destroy()
             arcade.Sound(f'{sound_path}hurt4.wav').play()
@@ -250,7 +246,7 @@ class GameView(arcade.View):
             else:
                 jump_angle = random.uniform(0, 45)
             if random.random() < 0.33:
-                jump_angle =- jump_angle
+                jump_angle = -jump_angle
         else:
             jump_angle = random.uniform(-45, 45)
 
@@ -268,8 +264,6 @@ class GameView(arcade.View):
             enemy.move_force = random.choice([-100, 100])
         self.physics_engine.set_velocity(enemy, (enemy.move_force, self.physics_engine.get_physics_object(enemy).body.velocity[1]))
 
-
-
     def steal_color(self, enemy, color):
         enemy.steal(color)
         self.score -= 1
@@ -277,24 +271,18 @@ class GameView(arcade.View):
             self.scene.add_sprite(ENEMIES_LAYER, new_enemy)
             self.add_enemy_phisics(new_enemy)
 
-    def retrive_color(self, enemy):
+    def retrieve_color(self, enemy):
         self.score += 1
         closest_sprite = self.get_random_colored_sprite(enemy)
         if closest_sprite:
             closest_sprite.give_color(enemy.color)
 
     def on_key_press(self, key, key_modifiers):
-        """
-        Called whenever a key on the keyboard is pressed.
-
-        For a full list of keys, see:
-        https://api.arcade.academy/en/latest/arcade.key.html
-        """
-        if key == arcade.key.LEFT:
+        if key == arcade.key.LEFT or key == arcade.key.A:
             self.left_pressed = True
-        elif key == arcade.key.RIGHT:
+        elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.right_pressed = True
-        elif key == arcade.key.UP:
+        elif key == arcade.key.UP or key == arcade.key.W:
             self.up_pressed = True
             # find out if player is standing on ground, and not on a ladder
             if self.physics_engine.is_on_ground(self.player_sprite):
@@ -303,21 +291,14 @@ class GameView(arcade.View):
                 self.physics_engine.apply_impulse(self.player_sprite, impulse)
 
     def on_key_release(self, key, key_modifiers):
-        """
-        Called whenever the user lets off a previously pressed key.
-        """
-        if key == arcade.key.LEFT:
+        if key == arcade.key.LEFT or key == arcade.key.A:
             self.left_pressed = False
-        elif key == arcade.key.RIGHT:
+        elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.right_pressed = False
-        elif key == arcade.key.UP:
+        elif key == arcade.key.UP or key == arcade.key.W:
             self.up_pressed = False
-        elif key == arcade.key.DOWN:
-            self.down_pressed = False
 
-    def player_update(self, delta_time):
-        """ Movement and game logic """
-
+    def player_update(self, _delta_time):
         is_on_ground = self.physics_engine.is_on_ground(self.player_sprite)
         # Update player forces based on keys pressed
         if self.left_pressed and not self.right_pressed:
@@ -362,21 +343,25 @@ class GameView(arcade.View):
                     closest_sprite = o
         return closest_sprite
 
-    def get_random_colored_sprite(self, sprite) -> Object:
+    def get_random_colored_sprite(self, _sprite) -> Object:
         index = random.randint(0, self.score-1)
-        closest_sprite = None
         i = 0
-        o: Object = None
         for o in self.scene[OBJECTS_LAYER]:
             if i == index:
                 return o
-            i+=1
+            i += 1
+
 
 class HighscoresView(arcade.View):
     def __init__(self):
         super().__init__()
 
         arcade.set_background_color(arcade.color.AO)
+
+        self.manager: Optional[UIManager] = None
+        self.layout: Optional[UIBoxLayout] = None
+        self.text_area: Optional[UITextArea] = None
+        self.inputPanel: Optional[UITexturePane] = None
 
         self.score = 0
         self.user_name_input = UIInputText(width=200, height=50, text="Name", text_color=arcade.color.BLACK)
@@ -404,13 +389,13 @@ class HighscoresView(arcade.View):
                                text_color=(0, 0, 0, 255),
                                bg_tex=bg_tex)
 
-        newHighscorePanel =  UITexturePane(
+        new_highscore_panel = UITexturePane(
                 text_area.with_space_around(right=50),
                 tex=bg_tex,
                 padding=(10, 10, 10, 10)
         )
 
-        self.layout.add(newHighscorePanel)
+        self.layout.add(new_highscore_panel)
 
         self.inputPanel = UIBoxLayout()
         self.inputPanel.add(UILabel(text=f"Congrats, you'v achieved an highscore ({self.score}%)! Enter your name:", font_size=14, bold=True))
@@ -425,10 +410,10 @@ class HighscoresView(arcade.View):
                 self.inputPanel
             )
 
-        reloadButton = UIFlatButton(text="Play again", width=200)
-        reloadButton.on_click = self.reload
+        reload_button = UIFlatButton(text="Play again", width=200)
+        reload_button.on_click = self.reload
 
-        self.layout.add(UIPadding(reloadButton, padding=(20, 20, 20, 20)))
+        self.layout.add(UIPadding(reload_button, padding=(20, 20, 20, 20)))
 
 
     def save_highscores(self, event):
@@ -436,7 +421,7 @@ class HighscoresView(arcade.View):
         self.scores.append((self.user_name_input.text, self.score))
         self.scores.sort(reverse=True, key=lambda x: x[1])
         for (user, points) in self.scores[:10]:
-            file.write(f'{user};{points}\n')
+            file.write(f'{" " if user == "" else user };{points}\n')
         file.close()
         self.layout.remove(self.inputPanel)
 
@@ -452,14 +437,15 @@ class HighscoresView(arcade.View):
         self.text = ''
         i = 1
         for (user, points) in self.scores:
-            self.text += (f'{i}. {user}\t{str(points)}\n')
+            self.text += f'{i}. {user}\t{points}\n'
             i += 1
         return self.text
 
-    def reload(self, event):
-        gameView = GameView()
-        gameView.setup()
-        self.window.show_view(gameView)
+    def reload(self, _event):
+        game_view = GameView()
+        game_view.setup()
+        self.window.show_view(game_view)
+
     def on_draw(self):
         self.clear()
         self.manager.draw()
@@ -469,7 +455,6 @@ class HighscoresView(arcade.View):
 
 
 def main():
-    """ Main function """
     window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
     start_view = GameView()
     start_view.setup()
