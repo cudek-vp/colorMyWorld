@@ -33,8 +33,8 @@
             "scale": 0.25,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1916,
-                "y": 1080
+                "x": 1920,
+                "y": 1082
             }
         },
         "bez nazwy.tmx": {
@@ -81,17 +81,17 @@
         "small_kitchen.tmx": {
             "expandedObjectLayers": [
                 5,
-                7,
-                3,
-                4,
                 6,
+                7,
+                4,
+                3,
                 2
             ],
             "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1900,
-                "y": 816
+                "x": 2108,
+                "y": 1082
             }
         },
         "walls.tmj": {

@@ -213,7 +213,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="5" name="objects1" visible="0">
+ <objectgroup id="5" name="objects1">
   <object id="48" gid="4" x="2997.67" y="2120.16" width="511" height="725">
    <properties>
     <property name="color" value="GOLDEN_BROWN"/>
